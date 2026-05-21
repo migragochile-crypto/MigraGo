@@ -150,7 +150,7 @@ export default function HomePage() {
                 href={`/herramientas/${tool.slug}`}
                 className="group bg-white border border-border hover:border-primary rounded-xl p-5 transition-all hover:shadow-sm"
               >
-                <span className="text-2xl">🔧</span>
+                <span className="text-2xl">{tool.icon}</span>
                 <p className="mt-2 font-medium text-gray-900 group-hover:text-primary transition-colors">
                   {tool.label}
                 </p>

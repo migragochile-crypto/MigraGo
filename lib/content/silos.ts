@@ -78,6 +78,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'documentos-perdidos',
       'prohibicion-ingreso',
       'notificacion-irregular',
+      'sin-respuesta-sermig',
     ],
     cta: { text: 'Ver herramientas de apoyo', href: '/herramientas' },
   },
@@ -95,6 +96,11 @@ export const SILOS: Record<string, SiloConfig> = {
       'educacion-hijos',
       'convalidacion-titulos',
       'apostilla-traduccion',
+      'trabajo-contrato',
+      'traer-familia',
+      'emprendimiento',
+      'licencia-conducir',
+      'seguro-cesantia',
     ],
     cta: { text: 'Ver herramientas', href: '/herramientas' },
   },
@@ -154,14 +160,14 @@ export const MAIN_SILOS = [
 ] as const
 
 export const HERRAMIENTAS_LIST = [
-  { slug: 'calculadora-elegibilidad', label: 'Calculadora de Elegibilidad' },
-  { slug: 'simulador-plazos', label: 'Simulador de Plazos' },
-  { slug: 'checklist-permanencia-definitiva', label: 'Checklist Residencia Definitiva' },
-  { slug: 'checklist-temporaria', label: 'Checklist Residencia Temporal' },
-  { slug: 'consultar-estado', label: 'Consultar Estado de Trámite' },
-  { slug: 'quiz-visas', label: '❓ ¿Cuál visa me conviene?' },
-  { slug: 'calculadora-multas', label: '💰 Calculadora de Multas + PD' },
-  { slug: 'matriz-visas', label: '📊 Comparador de Visas' },
+  { slug: 'calculadora-elegibilidad', label: 'Calculadora de Elegibilidad', icon: '✅' },
+  { slug: 'simulador-plazos', label: 'Simulador de Plazos', icon: '⏱️' },
+  { slug: 'checklist-permanencia-definitiva', label: 'Checklist Residencia Definitiva', icon: '📋' },
+  { slug: 'checklist-temporaria', label: 'Checklist Residencia Temporal', icon: '📋' },
+  { slug: 'consultar-estado', label: 'Consultar Estado de Trámite', icon: '🔍' },
+  { slug: 'quiz-visas', label: '¿Cuál visa me conviene?', icon: '❓' },
+  { slug: 'calculadora-multas', label: 'Calculadora de Multas + PD', icon: '💰' },
+  { slug: 'matriz-visas', label: 'Comparador de Visas', icon: '📊' },
 ]
 
 export function slugToLabel(slug: string): string {

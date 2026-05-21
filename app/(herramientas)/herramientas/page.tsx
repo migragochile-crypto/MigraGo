@@ -18,14 +18,9 @@ const TOOL_DESCRIPTIONS: Record<string, string> = {
   'checklist-permanencia-definitiva': 'Lista completa de documentos para tu solicitud de Residencia Definitiva.',
   'checklist-temporaria': 'Documentos necesarios para cada tipo de Residencia Temporal.',
   'consultar-estado': 'Ingresa tu número de solicitud y verifica el estado de tu trámite.',
-}
-
-const TOOL_ICONS: Record<string, string> = {
-  'calculadora-elegibilidad': '🧮',
-  'simulador-plazos': '📅',
-  'checklist-permanencia-definitiva': '✅',
-  'checklist-temporaria': '📝',
-  'consultar-estado': '🔍',
+  'quiz-visas': 'Responde 5 preguntas y descubre qué permiso migratorio se adapta mejor a tu situación.',
+  'calculadora-multas': 'Estima el monto de la multa por permanencia irregular y el costo total de regularizarte.',
+  'matriz-visas': 'Compara requisitos, plazos y costos de cada tipo de permiso de residencia en Chile.',
 }
 
 export default function HerramientasIndexPage() {
@@ -48,7 +43,7 @@ export default function HerramientasIndexPage() {
             href={`/herramientas/${tool.slug}`}
             className="group border border-border hover:border-primary rounded-2xl p-6 transition-all hover:shadow-md bg-white"
           >
-            <div className="text-3xl mb-3">{TOOL_ICONS[tool.slug] ?? '🔧'}</div>
+            <div className="text-3xl mb-3">{tool.icon}</div>
             <h2 className="font-semibold text-lg text-gray-900 group-hover:text-primary transition-colors">
               {tool.label}
             </h2>
