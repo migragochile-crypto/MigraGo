@@ -102,6 +102,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'emprendimiento',
       'licencia-conducir',
       'seguro-cesantia',
+      'apostilla-por-pais',
     ],
     cta: { text: 'Ver herramientas', href: '/herramientas' },
   },
