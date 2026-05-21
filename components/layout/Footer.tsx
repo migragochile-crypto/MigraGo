@@ -62,8 +62,6 @@ export default function Footer() {
             <h3 className="font-semibold text-white mb-3 mt-6 text-sm uppercase tracking-wide">Recursos</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/glosario" className="hover:text-white transition-colors">Glosario migratorio</Link></li>
-              <li><Link href="/noticias" className="hover:text-white transition-colors">Noticias</Link></li>
-              <li><Link href="/casos" className="hover:text-white transition-colors">Casos reales</Link></li>
               <li><Link href="/acerca" className="hover:text-white transition-colors">Acerca de MigraGo</Link></li>
               <li><Link href="/metodologia" className="hover:text-white transition-colors">Metodología</Link></li>
             </ul>

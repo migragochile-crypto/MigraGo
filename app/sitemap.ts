@@ -52,10 +52,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE_URL}/sitemap-herramientas.xml`,
       lastModified: new Date(),
     },
-    {
-      url: `${SITE_URL}/sitemap-noticias.xml`,
-      lastModified: new Date(),
-    },
   ]
 }
 
