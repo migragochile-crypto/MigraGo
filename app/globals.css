@@ -1,26 +1,55 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ── Design tokens ── */
+@theme {
+  --color-primary: #003087;
+  --color-primary-dark: #00205c;
+  --color-primary-light: #1a4fa0;
+  --color-accent: #d52b1e;
+  --color-accent-dark: #a82116;
+  --color-accent-light: #f0695e;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
+  --color-border: #e2e8f0;
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ── View transitions ── */
+@supports (view-transition-name: none) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0.25s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
   }
 }
 
+/* ── Base ── */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: #111827;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Typography prose overrides ── */
+.prose a {
+  color: var(--color-primary);
+}
+
+.prose a:hover {
+  text-decoration: underline;
+}
+
+/* Scroll margin for anchor links */
+[id] {
+  scroll-margin-top: 80px;
 }
