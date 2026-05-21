@@ -79,6 +79,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'prohibicion-ingreso',
       'notificacion-irregular',
       'sin-respuesta-sermig',
+      'derechos-migrante',
     ],
     cta: { text: 'Ver herramientas de apoyo', href: '/herramientas' },
   },
