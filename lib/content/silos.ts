@@ -151,6 +151,36 @@ export const SILOS: Record<string, SiloConfig> = {
     ],
     cta: { text: 'Ver guía Rep. Dominicana', href: '/paises/republica-dominicana' },
   },
+  peru: {
+    label: 'Perú',
+    description: 'Guía para peruanos en Chile: documentos, antecedentes penales y visa MERCOSUR',
+    clusters: [
+      'documentos-peru',
+      'antecedentes-penales',
+      'visa-mercosur',
+    ],
+    cta: { text: 'Ver guía Perú', href: '/paises/peru' },
+  },
+  colombia: {
+    label: 'Colombia',
+    description: 'Guía para colombianos en Chile: apostilla, antecedentes penales y visa MERCOSUR',
+    clusters: [
+      'apostilla-colombia',
+      'antecedentes-penales',
+      'visa-mercosur',
+    ],
+    cta: { text: 'Ver guía Colombia', href: '/paises/colombia' },
+  },
+  argentina: {
+    label: 'Argentina',
+    description: 'Guía para argentinos en Chile: documentos, antecedentes penales y visa MERCOSUR con DNI',
+    clusters: [
+      'documentos-argentina',
+      'antecedentes-penales',
+      'visa-mercosur',
+    ],
+    cta: { text: 'Ver guía Argentina', href: '/paises/argentina' },
+  },
 }
 
 export const PAISES: Record<string, PaisConfig> = {
