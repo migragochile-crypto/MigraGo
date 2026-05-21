@@ -106,6 +106,17 @@ export const SILOS: Record<string, SiloConfig> = {
     ],
     cta: { text: 'Ver herramientas', href: '/herramientas' },
   },
+  venezuela: {
+    label: 'Venezuela',
+    description: 'Guía para venezolanos en Chile: visa, documentos sin apostilla y regularización',
+    clusters: [
+      'documentos-apostilla',
+      'pasaporte',
+      'antecedentes-penales',
+      'visa-vrd',
+    ],
+    cta: { text: 'Ver guía Venezuela', href: '/paises/venezuela' },
+  },
   bolivia: {
     label: 'Bolivia',
     description: 'Guía práctica para ciudadanos bolivianos: documentos, apostilla y opciones de visa',
