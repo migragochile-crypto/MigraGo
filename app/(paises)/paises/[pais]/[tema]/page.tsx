@@ -4,8 +4,8 @@ import { getArticleBySlug, getAllPublishedArticles } from '@/lib/supabase/querie
 import { articleMetadata, buildMetadata } from '@/lib/seo/metadata'
 import ArticlePageTemplate from '@/components/templates/ArticlePageTemplate'
 import { PAISES, slugToLabel } from '@/lib/content/silos'
+import { SITE_URL } from '@/lib/constants'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://migrago.cl'
 
 export const revalidate = 3600
 export const dynamicParams = true

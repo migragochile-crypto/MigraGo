@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
+import { SITE_URL } from '@/lib/constants'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://migrago.cl'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

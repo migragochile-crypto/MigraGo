@@ -6,8 +6,8 @@ import JsonLd from '@/components/seo/JsonLd'
 import { HERRAMIENTAS_LIST } from '@/lib/content/silos'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { softwareApplicationSchema } from '@/lib/seo/schemas'
+import { SITE_URL } from '@/lib/constants'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://migrago.cl'
 
 export const revalidate = 3600
 export const dynamicParams = false

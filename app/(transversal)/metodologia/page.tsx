@@ -3,8 +3,8 @@ import { buildMetadata } from '@/lib/seo/metadata'
 import Breadcrumbs from '@/components/ui/Breadcrumbs'
 import JsonLd from '@/components/seo/JsonLd'
 import { breadcrumbSchema } from '@/lib/seo/schemas'
+import { SITE_URL } from '@/lib/constants'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://migrago.cl'
 
 export const metadata: Metadata = buildMetadata({
   title: 'Metodología editorial — MigraGo',

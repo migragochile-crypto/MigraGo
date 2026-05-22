@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import type { Article } from '@/types/content'
+import { SITE_URL, SITE_NAME } from '@/lib/constants'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://migrago.cl'
-const SITE_NAME = 'MigraGo'
 
 export function buildMetadata(opts: {
   title: string

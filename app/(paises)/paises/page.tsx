@@ -5,8 +5,8 @@ import Breadcrumbs from '@/components/ui/Breadcrumbs'
 import JsonLd from '@/components/seo/JsonLd'
 import { breadcrumbSchema } from '@/lib/seo/schemas'
 import { PAISES } from '@/lib/content/silos'
+import { SITE_URL } from '@/lib/constants'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://migrago.cl'
 
 export const metadata: Metadata = buildMetadata({
   title: 'Guías de Inmigración a Chile por País de Origen',

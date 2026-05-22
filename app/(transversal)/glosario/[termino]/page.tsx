@@ -4,8 +4,8 @@ import Link from 'next/link'
 import { getGlossaryTerm, getAllGlossaryTerms, getRelatedArticles } from '@/lib/supabase/queries'
 import Breadcrumbs from '@/components/ui/Breadcrumbs'
 import JsonLd from '@/components/seo/JsonLd'
+import { SITE_URL } from '@/lib/constants'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://migrago.cl'
 
 export const revalidate = 3600
 export const dynamicParams = true

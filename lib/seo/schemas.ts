@@ -1,7 +1,6 @@
 import type { Article, FaqItem, HowToStep } from '@/types/content'
+import { SITE_URL, SITE_NAME as ORG_NAME } from '@/lib/constants'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://migrago.cl'
-const ORG_NAME = 'MigraGo'
 
 export function organizationSchema() {
   return {

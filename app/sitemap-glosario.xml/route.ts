@@ -1,6 +1,6 @@
 import { getAllGlossaryTerms } from '@/lib/supabase/queries'
+import { SITE_URL } from '@/lib/constants'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://migrago.cl'
 
 function buildXml(urls: { loc: string; priority?: number }[]): string {
   const items = urls

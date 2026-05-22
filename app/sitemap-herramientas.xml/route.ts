@@ -1,6 +1,6 @@
 import { HERRAMIENTAS_LIST } from '@/lib/content/silos'
+import { SITE_URL } from '@/lib/constants'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://migrago.cl'
 
 export async function GET() {
   const items = [

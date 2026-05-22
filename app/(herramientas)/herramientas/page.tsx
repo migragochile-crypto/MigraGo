@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { HERRAMIENTAS_LIST } from '@/lib/content/silos'
 import Breadcrumbs from '@/components/ui/Breadcrumbs'
+import { SITE_URL } from '@/lib/constants'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://migrago.cl'
 
 export const metadata: Metadata = {
   title: 'Herramientas migratorias gratuitas | MigraGo',

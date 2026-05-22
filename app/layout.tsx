@@ -3,12 +3,11 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import { SITE_URL, SITE_NAME } from '@/lib/constants'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] })
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://migrago.cl'
-const SITE_NAME = 'MigraGo'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

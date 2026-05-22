@@ -6,9 +6,9 @@ import { SILOS } from '@/lib/content/silos'
 import { breadcrumbSchema } from '@/lib/seo/schemas'
 import JsonLd from '@/components/seo/JsonLd'
 import Link from 'next/link'
+import { SITE_URL } from '@/lib/constants'
 
 const SILO = 'residencia-temporal'
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://migrago.cl'
 
 export const revalidate = 3600
 
