@@ -110,6 +110,21 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
             </article>
 
             <RelatedContent slugs={article.related_slugs ?? []} currentSlug={article.slug} />
+
+            {/* CTA mobile — visible solo en pantallas < lg */}
+            {siloConfig && (
+              <div className="lg:hidden mt-10 rounded-xl border border-primary/20 bg-primary/5 p-6 text-center">
+                <p className="font-semibold text-gray-900 mb-3">{siloConfig.cta.text}</p>
+                <a
+                  href={siloConfig.cta.href}
+                  target={siloConfig.cta.href.startsWith('http') ? '_blank' : undefined}
+                  rel={siloConfig.cta.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  className="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors"
+                >
+                  {siloConfig.cta.text}
+                </a>
+              </div>
+            )}
           </main>
 
           {/* Right sidebar — CTA */}

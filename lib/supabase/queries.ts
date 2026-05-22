@@ -80,22 +80,26 @@ export async function getRelatedArticles(
 }
 
 export async function getPublishedClustersBySilo(silo: string): Promise<string[]> {
-  const supabase = getSupabase()
-  if (!supabase) return []
+  return unstable_cache(
+    async () => {
+      const supabase = getSupabase()
+      if (!supabase) return []
 
-  const { data } = await supabase
-    .from('articles')
-    .select('slug')
-    .eq('silo', silo)
-    .eq('type', 'cluster')
-    .eq('is_published', true)
+      const { data } = await supabase
+        .from('articles')
+        .select('slug')
+        .eq('silo', silo)
+        .eq('type', 'cluster')
+        .eq('is_published', true)
 
-  return (data ?? []).map(({ slug }: { slug: string }) => slug.split('/')[1])
+      return (data ?? []).map(({ slug }: { slug: string }) => slug.split('/')[1])
+    },
+    [`clusters-${silo}`],
+    { revalidate: 1800, tags: [`silo-${silo}`] }
+  )()
 }
 
-export async function getPublishedSlugs(
-  type: 'hub' | 'news' | 'caso'
-): Promise<string[]> {
+export async function getPublishedSlugs(type: 'hub'): Promise<string[]> {
   const supabase = getSupabase()
   if (!supabase) return []
 
@@ -154,26 +158,6 @@ export async function getAllGlossaryTerms(): Promise<GlossaryTerm[]> {
     .order('term', { ascending: true })
 
   return (data ?? []) as GlossaryTerm[]
-}
-
-export async function getLatestNews(
-  limit = 10
-): Promise<Pick<Article, 'id' | 'slug' | 'title' | 'h1' | 'meta_description' | 'published_at'>[]> {
-  const supabase = getSupabase()
-  if (!supabase) return []
-
-  const { data } = await supabase
-    .from('articles')
-    .select('id, slug, title, h1, meta_description, published_at')
-    .eq('type', 'news')
-    .eq('is_published', true)
-    .order('published_at', { ascending: false })
-    .limit(limit)
-
-  return (data ?? []) as Pick<
-    Article,
-    'id' | 'slug' | 'title' | 'h1' | 'meta_description' | 'published_at'
-  >[]
 }
 
 export async function getArticleWithRelated(

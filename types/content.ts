@@ -1,4 +1,4 @@
-export type ContentType = 'pillar' | 'cluster' | 'hub' | 'tool' | 'news' | 'caso'
+export type ContentType = 'pillar' | 'cluster' | 'hub' | 'tool'
 export type SchemaType = 'Article' | 'FAQPage' | 'HowTo' | 'WebPage'
 
 export interface FaqItem {

@@ -8,7 +8,7 @@ import { SILOS, slugToLabel } from '@/lib/content/silos'
 const SILO = 'nacionalizacion'
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://migrago.cl'
 
-export const revalidate = 86400
+export const revalidate = 3600
 export const dynamicParams = true
 
 export async function generateStaticParams() {

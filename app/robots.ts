@@ -15,6 +15,7 @@ export default function robots(): MetadataRoute.Robots {
       `${SITE_URL}/sitemap-silos.xml`,
       `${SITE_URL}/sitemap-paises.xml`,
       `${SITE_URL}/sitemap-herramientas.xml`,
+      `${SITE_URL}/sitemap-glosario.xml`,
     ],
   }
 }

@@ -5,7 +5,7 @@ import Breadcrumbs from '@/components/ui/Breadcrumbs'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://migrago.cl'
 
-export const revalidate = 86400
+export const revalidate = 3600
 
 export const metadata: Metadata = {
   title: 'Glosario migratorio Chile',

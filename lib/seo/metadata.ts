@@ -53,8 +53,7 @@ export function articleMetadata(article: Article): Metadata {
       : `${SITE_URL}${article.canonical.startsWith('/') ? '' : '/'}${article.canonical}`
   }
 
-  // Imagen dinámica basada en el tipo de contenido
-  const imageUrl = `${SITE_URL}/og-${article.type}.png`
+  const imageUrl = `${SITE_URL}/og-default.png`
 
   return {
     title: `${article.title} | ${SITE_NAME}`,
