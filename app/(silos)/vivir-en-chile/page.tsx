@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { getArticleBySlug } from '@/lib/supabase/queries'
+import { getArticleBySlug, getArticlesBySilo } from '@/lib/supabase/queries'
 import { articleMetadata, buildMetadata } from '@/lib/seo/metadata'
 import ArticlePageTemplate from '@/components/templates/ArticlePageTemplate'
 import { SILOS } from '@/lib/content/silos'
@@ -21,8 +21,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function VivirEnChilePage() {
-  const article = await getArticleBySlug(SILO)
+  const [article, siloArticles] = await Promise.all([
+    getArticleBySlug(SILO),
+    getArticlesBySilo(SILO),
+  ])
   const siloConfig = SILOS[SILO]
+  const clusters = siloArticles.filter((a) => a.type === 'cluster')
   const breadcrumbs = [
     { label: 'Inicio', href: SITE_URL },
     { label: siloConfig.label, href: `${SITE_URL}/${SILO}` },
