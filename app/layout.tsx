@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
@@ -29,6 +30,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`${geistSans.variable} ${geistMono.variable} h-full`}>
+      <head>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-M3F08MR4KC" strategy="afterInteractive" />
+        <Script id="ga4" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-M3F08MR4KC');
+        `}</Script>
+      </head>
       <body className="min-h-full flex flex-col antialiased">
         <Header />
         <div className="flex-1 flex flex-col">{children}</div>
