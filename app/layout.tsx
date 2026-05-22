@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   robots: { index: true, follow: true },
+  verification: { google: 'aB-ED4GeTjDo1QomL7I_vVhawTo3KQB_d6K7CuRqmVE' },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
