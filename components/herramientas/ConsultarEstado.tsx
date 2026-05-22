@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 
@@ -75,7 +75,7 @@ export default function ConsultarEstado() {
           Migratorios del SERMIG. Accede con la cuenta que usaste para presentar la solicitud.
         </p>
         <a
-          href="https://tramitesmigratorios.interior.gob.cl"
+          href="https://tramites.extranjeria.gob.cl"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-white text-primary font-semibold px-5 py-2.5 rounded-lg text-sm hover:bg-gray-100 transition-colors"
@@ -83,7 +83,7 @@ export default function ConsultarEstado() {
           Ir al portal del SERMIG ↗
         </a>
         <p className="mt-3 text-xs text-white/60">
-          Sitio oficial del Gobierno de Chile — servicio.migraciones.cl
+          Sitio oficial del Gobierno de Chile — tramites.extranjeria.gob.cl
         </p>
       </div>
 
@@ -92,7 +92,7 @@ export default function ConsultarEstado() {
         <h2 className="text-base font-semibold text-gray-900 mb-3">Cómo ver el estado de tu solicitud</h2>
         <ol className="space-y-3">
           {[
-            'Accede a tramitesmigratorios.interior.gob.cl e inicia sesión con tu cuenta.',
+            'Accede a tramites.extranjeria.gob.cl e inicia sesión con tu cuenta.',
             'En el menú principal, selecciona "Mis solicitudes" o "Mis trámites".',
             'Busca la solicitud por número de radicación o por fecha de presentación.',
             'El estado actual aparece junto a los datos de la solicitud. Si hay una notificación pendiente, verás un aviso.',
@@ -135,7 +135,7 @@ export default function ConsultarEstado() {
         <p className="text-sm text-gray-600">
           Tienes derecho a impugnar la resolución mediante recursos administrativos dentro de los plazos establecidos.
         </p>
-        <Link href="/problemas/recurso-administrativo" className="text-sm text-primary hover:underline inline-block">
+        <Link href="/problemas-migratorios/recurso-administrativo" className="text-sm text-primary hover:underline inline-block">
           Ver guía de recursos administrativos →
         </Link>
       </div>
@@ -144,7 +144,7 @@ export default function ConsultarEstado() {
         Esta guía es informativa. El estado actualizado de tu trámite solo puede consultarse en el portal
         oficial del SERMIG. Si llevas mucho tiempo sin actualizaciones y ya respondiste todos los
         requerimientos, puedes contactar directamente al SERMIG.{' '}
-        <Link href="/problemas/sin-respuesta-sermig" className="underline text-primary">
+        <Link href="/problemas-migratorios/sin-respuesta-sermig" className="underline text-primary">
           Ver qué hacer si el SERMIG no responde.
         </Link>
       </div>
