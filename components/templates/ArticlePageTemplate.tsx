@@ -22,16 +22,16 @@ interface Props {
 export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Props) {
   const siloConfig = SILOS[silo]
 
+  const isHowTo = article.schema_type === 'HowTo' && article.howto_steps?.length > 0
+
   const schemas: Record<string, unknown>[] = [
-    articleSchema(article),
+    isHowTo ? howToSchema(article.h1, article.howto_steps) : articleSchema(article),
     breadcrumbSchema(breadcrumbs.map((b) => ({ name: b.label, url: b.href }))),
   ]
 
+  // FAQPage alongside Article (or HowTo) is valid — Google puede mostrar ambos rich results
   if (article.faq_items?.length) {
     schemas.push(faqSchema(article.faq_items))
-  }
-  if (article.schema_type === 'HowTo' && article.howto_steps?.length) {
-    schemas.push(howToSchema(article.h1, article.howto_steps))
   }
 
   return (
