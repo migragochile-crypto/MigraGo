@@ -1,15 +1,41 @@
 import type { Article, FaqItem, HowToStep } from '@/types/content'
-import { SITE_URL, SITE_NAME as ORG_NAME } from '@/lib/constants'
+import { SITE_URL, SITE_NAME as ORG_NAME, ORGANIZATION_SAME_AS } from '@/lib/constants'
 
 
 export function organizationSchema() {
-  return {
+  const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: ORG_NAME,
     url: SITE_URL,
-    logo: `${SITE_URL}/logo.png`,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE_URL}/logo.png`,
+      width: 200,
+      height: 60,
+    },
+    description:
+      'Guía independiente sobre inmigración y trámites migratorios en Chile. Información clara y actualizada sobre Residencia Temporal, Residencia Definitiva, autodenuncia y vida cotidiana en Chile.',
+    areaServed: {
+      '@type': 'Country',
+      name: 'Chile',
+    },
+    knowsAbout: [
+      'Residencia Temporal Chile',
+      'Residencia Definitiva Chile',
+      'Autodenuncia migratoria PDI',
+      'Nacionalización chilena',
+      'Trámites migratorios SERMIG',
+      'Visa para Chile',
+    ],
+    inLanguage: 'es-CL',
   }
+
+  if (ORGANIZATION_SAME_AS.length > 0) {
+    schema.sameAs = ORGANIZATION_SAME_AS
+  }
+
+  return schema
 }
 
 export function webSiteSchema() {
