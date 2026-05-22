@@ -70,10 +70,11 @@ export default function Footer() {
 
         <div className="mt-10 pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
           <p>© {new Date().getFullYear()} MigraGo. Todos los derechos reservados.</p>
-          <p>
-            Esta guía es informativa. Para asesoría legal personalizada, consulta con un{' '}
-            <span className="text-gray-400">abogado de inmigración</span>.
-          </p>
+          <div className="flex flex-wrap justify-center sm:justify-end gap-x-4 gap-y-1">
+            <Link href="/privacidad" className="hover:text-white transition-colors">Política de Privacidad</Link>
+            <Link href="/terminos" className="hover:text-white transition-colors">Términos de Uso</Link>
+            <span className="text-gray-600">Información orientativa — no reemplaza asesoría legal.</span>
+          </div>
         </div>
       </div>
     </footer>

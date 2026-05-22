@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import { buildMetadata } from '@/lib/seo/metadata'
 import Breadcrumbs from '@/components/ui/Breadcrumbs'
 import JsonLd from '@/components/seo/JsonLd'
@@ -21,12 +21,12 @@ const breadcrumbs = [
 const FUENTES = [
   {
     nombre: 'Servicio Nacional de Migraciones (SERMIG)',
-    url: 'https://www.sermig.gob.cl',
+    url: 'https://serviciomigraciones.cl',
     descripcion: 'Trámites de residencia, visas, plazos y normativa vigente.',
   },
   {
     nombre: 'Portal de Trámites Migratorios',
-    url: 'https://tramitesmigratorios.interior.gob.cl',
+    url: 'https://tramites.extranjeria.gob.cl',
     descripcion: 'Solicitudes en línea y estado de trámites.',
   },
   {
@@ -36,7 +36,7 @@ const FUENTES = [
   },
   {
     nombre: 'Registro Civil e Identificación (SRCeI)',
-    url: 'https://www.srcei.cl',
+    url: 'https://www.registrocivil.cl',
     descripcion: 'RUN, cédula de identidad para extranjeros y nacionalización.',
   },
   {
@@ -46,7 +46,7 @@ const FUENTES = [
   },
   {
     nombre: 'Ley 21.325 de Migración y Extranjería',
-    url: 'https://www.bcn.cl/leychile/navegar?idNorma=1177286',
+    url: 'https://www.bcn.cl/leychile/navegar?idNorma=1158549',
     descripcion: 'Marco legal vigente que rige la inmigración en Chile desde 2021.',
   },
 ]

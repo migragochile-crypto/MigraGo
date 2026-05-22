@@ -13,6 +13,13 @@ const SILO_ICONS: Record<string, string> = {
   nacionalizacion: '🇨🇱',
   'vivir-en-chile': '🌆',
   'problemas-migratorios': '⚠️',
+  venezuela: '🇻🇪',
+  peru: '🇵🇪',
+  colombia: '🇨🇴',
+  bolivia: '🇧🇴',
+  haiti: '🇭🇹',
+  argentina: '🇦🇷',
+  'republica-dominicana': '🇩🇴',
 }
 
 export default function CtaBanner({ text, href, silo }: Props) {
@@ -20,33 +27,33 @@ export default function CtaBanner({ text, href, silo }: Props) {
   const icon = SILO_ICONS[silo] ?? '→'
 
   return (
-    <div className="bg-primary rounded-xl p-6 text-white sticky top-24">
-      <div className="text-3xl mb-3">{icon}</div>
-      <p className="font-semibold text-lg leading-snug mb-4">¿Listo para empezar tu trámite?</p>
-      <p className="text-sm text-white/80 mb-5">
-        Toda la información que necesitas está aquí. Cuando estés listo, accede al portal oficial.
+    <div className="rounded-xl border border-gray-200 bg-white p-5 sticky top-24">
+      <div className="text-2xl mb-4">{icon}</div>
+      <p className="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-3">
+        Siguiente paso
       </p>
       {isExternal ? (
         <a
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-full bg-white text-primary font-semibold py-3 px-4 rounded-lg text-center hover:bg-gray-100 transition-colors text-sm"
+          className="block w-full bg-primary text-white font-semibold py-3 px-4 rounded-lg text-center hover:bg-primary-dark transition-colors text-sm"
         >
           {text} ↗
         </a>
       ) : (
         <Link
           href={href}
-          className="block w-full bg-white text-primary font-semibold py-3 px-4 rounded-lg text-center hover:bg-gray-100 transition-colors text-sm"
+          className="block w-full bg-primary text-white font-semibold py-3 px-4 rounded-lg text-center hover:bg-primary-dark transition-colors text-sm"
         >
           {text}
         </Link>
       )}
-      <p className="mt-3 text-xs text-white/60 text-center">
-        Accederás a un sitio oficial del gobierno de Chile
-      </p>
+      {isExternal && (
+        <p className="mt-3 text-xs text-gray-400 text-center">
+          Sitio oficial del gobierno de Chile
+        </p>
+      )}
     </div>
   )
 }
-

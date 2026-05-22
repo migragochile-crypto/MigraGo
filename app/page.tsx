@@ -3,12 +3,13 @@ import type { Metadata } from 'next'
 import JsonLd from '@/components/seo/JsonLd'
 import { organizationSchema, webSiteSchema } from '@/lib/seo/schemas'
 import { SILOS, PAISES, HERRAMIENTAS_LIST, MAIN_SILOS } from '@/lib/content/silos'
+import { SITE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'MigraGo — Tu guía migratoria en Chile',
   description:
     'Todo sobre Residencia Temporal, autodenuncia, Residencia Definitiva, nacionalización y cómo vivir en Chile. Información clara, actualizada y sin jerga legal.',
-  alternates: { canonical: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://migrago.cl' },
+  alternates: { canonical: SITE_URL },
 }
 
 const SILO_ICONS: Record<string, string> = {
@@ -33,11 +34,14 @@ export default function HomePage() {
       <section className="bg-primary text-white py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-            Tu guía migratoria práctica para vivir en Chile
+            Tu trámite migratorio en Chile, explicado paso a paso
           </h1>
-          <p className="mt-6 text-lg lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Información paso a paso, herramientas útiles y respuestas claras para resolver visas,
-            autodenuncia y residencia en Chile.
+          <p className="mt-6 text-lg lg:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+            Guías claras sobre Residencia Temporal, Residencia Definitiva, autodenuncia y vida
+            cotidiana en Chile.{' '}
+            <span className="text-white/70">
+              Basado en Ley 21.325 y normativa oficial del SERMIG.
+            </span>
           </p>
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
             <Link
@@ -55,16 +59,16 @@ export default function HomePage() {
           </div>
           <div className="mt-10 grid gap-3 sm:grid-cols-3 text-left">
             <div className="rounded-3xl border border-white/15 bg-white/5 px-4 py-4 text-sm text-white/90">
-              <strong className="block font-semibold text-white">Guías claras</strong>
-              Contenido directo y fácil de seguir.
+              <strong className="block font-semibold text-white">Fuentes oficiales</strong>
+              Ley 21.325, SERMIG, PDI y Registro Civil. Citamos la fuente en cada artículo.
             </div>
             <div className="rounded-3xl border border-white/15 bg-white/5 px-4 py-4 text-sm text-white/90">
-              <strong className="block font-semibold text-white">Herramientas útiles</strong>
-              Calculadoras y pasos prácticos.
+              <strong className="block font-semibold text-white">8 herramientas gratuitas</strong>
+              Calculadoras de plazos, checklists y simuladores interactivos.
             </div>
             <div className="rounded-3xl border border-white/15 bg-white/5 px-4 py-4 text-sm text-white/90">
-              <strong className="block font-semibold text-white">Actualizado para Chile</strong>
-              Requisitos y trámites vigentes.
+              <strong className="block font-semibold text-white">60+ artículos en 2026</strong>
+              Contenido revisado y actualizado regularmente con la normativa vigente.
             </div>
           </div>
         </div>
@@ -117,7 +121,7 @@ export default function HomePage() {
           <p className="text-gray-500 text-center mb-10">
             Requisitos y contexto específico según tu nacionalidad
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
             {paisEntries.map(([slug, config]) => (
               <Link
                 key={slug}

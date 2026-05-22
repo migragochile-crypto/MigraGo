@@ -1,4 +1,4 @@
-import type { SiloConfig, PaisConfig } from '@/types/content'
+﻿import type { SiloConfig, PaisConfig } from '@/types/content'
 
 export const SILOS: Record<string, SiloConfig> = {
   autodenuncia: {
@@ -13,7 +13,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'tiempos-reales',
       'que-es-autodenuncia',
     ],
-    cta: { text: 'Ir al portal PDI', href: 'https://comisaria.pdichile.cl' },
+    cta: { text: 'Ir al portal PDI', href: 'https://www.pdichile.cl/tramites-online/denuncia-por-ingreso-clandestino' },
   },
   'residencia-temporal': {
     label: 'Residencia Temporal',
@@ -33,7 +33,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'cambio-categoria',
       'rechazo',
     ],
-    cta: { text: 'Ir a Trámites en Línea', href: 'https://tramitesmigratorios.interior.gob.cl' },
+    cta: { text: 'Ir a Trámites en Línea', href: 'https://tramites.extranjeria.gob.cl' },
   },
   'residencia-definitiva': {
     label: 'Residencia Definitiva',
@@ -48,7 +48,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'estado-tramite',
       'prorroga-fuera-chile',
     ],
-    cta: { text: 'Ir a Trámites en Línea', href: 'https://tramitesmigratorios.interior.gob.cl' },
+    cta: { text: 'Ir a Trámites en Línea', href: 'https://tramites.extranjeria.gob.cl' },
   },
   nacionalizacion: {
     label: 'Nacionalización',
@@ -61,7 +61,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'hijos-extranjeros',
       'perdida-nacionalidad-anterior',
     ],
-    cta: { text: 'Consultar en el SRCeI', href: 'https://www.srcei.cl' },
+    cta: { text: 'Consultar en el SRCeI', href: 'https://www.registrocivil.cl' },
   },
   'problemas-migratorios': {
     label: 'Problemas Migratorios',
@@ -81,7 +81,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'sin-respuesta-sermig',
       'derechos-migrante',
     ],
-    cta: { text: 'Ver herramientas de apoyo', href: '/herramientas' },
+    cta: { text: 'Consultar estado de trámite', href: 'https://tramites.extranjeria.gob.cl' },
   },
   'vivir-en-chile': {
     label: 'Vivir en Chile',
@@ -104,7 +104,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'seguro-cesantia',
       'apostilla-por-pais',
     ],
-    cta: { text: 'Ver herramientas', href: '/herramientas' },
+    cta: { text: 'Ir al Registro Civil (SRCeI)', href: 'https://www.registrocivil.cl' },
   },
   venezuela: {
     label: 'Venezuela',
@@ -115,7 +115,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'antecedentes-penales',
       'visa-vrd',
     ],
-    cta: { text: 'Ver guía Venezuela', href: '/paises/venezuela' },
+    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.extranjeria.gob.cl' },
   },
   bolivia: {
     label: 'Bolivia',
@@ -127,7 +127,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'visa-temporaria',
       'trabajar-en-chile',
     ],
-    cta: { text: 'Ver guía Bolivia', href: '/paises/bolivia' },
+    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.extranjeria.gob.cl' },
   },
   haiti: {
     label: 'Haití',
@@ -137,8 +137,9 @@ export const SILOS: Record<string, SiloConfig> = {
       'documentos-traducidos',
       'regularizacion',
       'reagrupacion-familiar',
+      'visas-haitianas',
     ],
-    cta: { text: 'Ver guía Haití', href: '/paises/haiti' },
+    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.extranjeria.gob.cl' },
   },
   'republica-dominicana': {
     label: 'República Dominicana',
@@ -149,7 +150,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'visa-consular',
       'faq',
     ],
-    cta: { text: 'Ver guía Rep. Dominicana', href: '/paises/republica-dominicana' },
+    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.extranjeria.gob.cl' },
   },
   peru: {
     label: 'Perú',
@@ -159,7 +160,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'antecedentes-penales',
       'visa-mercosur',
     ],
-    cta: { text: 'Ver guía Perú', href: '/paises/peru' },
+    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.extranjeria.gob.cl' },
   },
   colombia: {
     label: 'Colombia',
@@ -169,7 +170,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'antecedentes-penales',
       'visa-mercosur',
     ],
-    cta: { text: 'Ver guía Colombia', href: '/paises/colombia' },
+    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.extranjeria.gob.cl' },
   },
   argentina: {
     label: 'Argentina',
@@ -179,7 +180,28 @@ export const SILOS: Record<string, SiloConfig> = {
       'antecedentes-penales',
       'visa-mercosur',
     ],
-    cta: { text: 'Ver guía Argentina', href: '/paises/argentina' },
+    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.extranjeria.gob.cl' },
+  },
+  ecuador: {
+    label: 'Ecuador',
+    description: 'Guía para ecuatorianos en Chile: apostilla de documentos, antecedentes penales y opciones de visa',
+    clusters: [
+      'documentos-ecuador',
+      'antecedentes-penales',
+      'apostilla-ecuador',
+      'opciones-visa',
+    ],
+    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.extranjeria.gob.cl' },
+  },
+  cuba: {
+    label: 'Cuba',
+    description: 'Guía para cubanos en Chile: legalización de documentos, antecedentes penales y opciones de visa',
+    clusters: [
+      'documentos-cuba',
+      'antecedentes-penales',
+      'opciones-visa',
+    ],
+    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.extranjeria.gob.cl' },
   },
 }
 
@@ -187,9 +209,11 @@ export const PAISES: Record<string, PaisConfig> = {
   venezuela: { label: 'Venezuela', flag: '🇻🇪', demonym: 'venezolano/a' },
   peru: { label: 'Perú', flag: '🇵🇪', demonym: 'peruano/a' },
   colombia: { label: 'Colombia', flag: '🇨🇴', demonym: 'colombiano/a' },
+  ecuador: { label: 'Ecuador', flag: '🇪🇨', demonym: 'ecuatoriano/a' },
   haiti: { label: 'Haití', flag: '🇭🇹', demonym: 'haitiano/a' },
   bolivia: { label: 'Bolivia', flag: '🇧🇴', demonym: 'boliviano/a' },
   argentina: { label: 'Argentina', flag: '🇦🇷', demonym: 'argentino/a' },
+  cuba: { label: 'Cuba', flag: '🇨🇺', demonym: 'cubano/a' },
   'republica-dominicana': { label: 'República Dominicana', flag: '🇩🇴', demonym: 'dominicano/a' },
 }
 

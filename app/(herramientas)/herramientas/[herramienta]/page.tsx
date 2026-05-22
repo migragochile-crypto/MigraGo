@@ -52,6 +52,18 @@ const TOOL_META: Record<string, { desc: string; icon: string }> = {
     desc: 'Cómo verificar el estado de tu trámite en el portal oficial del SERMIG y qué significa cada estado.',
     icon: '🔍',
   },
+  'quiz-visas': {
+    desc: 'Responde 5 preguntas sobre tu situación y descubre cuál visa o permiso migratorio se adapta mejor a ti.',
+    icon: '❓',
+  },
+  'calculadora-multas': {
+    desc: 'Estima el monto de la multa por permanencia irregular y calcula si conviene pagar antes de solicitar la Residencia Definitiva.',
+    icon: '💰',
+  },
+  'matriz-visas': {
+    desc: 'Compara en una tabla las visas disponibles en Chile: requisitos, plazos, costos y condiciones de trabajo.',
+    icon: '📊',
+  },
 }
 
 export default async function HerramientaPage({
