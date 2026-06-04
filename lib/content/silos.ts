@@ -88,6 +88,7 @@ export const SILOS: Record<string, SiloConfig> = {
     label: 'Vivir en Chile',
     description: 'Todo lo que necesitas para establecerte: RUT, cuenta bancaria, salud, educación y más',
     clusters: [
+      'costo-de-vida',
       'rut-extranjero',
       'cedula-extranjero',
       'cuenta-bancaria',
@@ -98,6 +99,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'educacion-hijos',
       'convalidacion-titulos',
       'apostilla-traduccion',
+      'trabajar-en-chile',
       'trabajo-contrato',
       'traer-familia',
       'emprendimiento',
