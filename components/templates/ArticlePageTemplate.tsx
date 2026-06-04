@@ -89,7 +89,7 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
                         className="group border border-gray-200 rounded-xl overflow-hidden"
                       >
                         <summary className="flex justify-between items-center px-5 py-4 cursor-pointer font-medium text-gray-900 hover:bg-gray-50 transition-colors list-none">
-                          {faq.question}
+                          {faq.q}
                           <svg
                             className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-3"
                             fill="none"
@@ -100,7 +100,7 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
                           </svg>
                         </summary>
                         <div className="px-5 py-4 text-gray-700 border-t border-gray-100 text-sm leading-relaxed">
-                          {faq.answer}
+                          {faq.a}
                         </div>
                       </details>
                     ))}

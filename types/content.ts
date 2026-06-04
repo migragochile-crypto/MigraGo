@@ -2,8 +2,8 @@ export type ContentType = 'pillar' | 'cluster' | 'hub' | 'tool'
 export type SchemaType = 'Article' | 'FAQPage' | 'HowTo' | 'WebPage'
 
 export interface FaqItem {
-  question: string
-  answer: string
+  q: string
+  a: string
 }
 
 export interface HowToStep {

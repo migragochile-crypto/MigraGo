@@ -54,8 +54,12 @@ export function articleMetadata(article: Article): Metadata {
 
   const imageUrl = `${SITE_URL}/og-default.png`
 
+  const titleStr = article.title.includes(SITE_NAME)
+    ? article.title
+    : `${article.title} | ${SITE_NAME}`
+
   return {
-    title: `${article.title} | ${SITE_NAME}`,
+    title: titleStr,
     description: article.meta_description,
     alternates: { canonical: canonicalUrl },
     openGraph: {

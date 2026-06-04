@@ -74,10 +74,10 @@ export function faqSchema(items: FaqItem[]) {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: items.map(({ question, answer }) => ({
+    mainEntity: items.map(({ q, a }) => ({
       '@type': 'Question',
-      name: question,
-      acceptedAnswer: { '@type': 'Answer', text: answer },
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
     })),
   }
 }
