@@ -1,5 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/nacionalizacion/doble-ciudadania',
+        destination: '/nacionalizacion/doble-nacionalidad',
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [
       {
