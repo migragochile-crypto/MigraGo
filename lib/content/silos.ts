@@ -28,6 +28,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'jubilado-rentista',
       'responsabilidad-democratica',
       'mercosur',
+      'cuanto-demora',
       'renovacion',
       'prorroga',
       'cambio-categoria',
