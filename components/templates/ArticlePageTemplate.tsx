@@ -2,6 +2,7 @@ import Breadcrumbs from '@/components/ui/Breadcrumbs'
 import SiloSidebar from '@/components/ui/SiloSidebar'
 import RelatedContent from '@/components/ui/RelatedContent'
 import CtaBanner from '@/components/ui/CtaBanner'
+import LeadMagnet from '@/components/ui/LeadMagnet'
 import ArticleBody from '@/components/content/ArticleBody'
 import JsonLd from '@/components/seo/JsonLd'
 import {
@@ -108,6 +109,10 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
                 </section>
               )}
             </article>
+
+            <div className="mt-12">
+              <LeadMagnet source={article.slug} />
+            </div>
 
             <RelatedContent slugs={article.related_slugs ?? []} currentSlug={article.slug} />
 

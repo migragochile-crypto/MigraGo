@@ -1,59 +1,9 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-
-interface Item {
-  id: string
-  doc: string
-  detalle: string
-  href?: string
-}
-
-const ITEMS: Item[] = [
-  {
-    id: 'pd-pasaporte',
-    doc: 'Pasaporte vigente',
-    detalle: 'Con vigencia suficiente conforme a los criterios del SERMIG al momento de presentar. Si está por vencer, renuévalo antes de presentar.',
-  },
-  {
-    id: 'pd-visa',
-    doc: 'Visa temporaria vigente o comprobante de renovación',
-    detalle: 'Debes tener residencia legal continua. Si tu visa está en proceso de renovación, el comprobante puede habilitar la presentación.',
-    href: '/residencia-temporal/renovacion',
-  },
-  {
-    id: 'pd-cedula',
-    doc: 'Cédula de identidad para extranjeros vigente',
-    detalle: 'Emitida por el SRCeI (Registro Civil). Debe estar vigente al momento de presentar la solicitud.',
-  },
-  {
-    id: 'pd-ant-chile',
-    doc: 'Certificado de antecedentes penales de Chile',
-    detalle: 'Se obtiene gratis en registrocivil.cl. Verifica el plazo de vigencia exigido por el SERMIG al momento de presentar.',
-  },
-  {
-    id: 'pd-ant-origen',
-    doc: 'Certificado de antecedentes del país de origen',
-    detalle: 'Debe estar apostillado y, si no está en español, traducido por un traductor oficial. Verifica el plazo de vigencia exigido por el SERMIG.',
-    href: '/problemas/antecedentes-penales',
-  },
-  {
-    id: 'pd-domicilio',
-    doc: 'Comprobante de domicilio en Chile',
-    detalle: 'Puede ser contrato de arriendo, boleta de servicio o declaración jurada según lo que acepte el SERMIG.',
-  },
-  {
-    id: 'pd-foto',
-    doc: 'Fotografía reciente tamaño carnet',
-    detalle: 'El SERMIG puede solicitarla al presentar en oficina. Verifica los requisitos específicos en el portal.',
-  },
-  {
-    id: 'pd-formulario',
-    doc: 'Formulario de solicitud completado en el portal del SERMIG',
-    detalle: 'Accede a tramitesmigratorios.interior.gob.cl e inicia la solicitud de Permanencia Definitiva con tu cuenta.',
-  },
-]
+import { CHECKLIST_RESIDENCIA_DEFINITIVA as ITEMS } from '@/lib/content/checklists'
+import LeadMagnet from '@/components/ui/LeadMagnet'
 
 const STORAGE_KEY = 'checklist-pd-v1'
 
@@ -120,12 +70,12 @@ export default function ChecklistPermanencia() {
         Los requisitos exactos y los plazos de vigencia de cada documento los determina el SERMIG.
         Verifica en{' '}
         <a
-          href="https://tramitesmigratorios.interior.gob.cl"
+          href="https://tramites.extranjeria.gob.cl"
           target="_blank"
           rel="noopener noreferrer"
           className="underline"
         >
-          tramitesmigratorios.interior.gob.cl
+          tramites.extranjeria.gob.cl
         </a>
         {' '}antes de presentar tu solicitud.
       </div>
@@ -167,10 +117,10 @@ export default function ChecklistPermanencia() {
       {/* Acciones */}
       <div className="flex gap-4 pt-2">
         <Link
-          href="/residencia-definitiva/documentos"
+          href="/residencia-definitiva/requisitos"
           className="text-sm text-primary hover:underline"
         >
-          Ver guía completa de documentos →
+          Ver guía completa de requisitos →
         </Link>
         {completados > 0 && (
           <button onClick={limpiar} className="text-sm text-gray-400 hover:text-gray-600 ml-auto">
@@ -178,6 +128,14 @@ export default function ChecklistPermanencia() {
           </button>
         )}
       </div>
+
+      {/* Lead magnet: checklist imprimible */}
+      <LeadMagnet
+        source="checklist-permanencia-definitiva"
+        title="📄 Descarga este checklist en PDF para imprimir"
+        description="Déjanos tu correo y te damos acceso a la versión imprimible. También te avisaremos si el SERMIG cambia los requisitos."
+        downloadHref="/recursos/checklist-residencia-definitiva"
+      />
     </div>
   )
 }
