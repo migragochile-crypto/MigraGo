@@ -135,6 +135,31 @@ export async function getAllPublishedArticles(): Promise<
   )()
 }
 
+export async function getNewsArticles(): Promise<
+  Pick<Article, 'slug' | 'title' | 'h1' | 'meta_description' | 'published_at' | 'updated_at'>[]
+> {
+  return unstable_cache(
+    async () => {
+      const supabase = getSupabase()
+      if (!supabase) return []
+
+      const { data } = await supabase
+        .from('articles')
+        .select('slug, title, h1, meta_description, published_at, updated_at')
+        .eq('silo', 'actualidad')
+        .eq('is_published', true)
+        .order('published_at', { ascending: false })
+
+      return (data ?? []) as Pick<
+        Article,
+        'slug' | 'title' | 'h1' | 'meta_description' | 'published_at' | 'updated_at'
+      >[]
+    },
+    ['news-articles'],
+    { revalidate: 600, tags: ['silo-actualidad'] }
+  )()
+}
+
 export async function getGlossaryTerm(slug: string): Promise<GlossaryTerm | null> {
   const supabase = getSupabase()
   if (!supabase) return null

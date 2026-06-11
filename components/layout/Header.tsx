@@ -15,6 +15,7 @@ const NAV_SILOS = [
 const SECONDARY_LINKS = [
   { href: '/paises', label: 'Por país' },
   { href: '/herramientas', label: 'Herramientas' },
+  { href: '/actualidad', label: 'Actualidad' },
   { href: '/glosario', label: 'Glosario' },
 ]
 
