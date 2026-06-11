@@ -10,7 +10,7 @@ export function buildMetadata(opts: {
   noIndex?: boolean
 }): Metadata {
   const url = `${SITE_URL}/${opts.slug}`
-  const imageUrl = `${SITE_URL}/og-default.png`
+  const imageUrl = `${SITE_URL}/api/og?title=${encodeURIComponent(opts.title)}`
 
   return {
     // El layout raíz ya aplica template '%s | MigraGo' — no duplicar el brand aquí
@@ -53,11 +53,15 @@ export function articleMetadata(article: Article): Metadata {
       : `${SITE_URL}${article.canonical.startsWith('/') ? '' : '/'}${article.canonical}`
   }
 
-  const imageUrl = `${SITE_URL}/og-default.png`
-
   // El layout raíz aplica template '%s | MigraGo'. Si el título de DB ya trae
   // el brand, se elimina para que el template no lo duplique.
   const titleStr = article.title.replace(/\s*\|\s*MigraGo\s*$/i, '')
+
+  const sectionLabel = article.silo
+    .split('-')
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(' ')
+  const imageUrl = `${SITE_URL}/api/og?title=${encodeURIComponent(titleStr)}&section=${encodeURIComponent(sectionLabel)}`
 
   return {
     title: titleStr,
