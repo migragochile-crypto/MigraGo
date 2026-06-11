@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ pais: str
   const article = await getArticleBySlug(pais)
   if (!article) {
     return buildMetadata({
-      title: `Inmigración en Chile para ${paisConfig.demonym}`,
+      title: `${paisConfig.label}: Guía de Trámites Migratorios en Chile 2026`,
       description: `Guía completa para inmigrantes de ${paisConfig.label} en Chile: visas, requisitos, trámites y vida cotidiana.`,
       slug: `paises/${pais}`,
     })
@@ -61,9 +61,19 @@ export default async function PaisHubPage({ params }: { params: Promise<{ pais: 
             <span className="text-5xl">{paisConfig.flag}</span>
             <div>
               <h1 className="text-3xl font-bold text-gray-900">
-                Inmigración en Chile para {paisConfig.demonym}
+                {article?.h1 ?? `${paisConfig.label}: guía de trámites migratorios en Chile`}
               </h1>
               <p className="text-gray-500 mt-1">Guía de trámites y vida cotidiana</p>
+              {article?.updated_at && (
+                <p className="text-sm text-gray-400 mt-2">
+                  Actualizado:{' '}
+                  {new Date(article.updated_at).toLocaleDateString('es-CL', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </p>
+              )}
             </div>
           </div>
         </header>

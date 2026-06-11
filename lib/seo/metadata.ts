@@ -13,7 +13,8 @@ export function buildMetadata(opts: {
   const imageUrl = `${SITE_URL}/og-default.png`
 
   return {
-    title: `${opts.title} | ${SITE_NAME}`,
+    // El layout raíz ya aplica template '%s | MigraGo' — no duplicar el brand aquí
+    title: opts.title,
     description: opts.description,
     alternates: { canonical: url },
     openGraph: {
@@ -54,9 +55,9 @@ export function articleMetadata(article: Article): Metadata {
 
   const imageUrl = `${SITE_URL}/og-default.png`
 
-  const titleStr = article.title.includes(SITE_NAME)
-    ? article.title
-    : `${article.title} | ${SITE_NAME}`
+  // El layout raíz aplica template '%s | MigraGo'. Si el título de DB ya trae
+  // el brand, se elimina para que el template no lo duplique.
+  const titleStr = article.title.replace(/\s*\|\s*MigraGo\s*$/i, '')
 
   return {
     title: titleStr,
