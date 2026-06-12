@@ -10,7 +10,7 @@ import { SITE_URL } from '@/lib/constants'
 
 const SILO = 'nacionalizacion'
 
-export const revalidate = 3600
+export const revalidate = 86400
 
 export async function generateMetadata(): Promise<Metadata> {
   const article = await getArticleBySlug(SILO)

@@ -26,7 +26,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
       return data as Article
     },
     [`article-${slug}`],
-    { revalidate: 3600, tags: [`article-${slug}`] }
+    { revalidate: 86400, tags: [`article-${slug}`] }
   )()
 }
 
@@ -48,7 +48,7 @@ export async function getArticlesBySilo(
       return (data ?? []) as Pick<Article, 'id' | 'slug' | 'title' | 'h1' | 'type'>[]
     },
     [`silo-${silo}`],
-    { revalidate: 1800, tags: [`silo-${silo}`] }
+    { revalidate: 86400, tags: [`silo-${silo}`] }
   )()
 }
 
@@ -75,7 +75,7 @@ export async function getRelatedArticles(
       >[]
     },
     [cacheKey],
-    { revalidate: 1800, tags: [cacheKey] }
+    { revalidate: 86400, tags: [cacheKey] }
   )()
 }
 
@@ -95,7 +95,7 @@ export async function getPublishedClustersBySilo(silo: string): Promise<string[]
       return (data ?? []).map(({ slug }: { slug: string }) => slug.split('/')[1])
     },
     [`clusters-${silo}`],
-    { revalidate: 1800, tags: [`silo-${silo}`] }
+    { revalidate: 86400, tags: [`silo-${silo}`] }
   )()
 }
 
@@ -131,7 +131,7 @@ export async function getAllPublishedArticles(): Promise<
       >[]
     },
     ['all-published-articles'],
-    { revalidate: 600, tags: ['all-published-articles'] }
+    { revalidate: 21600, tags: ['all-published-articles'] }
   )()
 }
 
@@ -156,7 +156,7 @@ export async function getNewsArticles(): Promise<
       >[]
     },
     ['news-articles'],
-    { revalidate: 600, tags: ['silo-actualidad'] }
+    { revalidate: 21600, tags: ['silo-actualidad'] }
   )()
 }
 

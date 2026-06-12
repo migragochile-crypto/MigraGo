@@ -8,7 +8,7 @@ import { breadcrumbSchema } from '@/lib/seo/schemas'
 import { getNewsArticles } from '@/lib/supabase/queries'
 import { SITE_URL } from '@/lib/constants'
 
-export const revalidate = 600
+export const revalidate = 21600
 
 export const metadata: Metadata = buildMetadata({
   title: 'Actualidad Migratoria Chile 2026: Cambios Normativos y Noticias',

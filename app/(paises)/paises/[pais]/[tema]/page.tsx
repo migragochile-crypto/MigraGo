@@ -7,7 +7,7 @@ import { PAISES, slugToLabel } from '@/lib/content/silos'
 import { SITE_URL } from '@/lib/constants'
 
 
-export const revalidate = 3600
+export const revalidate = 86400
 export const dynamicParams = true
 
 export async function generateStaticParams() {

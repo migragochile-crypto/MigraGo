@@ -3,7 +3,7 @@ import { SITE_URL } from '@/lib/constants'
 import { PAISES, MAIN_SILOS } from '@/lib/content/silos'
 import { getAllPublishedArticles } from '@/lib/supabase/queries'
 
-export const revalidate = 3600
+export const revalidate = 86400
 
 const COUNTRY_SLUGS = new Set(Object.keys(PAISES))
 const HUB_SLUGS = new Set<string>(MAIN_SILOS)

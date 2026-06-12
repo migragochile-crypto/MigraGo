@@ -10,7 +10,7 @@ import JsonLd from '@/components/seo/JsonLd'
 import { breadcrumbSchema } from '@/lib/seo/schemas'
 import { SITE_URL, SITE_NAME } from '@/lib/constants'
 
-export const revalidate = 600
+export const revalidate = 21600
 export const dynamicParams = true
 
 export async function generateStaticParams() {

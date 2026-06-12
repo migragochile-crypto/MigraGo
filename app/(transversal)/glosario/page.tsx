@@ -5,7 +5,7 @@ import Breadcrumbs from '@/components/ui/Breadcrumbs'
 import { SITE_URL } from '@/lib/constants'
 
 
-export const revalidate = 3600
+export const revalidate = 86400
 
 export const metadata: Metadata = {
   title: 'Glosario migratorio Chile',

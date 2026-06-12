@@ -9,7 +9,7 @@ import { softwareApplicationSchema } from '@/lib/seo/schemas'
 import { SITE_URL } from '@/lib/constants'
 
 
-export const revalidate = 3600
+export const revalidate = 86400
 export const dynamicParams = false
 
 export async function generateStaticParams() {
