@@ -81,9 +81,12 @@ INSERT INTO articles (
 
 -- Actualizar monto en artículos que mencionan $500.000 como sueldo mínimo
 UPDATE articles SET
-  content = REPLACE(content, '$500.000 CLP mensuales (2026)', '$553.553 CLP mensuales (mayo 2026)'),
-  content = REPLACE(content, 'El sueldo mínimo en 2026 es $500.000 CLP', 'El sueldo mínimo en Chile es $553.553 CLP (desde mayo 2026)'),
-  content = REPLACE(content, 'Sueldo mínimo: $500.000 CLP mensual (2026)', 'Sueldo mínimo: $553.553 CLP mensual (desde mayo 2026)'),
+  content = REPLACE(
+    REPLACE(
+      REPLACE(content,
+        '$500.000 CLP mensuales (2026)', '$553.553 CLP mensuales (mayo 2026)'),
+      'El sueldo mínimo en 2026 es $500.000 CLP', 'El sueldo mínimo en Chile es $553.553 CLP (desde mayo 2026)'),
+    'Sueldo mínimo: $500.000 CLP mensual (2026)', 'Sueldo mínimo: $553.553 CLP mensual (desde mayo 2026)'),
   updated_at = NOW()
 WHERE content LIKE '%500.000%'
   AND is_published = TRUE;
