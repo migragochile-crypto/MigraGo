@@ -9,6 +9,7 @@ import { SITE_URL, SITE_NAME } from '@/lib/constants'
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] })
 
+const adsensePublisherId = process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_PUBLISHER_ID
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -31,6 +32,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className={`${geistSans.variable} ${geistMono.variable} h-full`}>
       <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6798179737019144"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-M3F08MR4KC" strategy="afterInteractive" />
         <Script id="ga4" strategy="afterInteractive">{`
           window.dataLayer = window.dataLayer || [];
