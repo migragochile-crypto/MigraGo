@@ -9,7 +9,11 @@ import { SITE_URL, SITE_NAME } from '@/lib/constants'
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] })
 
-const adsensePublisherId = process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_PUBLISHER_ID
+const adsensePublisherId = process.env.NEXT_PUBLIC_ADSENSE_PUBLISHER_ID ?? 'ca-pub-6798179737019144'
+const adsenseScriptSrc = adsensePublisherId
+  ? `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsensePublisherId}`
+  : null
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ?? 'aB-ED4GeTjDo1QomL7I_vVhawTo3KQB_d6K7CuRqmVE'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -25,19 +29,22 @@ export const metadata: Metadata = {
     type: 'website',
   },
   robots: { index: true, follow: true },
-  verification: { google: 'aB-ED4GeTjDo1QomL7I_vVhawTo3KQB_d6K7CuRqmVE' },
+  verification: { google: googleSiteVerification },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`${geistSans.variable} ${geistMono.variable} h-full`}>
       <head>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6798179737019144"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
+        {adsenseScriptSrc ? (
+          <Script
+            id="adsense-script"
+            async
+            src={adsenseScriptSrc}
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
+        ) : null}
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-M3F08MR4KC" strategy="afterInteractive" />
         <Script id="ga4" strategy="afterInteractive">{`
           window.dataLayer = window.dataLayer || [];
