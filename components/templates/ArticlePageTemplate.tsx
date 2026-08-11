@@ -4,6 +4,8 @@ import RelatedContent from '@/components/ui/RelatedContent'
 import CtaBanner from '@/components/ui/CtaBanner'
 import LeadMagnet from '@/components/ui/LeadMagnet'
 import ArticleBody from '@/components/content/ArticleBody'
+import EditorialDisclosure from '@/components/ui/EditorialDisclosure'
+import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import {
   articleSchema,
@@ -13,6 +15,7 @@ import {
 } from '@/lib/seo/schemas'
 import { SILOS } from '@/lib/content/silos'
 import type { Article, BreadcrumbItem } from '@/types/content'
+import { getPublicAuthorName } from '@/lib/editorial'
 
 interface Props {
   article: Article
@@ -22,6 +25,7 @@ interface Props {
 
 export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Props) {
   const siloConfig = SILOS[silo]
+  const publicAuthor = getPublicAuthorName(article.author)
 
   const isHowTo = article.schema_type === 'HowTo' && article.howto_steps?.length > 0
 
@@ -74,9 +78,18 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
                       })}
                     </span>
                   )}
-                  <span className="text-gray-400">Por {article.author}</span>
+                  <span className="text-gray-500">
+                    Por{' '}
+                    <Link href="/acerca#marcelo" className="text-primary hover:underline">
+                      {publicAuthor}
+                    </Link>
+                  </span>
                 </div>
               </header>
+
+              <div className="mb-8">
+                <EditorialDisclosure updatedAt={article.updated_at} />
+              </div>
 
               {article.content && <ArticleBody content={article.content} />}
 
@@ -143,4 +156,3 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
     </>
   )
 }
-

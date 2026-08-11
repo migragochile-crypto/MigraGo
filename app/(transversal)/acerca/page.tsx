@@ -44,6 +44,37 @@ export default function AcercaPage() {
 
         <div className="space-y-10">
 
+          {/* Responsable editorial */}
+          <section id="marcelo" className="rounded-2xl border border-blue-200 bg-blue-50/70 p-6">
+            <div className="flex items-start gap-4">
+              <div
+                aria-hidden="true"
+                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary text-lg font-bold text-white"
+              >
+                M
+              </div>
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+                  Responsable editorial
+                </p>
+                <h2 className="mt-1 text-xl font-bold text-gray-900">
+                  Marcelo Arancibia, fundador de MigraGo
+                </h2>
+                <p className="mt-3 leading-relaxed text-gray-700">
+                  Soy la persona que dirige y mantiene MigraGo. No soy abogado ni represento al
+                  Gobierno de Chile. Creé este proyecto para organizar información migratoria pública
+                  y explicarla de una forma más clara y práctica.
+                </p>
+                <p className="mt-3 leading-relaxed text-gray-700">
+                  Utilizo herramientas de inteligencia artificial para apoyar la investigación,
+                  estructurar contenidos y preparar borradores. Antes de publicar, contrasto la
+                  información con fuentes públicas oficiales. Cuando una página no ha sido revisada
+                  por un abogado, lo indico expresamente.
+                </p>
+              </div>
+            </div>
+          </section>
+
           {/* Misión */}
           <section>
             <h2 className="text-xl font-bold text-gray-900 mb-3">Nuestra misión</h2>
@@ -78,8 +109,8 @@ export default function AcercaPage() {
               y actualizada que explique los trámites con claridad.
             </p>
             <p className="text-gray-700 leading-relaxed mt-3">
-              MigraGo nació para cerrar esa brecha: un recurso editorial riguroso, gratuito y sin
-              agenda comercial que pone la información al alcance de quien la necesita.
+              MigraGo nació para reducir esa brecha: un recurso editorial gratuito que organiza la
+              información pública y la pone al alcance de quien la necesita.
             </p>
           </section>
 
@@ -107,7 +138,7 @@ export default function AcercaPage() {
           <section>
             <h2 className="text-xl font-bold text-gray-900 mb-3">Cómo trabajamos</h2>
             <p className="text-gray-700 leading-relaxed">
-              Cada artículo se basa exclusivamente en fuentes oficiales chilenas:
+              Los requisitos y datos normativos se contrastan con fuentes oficiales chilenas como:
             </p>
             <ul className="mt-3 space-y-1 text-gray-700">
               {FUENTES_CLAVE.map((f) => (
@@ -118,8 +149,10 @@ export default function AcercaPage() {
               ))}
             </ul>
             <p className="text-gray-700 leading-relaxed mt-4">
-              Revisamos y actualizamos el contenido cuando hay cambios normativos. Cada página muestra
-              la fecha de última actualización. Puedes leer más sobre nuestro proceso en{' '}
+              La inteligencia artificial nos ayuda a investigar, organizar información y redactar
+              borradores; no reemplaza la comprobación de los datos ni una revisión jurídica
+              profesional. Cada página informa quién es responsable, cuándo se actualizó y si cuenta
+              o no con revisión jurídica. Puedes leer el proceso completo en{' '}
               <Link href="/metodologia" className="text-primary underline">
                 nuestra metodología editorial
               </Link>
@@ -145,10 +178,10 @@ export default function AcercaPage() {
           <section>
             <h2 className="text-xl font-bold text-gray-900 mb-3">Política de correcciones</h2>
             <p className="text-gray-700 leading-relaxed">
-              La normativa migratoria cambia con frecuencia y los errores editoriales pueden ocurrir.
-              Si detectas información incorrecta, desactualizada o incompleta en cualquier artículo,
-              escríbenos. Revisamos todos los reportes y actualizamos el contenido dentro de las
-              72 horas hábiles siguientes.
+              La normativa migratoria cambia con frecuencia y pueden existir errores editoriales.
+              Si detectas información incorrecta, desactualizada o incompleta, escríbenos. Revisamos
+              los reportes y corregimos de forma visible los errores confirmados tan pronto como sea
+              posible.
             </p>
             <div className="mt-4">
               <a

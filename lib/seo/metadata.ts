@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import type { Article } from '@/types/content'
 import { SITE_URL, SITE_NAME } from '@/lib/constants'
+import { getPublicAuthorName } from '@/lib/editorial'
 
 
 export function buildMetadata(opts: {
@@ -76,7 +77,7 @@ export function articleMetadata(article: Article): Metadata {
       type: 'article',
       publishedTime: article.published_at ?? undefined,
       modifiedTime: article.updated_at,
-      authors: [article.author],
+      authors: [getPublicAuthorName(article.author)],
       images: [
         {
           url: imageUrl,
@@ -94,4 +95,3 @@ export function articleMetadata(article: Article): Metadata {
     },
   }
 }
-

@@ -9,6 +9,8 @@ import LeadMagnet from '@/components/ui/LeadMagnet'
 import JsonLd from '@/components/seo/JsonLd'
 import { breadcrumbSchema } from '@/lib/seo/schemas'
 import { SITE_URL, SITE_NAME } from '@/lib/constants'
+import EditorialDisclosure from '@/components/ui/EditorialDisclosure'
+import { EDITOR_NAME, EDITOR_PROFILE_URL } from '@/lib/editorial'
 
 export const revalidate = 21600
 export const dynamicParams = true
@@ -36,7 +38,7 @@ function newsSchema(article: { h1: string; meta_description: string; published_a
     url,
     datePublished: article.published_at,
     dateModified: article.updated_at,
-    author: { '@type': 'Organization', name: SITE_NAME },
+    author: { '@type': 'Person', name: EDITOR_NAME, url: EDITOR_PROFILE_URL },
     publisher: {
       '@type': 'Organization',
       name: SITE_NAME,
@@ -81,6 +83,10 @@ export default async function ActualidadPostPage({ params }: { params: Promise<{
             </h1>
             <p className="mt-4 text-lg text-gray-600 leading-relaxed">{article.meta_description}</p>
           </header>
+
+          <div className="mb-8">
+            <EditorialDisclosure updatedAt={article.updated_at} />
+          </div>
 
           {article.content && <ArticleBody content={article.content} />}
         </article>

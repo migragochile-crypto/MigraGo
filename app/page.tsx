@@ -177,9 +177,9 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
               {
-                icon: '✅',
-                title: 'Información verificada',
-                desc: 'Cada artículo cita fuentes oficiales: Ley 21.325, SERMIG, PDI, SRCeI y Dirección del Trabajo.',
+                icon: '🔎',
+                title: 'Proceso transparente',
+                desc: 'Te contamos quién mantiene el contenido, cómo usamos IA y si una guía cuenta o no con revisión jurídica.',
               },
               {
                 icon: '🔄',
@@ -200,12 +200,12 @@ export default function HomePage() {
             ))}
           </div>
           <p className="mt-8 text-sm text-gray-400">
-            Esta guía es informativa. Para asesoría legal personalizada, consulta con un abogado
-            especialista en inmigración.
+            MigraGo es dirigido por Marcelo Arancibia y utiliza IA como apoyo editorial. No somos
+            abogados ni representamos al Gobierno de Chile. Para asesoría legal personalizada,
+            consulta con un profesional especialista en inmigración.
           </p>
         </div>
       </section>
     </>
   )
 }
-

@@ -1,5 +1,6 @@
 import type { Article, FaqItem, HowToStep } from '@/types/content'
 import { SITE_URL, SITE_NAME as ORG_NAME, ORGANIZATION_SAME_AS } from '@/lib/constants'
+import { EDITOR_NAME, EDITOR_PROFILE_URL, EDITOR_ROLE, getPublicAuthorName } from '@/lib/editorial'
 
 
 export function organizationSchema() {
@@ -29,6 +30,12 @@ export function organizationSchema() {
       'Visa para Chile',
     ],
     inLanguage: 'es-CL',
+    founder: {
+      '@type': 'Person',
+      name: EDITOR_NAME,
+      url: EDITOR_PROFILE_URL,
+      jobTitle: EDITOR_ROLE,
+    },
   }
 
   if (ORGANIZATION_SAME_AS.length > 0) {
@@ -61,7 +68,11 @@ export function articleSchema(article: Article) {
     url,
     datePublished: article.published_at ?? article.created_at,
     dateModified: article.updated_at,
-    author: { '@type': 'Organization', name: ORG_NAME },
+    author: {
+      '@type': 'Person',
+      name: getPublicAuthorName(article.author),
+      url: EDITOR_PROFILE_URL,
+    },
     publisher: {
       '@type': 'Organization',
       name: ORG_NAME,
@@ -137,4 +148,3 @@ export function softwareApplicationSchema(opts: {
     },
   }
 }
-

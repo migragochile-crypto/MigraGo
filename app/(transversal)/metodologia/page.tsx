@@ -71,10 +71,25 @@ export default function MetodologiaPage() {
           <section>
             <h2 className="text-xl font-bold text-gray-900 mb-3">Principio de base</h2>
             <p className="text-gray-700 leading-relaxed">
-              Todo el contenido de MigraGo parte de fuentes oficiales chilenas. No publicamos
-              información de segunda mano ni basada en experiencias no verificadas sin indicarlo
-              explícitamente. Si la normativa es ambigua o está sujeta a interpretación, lo
-              señalamos en el artículo.
+              Los datos normativos y requisitos publicados en MigraGo se contrastan con fuentes
+              públicas oficiales chilenas. Si utilizamos una fuente secundaria, una experiencia o
+              una estimación, procuramos identificarla como tal. Si una norma es ambigua o está
+              sujeta a interpretación, evitamos presentar una conclusión como garantía.
+            </p>
+          </section>
+
+          <section className="rounded-2xl border border-blue-200 bg-blue-50/70 p-6">
+            <h2 className="text-xl font-bold text-gray-900 mb-3">Uso transparente de inteligencia artificial</h2>
+            <p className="text-gray-700 leading-relaxed">
+              MigraGo utiliza inteligencia artificial como herramienta de apoyo para investigar,
+              ordenar información, detectar temas que requieren aclaración y preparar borradores.
+              Marcelo Arancibia, fundador y responsable editorial, decide qué se publica y mantiene
+              el sitio.
+            </p>
+            <p className="text-gray-700 leading-relaxed mt-3">
+              El uso de IA no equivale a una revisión legal. Actualmente los contenidos no cuentan
+              con revisión jurídica profesional, salvo que una página identifique expresamente al
+              abogado o profesional que realizó esa revisión.
             </p>
           </section>
 
@@ -103,9 +118,9 @@ export default function MetodologiaPage() {
               {[
                 'Identificamos el trámite o tema a cubrir y la intención del usuario (¿qué quiere saber exactamente?).',
                 'Consultamos la normativa oficial vigente y el portal de trámites del SERMIG.',
-                'Redactamos el artículo en lenguaje claro, sin jerga legal innecesaria.',
-                'Añadimos ejemplos concretos, listas de documentos y pasos numerados cuando corresponde.',
-                'Indicamos la fecha de publicación y la fuente consultada.',
+                'Usamos IA para organizar la investigación y preparar un borrador en lenguaje claro.',
+                'Contrastamos requisitos, plazos, enlaces y afirmaciones sensibles con las fuentes disponibles.',
+                'Publicamos la fecha de actualización, la responsabilidad editorial y el estado de revisión jurídica.',
               ].map((paso, i) => (
                 <li key={i} className="flex gap-3">
                   <span className="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold">
@@ -127,7 +142,8 @@ export default function MetodologiaPage() {
             </p>
             <p className="text-gray-700 leading-relaxed mt-3">
               Si detectas información desactualizada o incorrecta, escríbenos. La precisión del
-              contenido es nuestra prioridad.
+              contenido es una prioridad y agradecemos las correcciones documentadas con una fuente
+              oficial.
             </p>
           </section>
 
@@ -139,6 +155,7 @@ export default function MetodologiaPage() {
                 'No gestionamos trámites en nombre de terceros.',
                 'No prometemos resultados específicos en solicitudes de residencia.',
                 'No publicamos contenido patrocinado que pueda confundirse con información editorial.',
+                'No afirmamos que un contenido fue revisado por un abogado si esa revisión no ocurrió.',
               ].map((item) => (
                 <li key={item} className="flex gap-2">
                   <span className="text-red-400 font-bold flex-shrink-0">✕</span>

@@ -9,6 +9,7 @@ import JsonLd from '@/components/seo/JsonLd'
 import { breadcrumbSchema } from '@/lib/seo/schemas'
 import { PAISES, SILOS, MAIN_SILOS } from '@/lib/content/silos'
 import { SITE_URL } from '@/lib/constants'
+import EditorialDisclosure from '@/components/ui/EditorialDisclosure'
 
 
 export const revalidate = 86400
@@ -77,6 +78,12 @@ export default async function PaisHubPage({ params }: { params: Promise<{ pais: 
             </div>
           </div>
         </header>
+
+        {article && (
+          <div className="mb-8">
+            <EditorialDisclosure updatedAt={article.updated_at} />
+          </div>
+        )}
 
         {article?.content && <ArticleBody content={article.content} />}
 
