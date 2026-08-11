@@ -243,7 +243,7 @@ INSERT INTO articles (
 </ul>
 
 <h2>Proceso de solicitud</h2>
-<p>La solicitud se realiza en <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a>:</p>
+<p>La solicitud se realiza en <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a>:</p>
 <ol>
   <li>Accede con tu cuenta del portal.</li>
   <li>Selecciona "Solicitar Permanencia Definitiva".</li>

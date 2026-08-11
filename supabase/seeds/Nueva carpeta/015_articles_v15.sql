@@ -149,7 +149,7 @@ INSERT INTO articles (
 <p>Si llevas <strong>más del doble del plazo real habitual</strong> sin ningún cambio de estado (ni observaciones ni aprobación), es momento de actuar.</p>
 
 <h2>Paso 1: Revisar el estado en el portal</h2>
-<p>Antes de cualquier acción, verifica en <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a>:</p>
+<p>Antes de cualquier acción, verifica en <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a>:</p>
 <ul>
   <li>¿El estado dice "Con observaciones"? — puede haber una notificación que no viste. Revisa el correo (incluyendo spam).</li>
   <li>¿El estado dice "En revisión" desde hace meses? — sigue los pasos abajo.</li>
@@ -372,7 +372,7 @@ INSERT INTO articles (
 </ul>
 
 <h2>Proceso de solicitud</h2>
-<p>La solicitud se realiza en el portal <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a>:</p>
+<p>La solicitud se realiza en el portal <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a>:</p>
 <ol>
   <li>Crea o accede a tu cuenta.</li>
   <li>Selecciona "Solicitar visa temporaria" → categoría "Vínculo con ciudadano chileno" o "Arraigo familiar".</li>
@@ -406,7 +406,7 @@ INSERT INTO articles (
     {"name": "Verificar que la filiación está reconocida", "text": "Tu nombre debe constar en el certificado de nacimiento del hijo. Si no figura (reconocimiento pendiente), trámitalo ante el Registro Civil o vía judicial antes de solicitar la visa."},
     {"name": "Obtener certificado de nacimiento actualizado", "text": "Solicita el certificado de nacimiento del hijo en el Registro Civil, con no más de 90 días de antigüedad. Puede obtenerse en línea en el sitio del SRCeI."},
     {"name": "Preparar documentos de sustento y residencia", "text": "Reúne comprobante de residencia en Chile (contrato arriendo, certificado de la junta de vecinos) y comprobante de actividad lícita o sustento económico."},
-    {"name": "Ingresar la solicitud en el portal SERMIG", "text": "Accede a tramitesmigratorios.interior.gob.cl, selecciona visa temporaria por arraigo familiar, sube todos los documentos y envía. Guarda el número de solicitud y el comprobante."},
+    {"name": "Ingresar la solicitud en el portal SERMIG", "text": "Accede a tramites.serviciomigraciones.cl, selecciona visa temporaria por arraigo familiar, sube todos los documentos y envía. Guarda el número de solicitud y el comprobante."},
     {"name": "Usar el comprobante para trabajar y residir mientras esperas", "text": "El comprobante de trámite activo te habilita para trabajar y permanecer en Chile legalmente durante el proceso. Muéstralo a empleadores que pregunten por tu situación migratoria."}
   ]'::jsonb,
   '[

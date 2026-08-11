@@ -1,7 +1,8 @@
 import type { MetadataRoute } from 'next'
 import { SITE_URL } from '@/lib/constants'
-import { PAISES, MAIN_SILOS } from '@/lib/content/silos'
+import { PAISES, MAIN_SILOS, HERRAMIENTAS_LIST } from '@/lib/content/silos'
 import { getAllPublishedArticles } from '@/lib/supabase/queries'
+import { hasSubstantiveArticleContent, isCurrentArticleSlug } from '@/lib/seo/indexing'
 
 export const revalidate = 86400
 
@@ -13,36 +14,45 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const articleUrls: MetadataRoute.Sitemap = articles
     // Los hubs de los 6 silos principales ya están en staticUrls — evitar duplicados
-    .filter((article) => !HUB_SLUGS.has(article.slug))
+    .filter(
+      (article) =>
+        !HUB_SLUGS.has(article.slug) &&
+        isCurrentArticleSlug(article.slug) &&
+        hasSubstantiveArticleContent(article.content)
+    )
     .map((article) => {
       // Artículos de países viven bajo /paises/ aunque su slug en DB no lleve el prefijo
       const siloRoot = article.slug.split('/')[0]
       const path = COUNTRY_SLUGS.has(siloRoot) ? `paises/${article.slug}` : article.slug
       return {
         url: `${SITE_URL}/${path}`,
-        lastModified: article.updated_at ? new Date(article.updated_at) : new Date(),
+        ...(article.updated_at ? { lastModified: new Date(article.updated_at) } : {}),
         changeFrequency: 'monthly' as const,
         priority: article.type === 'hub' ? 0.8 : 0.7,
       }
     })
 
   const staticUrls: MetadataRoute.Sitemap = [
-    { url: SITE_URL, lastModified: new Date(), changeFrequency: 'daily', priority: 1 },
-    { url: `${SITE_URL}/residencia-temporal`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${SITE_URL}/residencia-definitiva`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${SITE_URL}/autodenuncia`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${SITE_URL}/nacionalizacion`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${SITE_URL}/vivir-en-chile`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${SITE_URL}/problemas-migratorios`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${SITE_URL}/paises`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${SITE_URL}/herramientas`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${SITE_URL}/actualidad`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${SITE_URL}/glosario`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${SITE_URL}/acerca`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.5 },
-    { url: `${SITE_URL}/metodologia`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.5 },
-    { url: `${SITE_URL}/privacidad`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${SITE_URL}/terminos`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
+    { url: SITE_URL, changeFrequency: 'daily', priority: 1 },
+    { url: `${SITE_URL}/residencia-temporal`, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${SITE_URL}/residencia-definitiva`, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${SITE_URL}/autodenuncia`, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${SITE_URL}/nacionalizacion`, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${SITE_URL}/vivir-en-chile`, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${SITE_URL}/problemas-migratorios`, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${SITE_URL}/paises`, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE_URL}/herramientas`, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE_URL}/actualidad`, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${SITE_URL}/glosario`, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${SITE_URL}/acerca`, changeFrequency: 'yearly', priority: 0.5 },
+    { url: `${SITE_URL}/metodologia`, changeFrequency: 'yearly', priority: 0.5 },
   ]
 
-  return [...staticUrls, ...articleUrls]
+  const toolUrls: MetadataRoute.Sitemap = HERRAMIENTAS_LIST.map(({ slug }) => ({
+    url: `${SITE_URL}/herramientas/${slug}`,
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }))
+
+  return [...staticUrls, ...toolUrls, ...articleUrls]
 }

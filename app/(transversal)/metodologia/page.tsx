@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import { buildMetadata } from '@/lib/seo/metadata'
 import Breadcrumbs from '@/components/ui/Breadcrumbs'
 import JsonLd from '@/components/seo/JsonLd'
@@ -26,7 +26,7 @@ const FUENTES = [
   },
   {
     nombre: 'Portal de Trámites Migratorios',
-    url: 'https://tramites.extranjeria.gob.cl',
+    url: 'https://tramites.serviciomigraciones.cl',
     descripcion: 'Solicitudes en línea y estado de trámites.',
   },
   {

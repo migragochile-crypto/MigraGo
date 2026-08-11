@@ -83,7 +83,7 @@ INSERT INTO articles (
 <h2>¿Qué cambió realmente?</h2>
 <ul>
   <li><strong>La institución:</strong> el antiguo DEM (dependiente del Ministerio del Interior) fue reemplazado por el SERMIG, un servicio público descentralizado.</li>
-  <li><strong>El proceso:</strong> los trámites pasaron a ser 100% digitales en tramites.extranjeria.gob.cl.</li>
+  <li><strong>El proceso:</strong> los trámites pasaron a ser 100% digitales en tramites.serviciomigraciones.cl.</li>
   <li><strong>Las categorías:</strong> la ley reorganizó las subcategorías de residencia temporal.</li>
 </ul>
 

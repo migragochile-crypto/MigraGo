@@ -198,7 +198,7 @@ INSERT INTO articles (
     {"name": "Reunir los documentos que acrediten los ingresos", "text": "Certificado oficial de pensión o renta emitido por la entidad pagadora, apostillado, y extractos bancarios que muestren los depósitos regulares de los últimos 3-6 meses."},
     {"name": "Apostillar todos los documentos extranjeros", "text": "El certificado de pensión, antecedentes penales y cualquier otro documento extranjero deben estar apostillados. La apostilla se obtiene en el Ministerio de Relaciones Exteriores del país de origen."},
     {"name": "Obtener el certificado de antecedentes del Registro Civil de Chile", "text": "Gratis en registrocivil.cl. Válido por 90 días desde su emisión."},
-    {"name": "Presentar la solicitud en el portal del SERMIG", "text": "Ingresa a tramitesmigratorios.interior.gob.cl, selecciona Visa Temporaria → Jubilado o Rentista, carga los documentos y paga el arancel."},
+    {"name": "Presentar la solicitud en el portal del SERMIG", "text": "Ingresa a tramites.serviciomigraciones.cl, selecciona Visa Temporaria → Jubilado o Rentista, carga los documentos y paga el arancel."},
     {"name": "Conservar el comprobante de trámite", "text": "El comprobante te habilita para permanecer en Chile durante la tramitación."},
     {"name": "Con la visa aprobada, obtener la cédula en el SRCeI", "text": "Solicita tu cédula de identidad para extranjeros y RUT en cualquier oficina del Registro Civil."}
   ]'::jsonb,

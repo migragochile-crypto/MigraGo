@@ -7,6 +7,21 @@ const nextConfig = {
         destination: '/nacionalizacion/doble-nacionalidad',
         permanent: true,
       },
+      {
+        source: '/herramientas/quiz-visas',
+        destination: '/herramientas/calculadora-elegibilidad',
+        permanent: true,
+      },
+      {
+        source: '/residencia-temporal/responsabilidad-democratica',
+        destination: '/residencia-temporal',
+        permanent: true,
+      },
+      {
+        source: '/paises/venezuela/visa-vrd',
+        destination: '/paises/venezuela',
+        permanent: true,
+      },
     ]
   },
   async headers() {

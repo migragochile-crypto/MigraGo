@@ -74,7 +74,7 @@ INSERT INTO articles (
 </table>
 
 <h2>¿Cómo organizar los documentos para la solicitud online?</h2>
-<p>El trámite de Permanencia Definitiva se realiza a través del portal <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a>. Los documentos deben subirse en formato PDF. Recomendaciones:</p>
+<p>El trámite de Permanencia Definitiva se realiza a través del portal <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a>. Los documentos deben subirse en formato PDF. Recomendaciones:</p>
 <ul>
   <li>Escanea cada documento en alta resolución (mínimo 300 DPI).</li>
   <li>Asegúrate de que el texto sea legible en el PDF.</li>
@@ -89,7 +89,7 @@ INSERT INTO articles (
     {"name": "Preparar comprobante de actividad lícita", "text": "Reúne contrato de trabajo vigente y las últimas 3 liquidaciones de sueldo, o certificado de inicio de actividades del SII si trabajas a honorarios."},
     {"name": "Traducir documentos en idioma extranjero", "text": "Documentos en idioma distinto al español deben traducirse por traductor oficial del Ministerio de RREE de Chile. Verifica la lista en el sitio de Cancillería."},
     {"name": "Escanear todos los documentos en PDF", "text": "Escanea en alta resolución (300 DPI mínimo). Verifica que el texto sea legible. Si hay apostilla al dorso, escanea ambas caras."},
-    {"name": "Ingresar la solicitud en el portal del SERMIG", "text": "Accede a tramitesmigratorios.interior.gob.cl, sube todos los documentos y completa el formulario. Guarda el número de solicitud y el comprobante de trámite."}
+    {"name": "Ingresar la solicitud en el portal del SERMIG", "text": "Accede a tramites.serviciomigraciones.cl, sube todos los documentos y completa el formulario. Guarda el número de solicitud y el comprobante de trámite."}
   ]'::jsonb,
   '[
     {
@@ -193,7 +193,7 @@ INSERT INTO articles (
     {"name": "Si el matrimonio fue en el extranjero, inscribirlo en Chile", "text": "Apostilla el certificado de matrimonio extranjero e inscríbelo en el Servicio de Registro Civil (SRCeI). El proceso puede tomar semanas."},
     {"name": "Obtener certificado de matrimonio/AUC actualizado", "text": "Solicita el certificado en el Registro Civil. Debe tener no más de 90 días de vigencia al momento de presentar la solicitud."},
     {"name": "Reunir documentos base y específicos", "text": "Prepara los documentos base (antecedentes penales Chile y extranjero, cédula, pasaporte, actividad lícita) más el certificado de matrimonio/AUC y la cédula del cónyuge chileno."},
-    {"name": "Presentar la solicitud en el portal SERMIG", "text": "Ingresa en tramitesmigratorios.interior.gob.cl, selecciona la categoría correcta (vínculo con chileno), sube todos los documentos y envía la solicitud."},
+    {"name": "Presentar la solicitud en el portal SERMIG", "text": "Ingresa en tramites.serviciomigraciones.cl, selecciona la categoría correcta (vínculo con chileno), sube todos los documentos y envía la solicitud."},
     {"name": "Monitorear el estado en el portal", "text": "Revisa periódicamente el estado de tu solicitud. Si aparece Con observaciones, tienes plazo de 10 días hábiles para responder. Activa notificaciones de correo."}
   ]'::jsonb,
   '[

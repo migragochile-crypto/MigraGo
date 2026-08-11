@@ -56,7 +56,7 @@ INSERT INTO articles (
 
 <h2>Cómo consultar el estado de tu solicitud</h2>
 <ol>
-  <li>Ingresa a <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a>.</li>
+  <li>Ingresa a <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a>.</li>
   <li>Inicia sesión con tu cuenta.</li>
   <li>Ve a <strong>Mis trámites</strong> y busca la solicitud de Permanencia Definitiva.</li>
   <li>Los estados posibles son: <strong>En revisión, Con observaciones, Aprobado, Rechazado</strong>.</li>

@@ -92,7 +92,7 @@ export default function LeadMagnet({
       </form>
       {status === 'error' && <p className="mt-2 text-xs text-red-600">{errorMsg}</p>}
       <p className="mt-3 text-xs text-gray-400">
-        Solo usamos tu correo para avisos del trámite. Puedes darte de baja cuando quieras.{' '}
+        Al enviar aceptas recibir estos avisos. Puedes darte de baja escribiendo a hola@migrago.cl.{' '}
         <a href="/privacidad" className="underline hover:text-gray-600">Política de privacidad</a>
       </p>
     </div>

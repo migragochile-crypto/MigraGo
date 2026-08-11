@@ -135,7 +135,7 @@ INSERT INTO articles (
   $e2$,
   'HowTo',
   '[
-    {"name": "Obtén el comprobante de solicitud de visa", "text": "Al presentar tu solicitud en tramitesmigratorios.interior.gob.cl recibirás un número de trámite. Ese comprobante es lo que necesitas para el RUT provisorio."},
+    {"name": "Obtén el comprobante de solicitud de visa", "text": "Al presentar tu solicitud en tramites.serviciomigraciones.cl recibirás un número de trámite. Ese comprobante es lo que necesitas para el RUT provisorio."},
     {"name": "Solicita el RUT provisorio en el SII", "text": "Ve a cualquier oficina del SII con tu pasaporte, el comprobante de solicitud y un comprobante de domicilio. El RUT provisorio se emite el mismo día."},
     {"name": "Espera la aprobación de tu visa o permanencia", "text": "Una vez que el SERMIG aprueba tu solicitud, recibirás la resolución oficial por correo o en el portal tramitesmigratorios."},
     {"name": "Agenda cita en el SRCeI", "text": "Con la resolución de aprobación, agenda cita en registrocivil.cl o llama al 600 370 2000 para solicitar la cédula de identidad para extranjeros."},

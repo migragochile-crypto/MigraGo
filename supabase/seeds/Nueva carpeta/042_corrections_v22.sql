@@ -37,7 +37,7 @@ SET content = REPLACE(
   REPLACE(
     content,
     -- Fix 1 (innermost): URL cruda como anchor text
-    '>tramitesmigratorios.interior.gob.cl</a>) o presencialmente',
+    '>tramites.serviciomigraciones.cl</a>) o presencialmente',
     '>Portal de Trámites Migratorios del SERMIG</a>) o presencialmente'
   ),
   -- Fix 2 (outermost): comprobante "actúa como habilitante" — absoluto

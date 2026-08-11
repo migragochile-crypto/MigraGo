@@ -33,7 +33,7 @@ SET content = REPLACE(
     '>Residencia temporal por motivos laborales (visa por contrato de trabajo)</a>'
   ),
   -- Fix 5: URL cruda del portal → texto institucional descriptivo
-  '>tramitesmigratorios.interior.gob.cl</a>',
+  '>tramites.serviciomigraciones.cl</a>',
   '>Portal de Trámites Migratorios del SERMIG</a>'
 )
 WHERE slug = 'autodenuncia/pdi-paso-a-paso';

@@ -104,7 +104,7 @@ INSERT INTO articles (
 <h2>Proceso para trabajar legalmente como ecuatoriano</h2>
 <ol>
   <li>Ingresa a Chile con pasaporte ecuatoriano (sin visa de turista requerida).</li>
-  <li>Presenta solicitud de Residencia Temporal MERCOSUR en <strong>tramites.extranjeria.gob.cl</strong>.</li>
+  <li>Presenta solicitud de Residencia Temporal MERCOSUR en <strong>tramites.serviciomigraciones.cl</strong>.</li>
   <li>Con el comprobante de radicación, busca trabajo — muchos empleadores ya aceptan este documento.</li>
   <li>Cuando el SERMIG apruebe (2–5 meses), saca tu cédula de extranjero en el Registro Civil.</li>
   <li>Con la cédula, firma contrato formal con tu empleador.</li>

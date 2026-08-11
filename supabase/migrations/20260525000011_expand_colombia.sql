@@ -49,7 +49,7 @@ UPDATE articles SET
 <ol>
   <li>Apostilla tus documentos en Colombia (puedes hacerlo antes de viajar o estando en Chile).</li>
   <li>Ingresa a Chile con tu pasaporte colombiano.</li>
-  <li>Crea una cuenta en <strong>tramites.extranjeria.gob.cl</strong>.</li>
+  <li>Crea una cuenta en <strong>tramites.serviciomigraciones.cl</strong>.</li>
   <li>Selecciona "Residencia Temporal" → "MERCOSUR".</li>
   <li>Sube los documentos requeridos en formato PDF.</li>
   <li>Paga el arancel correspondiente.</li>

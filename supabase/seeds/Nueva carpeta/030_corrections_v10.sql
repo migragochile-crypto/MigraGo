@@ -42,7 +42,7 @@ SET content = REPLACE(
       'Muchas personas consideran razonable solicitar información adicional si llevan un período prolongado sin resolución y el estado sigue como "En revisión" sin observaciones. En ese caso, puedes presentar'
     ),
     -- Fix 7: URL cruda del portal → texto institucional descriptivo
-    '>tramitesmigratorios.interior.gob.cl</a>',
+    '>tramites.serviciomigraciones.cl</a>',
     '>Portal de Trámites Migratorios del SERMIG</a>'
   )
 )

@@ -78,7 +78,7 @@ INSERT INTO articles (
   <li>Verifica que tu país esté incluido en el Acuerdo MERCOSUR.</li>
   <li>Si estás en situación irregular, haz la autodenuncia en la PDI primero.</li>
   <li>Reúne los documentos con fechas vigentes (apostillados).</li>
-  <li>Ingresa al portal <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a>.</li>
+  <li>Ingresa al portal <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a>.</li>
   <li>Selecciona <strong>Visa Temporaria → MERCOSUR</strong>.</li>
   <li>Carga los documentos y paga el arancel.</li>
   <li>Con el comprobante de trámite puedes permanecer y trabajar en Chile mientras se resuelve.</li>
@@ -205,7 +205,7 @@ INSERT INTO articles (
     {"name": "Obtener la carta de aceptación de la institución", "text": "Solicita a la universidad, instituto o establecimiento educacional una carta oficial de aceptación o matrícula que confirme tu inscripción en el programa."},
     {"name": "Apostillar los documentos extranjeros", "text": "El certificado de antecedentes penales de tu país debe estar apostillado. Si tu país no adhiere al Convenio de La Haya, requiere legalización consular."},
     {"name": "Reunir comprobante de solvencia económica", "text": "Extracto bancario de los últimos 3 meses, carta de beca o carta de patrocinio de tus padres o tutor que acredite que puedes sostenerte durante los estudios."},
-    {"name": "Presentar la solicitud en el portal del SERMIG", "text": "Ingresa a tramitesmigratorios.interior.gob.cl, selecciona Visa de Estudiante, carga todos los documentos y paga el arancel."},
+    {"name": "Presentar la solicitud en el portal del SERMIG", "text": "Ingresa a tramites.serviciomigraciones.cl, selecciona Visa de Estudiante, carga todos los documentos y paga el arancel."},
     {"name": "Conservar el comprobante de trámite", "text": "El comprobante te habilita para permanecer en Chile durante la tramitación. Llévalo siempre junto al pasaporte."},
     {"name": "Con la visa aprobada, obtener la cédula en el SRCeI", "text": "Solicita tu cédula de identidad para extranjeros y RUT en cualquier oficina del Registro Civil."}
   ]'::jsonb,
@@ -288,7 +288,7 @@ INSERT INTO articles (
 <p>El apoyo de una organización de ayuda humanitaria (OIM, ACNUR, Servicio Jesuita a Migrantes, etc.) puede ser determinante para que el SERMIG evalúe positivamente la solicitud.</p>
 
 <h2>Proceso de solicitud</h2>
-<p>La solicitud se presenta en el portal del SERMIG (<a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a>) bajo la categoría <strong>Visa Temporaria → Razones Humanitarias</strong>. Dado el carácter excepcional, se recomienda acompañar la solicitud con una carta explicativa detallada.</p>
+<p>La solicitud se presenta en el portal del SERMIG (<a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a>) bajo la categoría <strong>Visa Temporaria → Razones Humanitarias</strong>. Dado el carácter excepcional, se recomienda acompañar la solicitud con una carta explicativa detallada.</p>
 
 <h2>Vigencia y renovación</h2>
 <p>La visa humanitaria se otorga por <strong>1 año renovable</strong> mientras persistan las condiciones que la motivaron. El SERMIG puede revocarla si las circunstancias cambian.</p>

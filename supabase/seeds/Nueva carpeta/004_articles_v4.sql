@@ -149,7 +149,7 @@ INSERT INTO articles (
     {"name": "Reunir los documentos para la autodenuncia", "text": "Pasaporte, comprobante de domicilio, fotografía y documentos de vínculos familiares si aplica."},
     {"name": "Presentarte en la PDI y pagar la multa", "text": "Dirígete a cualquier comisaría PDI, declara tu situación y paga la multa migratoria. Recibirás el Certificado de Autodenuncia."},
     {"name": "Identificar la causal de visa que te corresponde", "text": "Según tu situación personal (hijo chileno, pareja, trabajo, VRD u otra), determina qué visa solicitar."},
-    {"name": "Presentar la solicitud de visa en el portal del SERMIG", "text": "Con el Certificado de Autodenuncia, ingresa a tramitesmigratorios.interior.gob.cl y presenta la solicitud."},
+    {"name": "Presentar la solicitud de visa en el portal del SERMIG", "text": "Con el Certificado de Autodenuncia, ingresa a tramites.serviciomigraciones.cl y presenta la solicitud."},
     {"name": "Conservar el comprobante de trámite", "text": "El número de trámite actúa como documento habilitante para permanecer y trabajar en Chile mientras esperas la resolución."}
   ]'::jsonb,
   '[
@@ -208,7 +208,7 @@ UPDATE articles SET
   <li>La VRD puede tramitarse con pasaporte vencido en muchos casos.</li>
   <li>La cédula de identidad venezolana puede ser aceptada como documento alternativo en algunos trámites.</li>
 </ul>
-<p>Sin embargo, la política puede cambiar. Verifica siempre el estado actual en el <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">portal del SERMIG</a> o en el <a href="https://www.consulado.gob.ve/santiago" target="_blank" rel="noopener noreferrer">Consulado de Venezuela en Santiago</a>.</p>
+<p>Sin embargo, la política puede cambiar. Verifica siempre el estado actual en el <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">portal del SERMIG</a> o en el <a href="https://www.consulado.gob.ve/santiago" target="_blank" rel="noopener noreferrer">Consulado de Venezuela en Santiago</a>.</p>
 
 <h2>Ruta migratoria típica para un venezolano en Chile</h2>
 <ol>
@@ -235,7 +235,7 @@ UPDATE articles SET
     },
     {
       "question": "¿La VRD está vigente en 2026?",
-      "answer": "Sí, la VRD continúa disponible. Su vigencia ha sido renovada periódicamente desde 2018. Sin embargo, el gobierno puede establecer plazos o condiciones adicionales. Verifica siempre el estado actualizado en tramitesmigratorios.interior.gob.cl antes de presentar."
+      "answer": "Sí, la VRD continúa disponible. Su vigencia ha sido renovada periódicamente desde 2018. Sin embargo, el gobierno puede establecer plazos o condiciones adicionales. Verifica siempre el estado actualizado en tramites.serviciomigraciones.cl antes de presentar."
     },
     {
       "question": "¿Puedo solicitar la VRD si ya tengo otra visa en trámite?",

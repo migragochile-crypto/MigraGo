@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   title: 'Términos de Uso',
   description: `Términos y condiciones de uso de ${SITE_NAME}. Condiciones de acceso al sitio, propiedad intelectual, limitación de responsabilidad y ley aplicable.`,
   slug: 'terminos',
-  noIndex: false,
+  noIndex: true,
 })
 
 const breadcrumbs = [

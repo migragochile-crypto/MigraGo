@@ -4,7 +4,7 @@ import PrintButton from '@/components/ui/PrintButton'
 
 export const metadata: Metadata = {
   title: 'Checklist Residencia Definitiva — Versión Imprimible',
-  robots: { index: false, follow: false },
+  robots: { index: false, follow: true },
 }
 
 export default function ChecklistImprimiblePage() {
@@ -60,9 +60,9 @@ export default function ChecklistImprimiblePage() {
       <section className="mt-8 rounded-xl border border-gray-300 p-4 text-sm text-gray-700 break-inside-avoid">
         <p className="font-semibold mb-1">Antes de presentar:</p>
         <ul className="list-disc list-inside space-y-1">
-          <li>Verifica los requisitos actualizados en tramites.extranjeria.gob.cl — el SERMIG puede cambiarlos.</li>
-          <li>Los antecedentes penales tienen vigencia limitada (generalmente 90 días): solicítalos al final.</li>
-          <li>Todos los documentos extranjeros deben estar apostillados y, si no están en español, traducidos.</li>
+          <li>Verifica los requisitos actualizados en tramites.serviciomigraciones.cl — el SERMIG puede cambiarlos.</li>
+          <li>Confirma en tu formulario la vigencia exigida para cada certificado antes de solicitarlo.</li>
+          <li>Revisa si cada documento extranjero requiere apostilla, legalización o traducción.</li>
         </ul>
       </section>
 

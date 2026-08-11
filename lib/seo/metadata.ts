@@ -40,7 +40,7 @@ export function buildMetadata(opts: {
       description: opts.description,
       images: [imageUrl],
     },
-    robots: opts.noIndex ? { index: false, follow: false } : undefined,
+    robots: opts.noIndex ? { index: false, follow: true } : undefined,
   }
 }
 

@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   title: 'Política de Privacidad',
   description: `Política de privacidad de ${SITE_NAME}. Cómo recopilamos, usamos y protegemos tus datos personales conforme a la Ley 19.628 y la Ley 21.719 de Chile.`,
   slug: 'privacidad',
-  noIndex: false,
+  noIndex: true,
 })
 
 const breadcrumbs = [
@@ -41,11 +41,12 @@ export default function PrivacidadPage() {
 
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-3">2. Datos que recopilamos</h2>
-          <p>{SITE_NAME} no solicita registro de usuario ni recopila datos personales de forma directa. Sin embargo, como la mayoría de los sitios web, podemos recopilar automáticamente:</p>
+          <p>{SITE_NAME} no exige crear una cuenta. Podemos recopilar los siguientes datos:</p>
           <ul className="mt-3 space-y-2 list-disc list-inside">
             <li><strong>Datos de navegación:</strong> dirección IP, tipo de navegador, páginas visitadas, tiempo de permanencia y origen de la visita. Estos datos se recogen a través de herramientas de analítica web (como Google Analytics).</li>
             <li><strong>Cookies:</strong> archivos de texto que se almacenan en tu dispositivo para mejorar la experiencia de navegación y medir el uso del sitio. Ver sección 5.</li>
             <li><strong>Datos de contacto voluntarios:</strong> si nos escribes a nuestro correo electrónico, recopilamos tu dirección de email y el contenido del mensaje para responder tu consulta.</li>
+            <li><strong>Suscripciones voluntarias:</strong> si solicitas recibir avisos o un recurso por correo, guardamos tu dirección de email y la página desde la que te suscribiste.</li>
           </ul>
         </section>
 
@@ -56,6 +57,7 @@ export default function PrivacidadPage() {
             <li>Medir el tráfico y el comportamiento de los usuarios para mejorar el contenido del sitio.</li>
             <li>Detectar y corregir errores técnicos.</li>
             <li>Responder consultas enviadas por correo electrónico.</li>
+            <li>Enviar los avisos editoriales solicitados y gestionar la baja de la suscripción.</li>
             <li>Mostrar publicidad contextual a través de terceros (cuando corresponda).</li>
           </ul>
           <p className="mt-3">No vendemos ni cedemos datos personales a terceros con fines comerciales propios.</p>
@@ -68,7 +70,7 @@ export default function PrivacidadPage() {
             <strong>Ley N° 19.628 sobre Protección de la Vida Privada</strong> de Chile y, en lo que
             corresponda, a la <strong>Ley N° 21.719</strong> (nueva ley de protección de datos personales,
             vigente desde diciembre de 2026). La base legal es el interés legítimo de mejorar el servicio
-            y, en el caso de cookies no esenciales, el consentimiento del usuario.
+            y, para suscripciones y cookies no esenciales, el consentimiento del usuario.
           </p>
         </section>
 
@@ -89,6 +91,7 @@ export default function PrivacidadPage() {
           <p>El sitio puede incorporar servicios de terceros que tienen sus propias políticas de privacidad:</p>
           <ul className="mt-3 space-y-2 list-disc list-inside">
             <li><strong>Google Analytics</strong> — analítica de tráfico web.</li>
+            <li><strong>Supabase</strong> — infraestructura utilizada para almacenar contenido y direcciones de correo de suscriptores.</li>
             <li><strong>Proveedores de publicidad</strong> — si el sitio muestra anuncios, estos pueden usar cookies de terceros para segmentación contextual.</li>
           </ul>
           <p className="mt-3">{SITE_NAME} no controla las políticas de privacidad de estos terceros. Te recomendamos consultarlas directamente.</p>
@@ -97,10 +100,10 @@ export default function PrivacidadPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-3">7. Conservación de datos</h2>
           <p>
-            Los datos de navegación recopilados por herramientas de analítica se conservan según las
-            políticas de cada proveedor (Google Analytics los retiene por defecto 14 meses). Los correos
-            electrónicos de contacto se conservan mientras sean necesarios para responder la consulta y
-            hasta 1 año después.
+            Los datos de navegación recopilados por herramientas de analítica se conservan según la
+            configuración y las políticas de cada proveedor. Los correos de contacto se conservan mientras
+            sean necesarios para responder la consulta y hasta 1 año después. Los correos de suscripción
+            se conservan hasta que solicites la baja escribiendo a hola@migrago.cl.
           </p>
         </section>
 

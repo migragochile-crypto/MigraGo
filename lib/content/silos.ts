@@ -1,4 +1,4 @@
-﻿import type { SiloConfig, PaisConfig } from '@/types/content'
+import type { SiloConfig, PaisConfig } from '@/types/content'
 
 export const SILOS: Record<string, SiloConfig> = {
   autodenuncia: {
@@ -26,7 +26,6 @@ export const SILOS: Record<string, SiloConfig> = {
       'estudiante',
       'razones-humanitarias',
       'jubilado-rentista',
-      'responsabilidad-democratica',
       'mercosur',
       'cuanto-demora',
       'renovacion',
@@ -34,7 +33,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'cambio-categoria',
       'rechazo',
     ],
-    cta: { text: 'Ir a Trámites en Línea', href: 'https://tramites.extranjeria.gob.cl' },
+    cta: { text: 'Ir a Trámites en Línea', href: 'https://tramites.serviciomigraciones.cl' },
   },
   'residencia-definitiva': {
     label: 'Residencia Definitiva',
@@ -50,7 +49,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'estado-tramite',
       'prorroga-fuera-chile',
     ],
-    cta: { text: 'Ir a Trámites en Línea', href: 'https://tramites.extranjeria.gob.cl' },
+    cta: { text: 'Ir a Trámites en Línea', href: 'https://tramites.serviciomigraciones.cl' },
   },
   nacionalizacion: {
     label: 'Nacionalización',
@@ -84,7 +83,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'sin-respuesta-sermig',
       'derechos-migrante',
     ],
-    cta: { text: 'Consultar estado de trámite', href: 'https://tramites.extranjeria.gob.cl' },
+    cta: { text: 'Consultar estado de trámite', href: 'https://tramites.serviciomigraciones.cl' },
   },
   'vivir-en-chile': {
     label: 'Vivir en Chile',
@@ -122,9 +121,8 @@ export const SILOS: Record<string, SiloConfig> = {
       'documentos-apostilla',
       'pasaporte',
       'antecedentes-penales',
-      'visa-vrd',
     ],
-    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.extranjeria.gob.cl' },
+    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.serviciomigraciones.cl' },
   },
   bolivia: {
     label: 'Bolivia',
@@ -136,7 +134,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'visa-temporaria',
       'trabajar-en-chile',
     ],
-    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.extranjeria.gob.cl' },
+    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.serviciomigraciones.cl' },
   },
   haiti: {
     label: 'Haití',
@@ -148,7 +146,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'reagrupacion-familiar',
       'visas-haitianas',
     ],
-    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.extranjeria.gob.cl' },
+    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.serviciomigraciones.cl' },
   },
   'republica-dominicana': {
     label: 'República Dominicana',
@@ -159,7 +157,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'visa-consular',
       'faq',
     ],
-    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.extranjeria.gob.cl' },
+    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.serviciomigraciones.cl' },
   },
   peru: {
     label: 'Perú',
@@ -169,7 +167,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'antecedentes-penales',
       'visa-mercosur',
     ],
-    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.extranjeria.gob.cl' },
+    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.serviciomigraciones.cl' },
   },
   colombia: {
     label: 'Colombia',
@@ -179,7 +177,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'antecedentes-penales',
       'visa-mercosur',
     ],
-    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.extranjeria.gob.cl' },
+    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.serviciomigraciones.cl' },
   },
   argentina: {
     label: 'Argentina',
@@ -189,7 +187,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'antecedentes-penales',
       'visa-mercosur',
     ],
-    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.extranjeria.gob.cl' },
+    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.serviciomigraciones.cl' },
   },
   ecuador: {
     label: 'Ecuador',
@@ -201,7 +199,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'opciones-visa',
       'trabajar-en-chile',
     ],
-    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.extranjeria.gob.cl' },
+    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.serviciomigraciones.cl' },
   },
   cuba: {
     label: 'Cuba',
@@ -211,7 +209,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'antecedentes-penales',
       'opciones-visa',
     ],
-    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.extranjeria.gob.cl' },
+    cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.serviciomigraciones.cl' },
   },
 }
 
@@ -242,8 +240,7 @@ export const HERRAMIENTAS_LIST = [
   { slug: 'checklist-permanencia-definitiva', label: 'Checklist Residencia Definitiva', icon: '📋' },
   { slug: 'checklist-temporaria', label: 'Checklist Residencia Temporal', icon: '📋' },
   { slug: 'consultar-estado', label: 'Consultar Estado de Trámite', icon: '🔍' },
-  { slug: 'quiz-visas', label: '¿Cuál visa me conviene?', icon: '❓' },
-  { slug: 'calculadora-multas', label: 'Calculadora de Multas + PD', icon: '💰' },
+  { slug: 'calculadora-multas', label: 'Estimador de Multa por Permiso Vencido', icon: '💰' },
   { slug: 'matriz-visas', label: 'Comparador de Visas', icon: '📊' },
 ]
 
@@ -253,4 +250,3 @@ export function slugToLabel(slug: string): string {
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(' ')
 }
-

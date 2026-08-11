@@ -214,7 +214,7 @@ INSERT INTO articles (
 <h2>Renovación de la VRD</h2>
 <p>Si ya tienes VRD y quieres renovarla:</p>
 <ul>
-  <li>La renovación se solicita en el portal del SERMIG: <strong>tramitesmigratorios.interior.gob.cl</strong>.</li>
+  <li>La renovación se solicita en el portal del SERMIG: <strong>tramites.serviciomigraciones.cl</strong>.</li>
   <li>Debes presentar el trámite <strong>antes de que venza la visa actual</strong> — no esperes hasta el último momento.</li>
   <li>Los documentos requeridos incluyen pasaporte vigente, antecedentes penales actualizados y los mismos documentos de identidad de la solicitud original.</li>
 </ul>
@@ -248,7 +248,7 @@ INSERT INTO articles (
     },
     {
       "question": "Tengo VRD vigente. ¿Cuándo puedo pedir la Residencia Definitiva?",
-      "answer": "Después de 2 años continuos de residencia legal en Chile (el tiempo con VRD cuenta). Si tienes cónyuge o pareja civil chilena, o hijos chilenos, el plazo se reduce a 1 año. Solicita en tramitesmigratorios.interior.gob.cl antes de que venza tu VRD."
+      "answer": "Después de 2 años continuos de residencia legal en Chile (el tiempo con VRD cuenta). Si tienes cónyuge o pareja civil chilena, o hijos chilenos, el plazo se reduce a 1 año. Solicita en tramites.serviciomigraciones.cl antes de que venza tu VRD."
     },
     {
       "question": "¿Los venezolanos pueden solicitar visa MERCOSUR?",

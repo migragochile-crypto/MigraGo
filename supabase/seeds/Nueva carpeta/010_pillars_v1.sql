@@ -225,7 +225,7 @@ UPDATE articles SET
   <li>Determina qué categoría de visa aplica a tu situación.</li>
   <li>Reúne todos los documentos requeridos con fechas vigentes.</li>
   <li>Si estás en situación irregular, completa primero la autodenuncia en la PDI.</li>
-  <li>Ingresa a <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a>, crea una cuenta o inicia sesión.</li>
+  <li>Ingresa a <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a>, crea una cuenta o inicia sesión.</li>
   <li>Selecciona la categoría de visa y completa el formulario.</li>
   <li>Sube todos los documentos solicitados en formato PDF o imagen.</li>
   <li>Paga el arancel de solicitud (varía según la categoría y el país de origen).</li>

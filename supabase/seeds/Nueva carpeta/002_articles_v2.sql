@@ -33,7 +33,7 @@ INSERT INTO articles (
 <p>La VRD no requiere acreditar contrato de trabajo, vínculo familiar con un chileno ni ninguna otra causal específica. Es de carácter humanitario.</p>
 
 <h2>¿Sigue vigente la VRD en 2026?</h2>
-<p>Sí. La VRD continúa disponible para venezolanos en Chile. Sin embargo, su vigencia ha estado sujeta a renovaciones periódicas y el gobierno chileno puede establecer condiciones adicionales o plazos de presentación. Verifica siempre el estado actualizado en el <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">portal oficial del SERMIG</a> antes de presentar.</p>
+<p>Sí. La VRD continúa disponible para venezolanos en Chile. Sin embargo, su vigencia ha estado sujeta a renovaciones periódicas y el gobierno chileno puede establecer condiciones adicionales o plazos de presentación. Verifica siempre el estado actualizado en el <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">portal oficial del SERMIG</a> antes de presentar.</p>
 
 <h2>Documentos necesarios</h2>
 <table>
@@ -71,7 +71,7 @@ INSERT INTO articles (
 <ol>
   <li>Si tu visa está vencida, realiza primero la <a href="/autodenuncia/pdi-paso-a-paso">autodenuncia en la PDI</a> para obtener el Certificado de Autodenuncia.</li>
   <li>Reúne todos los documentos indicados. Verifica fechas de vigencia.</li>
-  <li>Ingresa al portal <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a> y crea una cuenta.</li>
+  <li>Ingresa al portal <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a> y crea una cuenta.</li>
   <li>Selecciona <strong>Solicitud de visa → Visa Temporaria → Razones humanitarias → Responsabilidad Democrática</strong>.</li>
   <li>Carga los documentos (PDF o JPG, máximo 5 MB por archivo) y paga el arancel.</li>
   <li>Guarda el número de trámite para consultar el estado de tu solicitud.</li>
@@ -196,7 +196,7 @@ INSERT INTO articles (
   <li>El empleador firma el contrato de trabajo y lo registra en la Dirección del Trabajo.</li>
   <li>Si estás en situación irregular, completa la <a href="/autodenuncia/pdi-paso-a-paso">autodenuncia en la PDI</a>.</li>
   <li>Reúne los documentos personales indicados.</li>
-  <li>Ingresa al portal <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a>.</li>
+  <li>Ingresa al portal <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a>.</li>
   <li>Selecciona <strong>Solicitud de visa → Visa Temporaria → Trabajo → Contrato de trabajo</strong>.</li>
   <li>Carga los documentos y paga el arancel de solicitud.</li>
   <li>Guarda el número de trámite para seguimiento.</li>
@@ -217,7 +217,7 @@ INSERT INTO articles (
     {"name": "Firma y registra el contrato de trabajo", "text": "El empleador firma el contrato según el Código del Trabajo y lo registra en la Dirección del Trabajo (dt.gob.cl)."},
     {"name": "Autodenuncia si estás en situación irregular", "text": "Si tu visa venció o ingresaste sin visa, presenta la autodenuncia en cualquier comisaría PDI antes de continuar."},
     {"name": "Reúne los documentos personales", "text": "Pasaporte vigente, antecedentes penales del país de origen apostillados, certificado de antecedentes de Chile, fotografía y domicilio."},
-    {"name": "Presenta la solicitud en el portal del SERMIG", "text": "Ingresa a tramitesmigratorios.interior.gob.cl, selecciona Visa Temporaria › Trabajo › Contrato de trabajo y carga los documentos."},
+    {"name": "Presenta la solicitud en el portal del SERMIG", "text": "Ingresa a tramites.serviciomigraciones.cl, selecciona Visa Temporaria › Trabajo › Contrato de trabajo y carga los documentos."},
     {"name": "Paga el arancel y guarda el comprobante", "text": "El comprobante de solicitud te habilita para trabajar de inmediato con el empleador contratante."},
     {"name": "Recibe la visa y obtén tu RUT definitivo", "text": "Con la visa aprobada, acércate al SRCeI para obtener tu cédula de identidad para extranjeros y RUT definitivo."}
   ]'::jsonb,
@@ -387,7 +387,7 @@ INSERT INTO articles (
     </tr>
     <tr>
       <td>Formulario de solicitud del SERMIG</td>
-      <td>Se completa directamente en el portal tramitesmigratorios.interior.gob.cl al momento de presentar.</td>
+      <td>Se completa directamente en el portal tramites.serviciomigraciones.cl al momento de presentar.</td>
     </tr>
   </tbody>
 </table>
@@ -405,7 +405,7 @@ INSERT INTO articles (
 <ol>
   <li>Verifica que tu visa temporaria lleva al menos 1 año de vigencia y que no superaste los 180 días de ausencia durante ese período.</li>
   <li>Reúne todos los documentos indicados. Revisa fechas: los certificados no deben tener más de 90 días de antigüedad al momento de presentar.</li>
-  <li>Ingresa al portal <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a> con tu cuenta existente.</li>
+  <li>Ingresa al portal <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a> con tu cuenta existente.</li>
   <li>Selecciona <strong>Solicitud de permanencia definitiva</strong> y completa el formulario.</li>
   <li>Carga los documentos en formato PDF o JPG (máximo 5 MB por archivo).</li>
   <li>Paga el arancel de solicitud y guarda el comprobante.</li>
@@ -421,7 +421,7 @@ INSERT INTO articles (
     {"name": "Verificar el año de residencia continua", "text": "Confirma que tu visa temporaria lleva al menos 1 año vigente y que no superaste 180 días de ausencia en ese período."},
     {"name": "Obtener los certificados con fecha vigente", "text": "Solicita el certificado de antecedentes de Chile (registrocivil.cl) y el de tu país de origen apostillado. Ambos deben tener menos de 90 días."},
     {"name": "Reunir documentos complementarios según tu causal", "text": "Si tu visa es por trabajo, necesitas certificado de cotizaciones. Si es por hijo chileno, el certificado de nacimiento actualizado."},
-    {"name": "Presentar la solicitud en el portal del SERMIG", "text": "Ingresa a tramitesmigratorios.interior.gob.cl, selecciona Solicitud de permanencia definitiva, completa el formulario y carga los documentos."},
+    {"name": "Presentar la solicitud en el portal del SERMIG", "text": "Ingresa a tramites.serviciomigraciones.cl, selecciona Solicitud de permanencia definitiva, completa el formulario y carga los documentos."},
     {"name": "Pagar el arancel y guardar el comprobante", "text": "El comprobante de trámite actúa como habilitante mientras esperas la resolución (60-120 días hábiles en promedio)."},
     {"name": "Obtener la cédula definitiva en el SRCeI", "text": "Con la permanencia aprobada, acércate al Registro Civil para obtener tu cédula de identidad para extranjeros con vigencia indefinida."}
   ]'::jsonb,

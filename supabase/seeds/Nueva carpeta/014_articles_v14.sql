@@ -294,7 +294,7 @@ INSERT INTO articles (
   'HowTo',
   '[
     {"name": "Verificar que cumples los requisitos", "text": "Confirma que tienes Permanencia Definitiva vigente, al menos 5 años de residencia legal continua, y no tienes antecedentes penales. Para vía de cónyuge de chileno el plazo es 3 años."},
-    {"name": "Obtener certificado de situación migratoria del SERMIG", "text": "Solicítalo en el portal tramitesmigratorios.interior.gob.cl. Acredita el tiempo de residencia legal en Chile. Es uno de los documentos más importantes del proceso."},
+    {"name": "Obtener certificado de situación migratoria del SERMIG", "text": "Solicítalo en el portal tramites.serviciomigraciones.cl. Acredita el tiempo de residencia legal en Chile. Es uno de los documentos más importantes del proceso."},
     {"name": "Recopilar todos los documentos", "text": "Reúne pasaporte, cédula PD, certificados de antecedentes (Chile y país de origen apostillado), comprobante de residencia y actividad lícita, y fotografías."},
     {"name": "Presentar la solicitud en el Ministerio del Interior", "text": "Entrega la solicitud con todos los documentos en el Departamento de Extranjería de Santiago o en la Gobernación o Intendencia de tu región."},
     {"name": "Esperar la resolución (1–3 años)", "text": "El proceso es largo. Mantén vigentes tu PD y cédula durante todo el proceso. Puedes consultar el estado directamente en el Departamento de Extranjería."},

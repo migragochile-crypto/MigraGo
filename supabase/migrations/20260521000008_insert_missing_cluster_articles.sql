@@ -33,7 +33,7 @@ INSERT INTO articles (
 
 <h2>Documentos necesarios</h2>
 <ul>
-  <li>Formulario de solicitud de Residencia Definitiva (portal <a href="https://tramites.extranjeria.gob.cl" target="_blank" rel="noopener noreferrer">tramites.extranjeria.gob.cl</a>).</li>
+  <li>Formulario de solicitud de Residencia Definitiva (portal <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a>).</li>
   <li>Pasaporte vigente.</li>
   <li>Carnet de Residencia Temporal en vigor.</li>
   <li>Certificado de antecedentes penales chileno (Registro Civil).</li>

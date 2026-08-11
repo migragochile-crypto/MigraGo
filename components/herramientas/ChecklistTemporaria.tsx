@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 
 type TipoVisa =
@@ -8,7 +8,6 @@ type TipoVisa =
   | 'hijo-chileno'
   | 'pareja-chilena'
   | 'contrato-trabajo'
-  | 'responsabilidad-democratica'
   | 'estudiante'
   | 'razones-humanitarias'
 
@@ -25,11 +24,6 @@ const DOC_BASE: Record<string, Item> = {
     doc: 'Pasaporte vigente',
     detalle: 'Con vigencia suficiente conforme a los criterios del SERMIG.',
   },
-  pasaporte_vrd: {
-    id: 'pasaporte',
-    doc: 'Pasaporte venezolano (puede estar vencido en muchos casos)',
-    detalle: 'El SERMIG puede aceptar pasaportes vencidos para la VRD dado el reconocimiento de las dificultades institucionales en Venezuela. Verifica el estado actual de esta política en el SERMIG.',
-  },
   ant_chile: {
     id: 'ant-chile',
     doc: 'Certificado de antecedentes penales de Chile (SRCeI)',
@@ -40,11 +34,6 @@ const DOC_BASE: Record<string, Item> = {
     doc: 'Certificado de antecedentes del país de origen',
     detalle: 'Apostillado. En español o con traducción oficial. Verifica el plazo de vigencia exigido por el SERMIG.',
     href: '/problemas/antecedentes-penales',
-  },
-  ant_cicpc: {
-    id: 'ant-origen',
-    doc: 'Certificado de antecedentes CICPC (Venezuela)',
-    detalle: 'Emitido por el CICPC, apostillado cuando corresponda. Verifica los requisitos actualizados con el SERMIG dado que las políticas para documentos venezolanos pueden variar.',
   },
   domicilio: {
     id: 'domicilio',
@@ -101,10 +90,6 @@ const CHECKLIST_POR_VISA: Record<TipoVisa, { items: Item[]; articuloHref: string
     items: [DOC_BASE.pasaporte, DOC_BASE.ant_chile, DOC_BASE.ant_origen, DOC_BASE.contrato, DOC_BASE.domicilio, DOC_BASE.foto],
     articuloHref: '/residencia-temporal/contrato-trabajo',
   },
-  'responsabilidad-democratica': {
-    items: [DOC_BASE.pasaporte_vrd, DOC_BASE.ant_cicpc, DOC_BASE.domicilio, DOC_BASE.foto],
-    articuloHref: '/residencia-temporal/responsabilidad-democratica',
-  },
   estudiante: {
     items: [DOC_BASE.pasaporte, DOC_BASE.ant_chile, DOC_BASE.ant_origen, DOC_BASE.carta_aceptacion, DOC_BASE.domicilio, DOC_BASE.foto],
     articuloHref: '/residencia-temporal/estudiante',
@@ -116,11 +101,10 @@ const CHECKLIST_POR_VISA: Record<TipoVisa, { items: Item[]; articuloHref: string
 }
 
 const OPCIONES_VISA: { value: TipoVisa; label: string }[] = [
-  { value: 'mercosur', label: 'Visa Mercosur (Argentina, Bolivia, Colombia, Perú y otros)' },
+  { value: 'mercosur', label: 'Residencia Mercosur (Argentina, Bolivia, Brasil, Paraguay o Uruguay)' },
   { value: 'hijo-chileno', label: 'Por hijo/a con nacionalidad chilena' },
   { value: 'pareja-chilena', label: 'Por pareja chilena (matrimonio o AUC)' },
   { value: 'contrato-trabajo', label: 'Por contrato de trabajo' },
-  { value: 'responsabilidad-democratica', label: 'Visa de Responsabilidad Democrática (VRD) — solo venezolanos' },
   { value: 'estudiante', label: 'Visa de estudiante' },
   { value: 'razones-humanitarias', label: 'Por razones humanitarias' },
 ]
@@ -132,22 +116,21 @@ function storageKey(visa: TipoVisa) {
 export default function ChecklistTemporaria() {
   const [visaSeleccionada, setVisaSeleccionada] = useState<TipoVisa | null>(null)
   const [checked, setChecked] = useState<Set<string>>(new Set())
-  const [hydrated, setHydrated] = useState(false)
 
-  useEffect(() => {
-    setHydrated(true)
-  }, [])
-
-  useEffect(() => {
-    if (!visaSeleccionada) return
+  function seleccionarVisa(visa: TipoVisa | null) {
+    setVisaSeleccionada(visa)
+    if (!visa) {
+      setChecked(new Set())
+      return
+    }
     try {
-      const saved = localStorage.getItem(storageKey(visaSeleccionada))
+      const saved = localStorage.getItem(storageKey(visa))
       if (saved) setChecked(new Set(JSON.parse(saved) as string[]))
       else setChecked(new Set())
     } catch {
       setChecked(new Set())
     }
-  }, [visaSeleccionada])
+  }
 
   function toggle(id: string) {
     if (!visaSeleccionada) return
@@ -168,8 +151,6 @@ export default function ChecklistTemporaria() {
     try { localStorage.removeItem(storageKey(visaSeleccionada)) } catch {}
   }
 
-  if (!hydrated) return null
-
   const config = visaSeleccionada ? CHECKLIST_POR_VISA[visaSeleccionada] : null
   const items = config?.items ?? []
   const total = items.length
@@ -185,7 +166,7 @@ export default function ChecklistTemporaria() {
         </label>
         <select
           value={visaSeleccionada ?? ''}
-          onChange={(e) => setVisaSeleccionada((e.target.value as TipoVisa) || null)}
+          onChange={(e) => seleccionarVisa((e.target.value as TipoVisa) || null)}
           className="border border-border rounded-lg px-3 py-2 text-sm w-full focus:outline-none focus:ring-2 focus:ring-primary/30"
         >
           <option value="">— Selecciona una categoría —</option>
@@ -225,12 +206,12 @@ export default function ChecklistTemporaria() {
             Los requisitos exactos y los plazos de vigencia de cada documento los determina el SERMIG.
             Verifica en{' '}
             <a
-              href="https://tramitesmigratorios.interior.gob.cl"
+              href="https://tramites.serviciomigraciones.cl"
               target="_blank"
               rel="noopener noreferrer"
               className="underline"
             >
-              tramitesmigratorios.interior.gob.cl
+              tramites.serviciomigraciones.cl
             </a>
             {' '}antes de presentar.
           </div>
@@ -285,4 +266,3 @@ export default function ChecklistTemporaria() {
     </div>
   )
 }
-

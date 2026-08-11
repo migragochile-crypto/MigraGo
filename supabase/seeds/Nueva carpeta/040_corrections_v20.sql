@@ -56,7 +56,7 @@ SET content = REPLACE(
         'si tu permiso de turismo o visa ya está vencido, en muchos casos no es posible hacer el cambio directamente'
       ),
       -- Fix 2: URL cruda como anchor text (paso 1)
-      '>tramitesmigratorios.interior.gob.cl</a>.',
+      '>tramites.serviciomigraciones.cl</a>.',
       '>Portal de Trámites Migratorios del SERMIG</a>.'
     ),
     -- Fix 3: comprobante "te mantiene en situación migratoria regular" — absoluto

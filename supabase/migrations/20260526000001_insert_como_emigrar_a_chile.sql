@@ -47,7 +47,7 @@ INSERT INTO articles (
 <p>→ Ver apostilla por país: <a href="/vivir-en-chile/apostilla-por-pais">Apostilla por país de origen</a></p>
 
 <h2>Paso 3: Presenta la solicitud en línea</h2>
-<p>Todos los trámites de Residencia Temporal se presentan en el portal del SERMIG: <strong>tramites.extranjeria.gob.cl</strong>. El proceso es 100% digital — no necesitas ir a una oficina para presentar la solicitud.</p>
+<p>Todos los trámites de Residencia Temporal se presentan en el portal del SERMIG: <strong>tramites.serviciomigraciones.cl</strong>. El proceso es 100% digital — no necesitas ir a una oficina para presentar la solicitud.</p>
 <ol>
   <li>Crea una cuenta en el portal.</li>
   <li>Selecciona "Nueva solicitud" → "Residencia Temporal".</li>
@@ -101,7 +101,7 @@ INSERT INTO articles (
   '[
     {"name": "Elige tu categoría de visa", "text": "Identifica qué categoría de Residencia Temporal te aplica: MERCOSUR, contrato de trabajo, pareja chilena, hijo chileno, estudiante u otra."},
     {"name": "Reúne y apostilla los documentos", "text": "Obtén tu certificado de nacimiento y antecedentes penales apostillados en tu país de origen. El pasaporte no necesita apostilla."},
-    {"name": "Presenta la solicitud en línea", "text": "Crea cuenta en tramites.extranjeria.gob.cl, selecciona la categoría, sube los documentos y paga el arancel."},
+    {"name": "Presenta la solicitud en línea", "text": "Crea cuenta en tramites.serviciomigraciones.cl, selecciona la categoría, sube los documentos y paga el arancel."},
     {"name": "Ingresa a Chile y espera la resolución", "text": "Con el comprobante de radicación tu situación queda regularizada mientras el SERMIG resuelve (2-8 meses según categoría)."},
     {"name": "Saca tu cédula de identidad de extranjero", "text": "Con la aprobación del SERMIG, tramita tu cédula en el Registro Civil. Incluye tu RUT permanente."}
   ]'::jsonb,

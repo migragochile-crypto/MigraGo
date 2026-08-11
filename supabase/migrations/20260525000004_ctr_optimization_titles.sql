@@ -21,6 +21,6 @@ WHERE slug = 'residencia-temporal';
 --    Queries: "residencia definitiva chile requisitos", "visa definitiva chile", "requisitos para la definitiva"
 UPDATE articles SET
   title = 'Residencia Definitiva en Chile 2025 (ex Permanencia Definitiva): Requisitos',
-  meta_description = 'Requisitos para la Residencia Definitiva: 2 años de Residencia Temporal + documentos. Proceso paso a paso en tramites.extranjeria.gob.cl. Antes: permanencia definitiva.',
+  meta_description = 'Requisitos para la Residencia Definitiva: 2 años de Residencia Temporal + documentos. Proceso paso a paso en tramites.serviciomigraciones.cl. Antes: permanencia definitiva.',
   updated_at = NOW()
 WHERE slug = 'residencia-definitiva';

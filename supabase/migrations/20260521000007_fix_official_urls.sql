@@ -8,8 +8,8 @@ SET content = REPLACE(
       REPLACE(
         REPLACE(
           content,
-          'tramitesmigratorios.interior.gob.cl',
-          'tramites.extranjeria.gob.cl'
+          'tramites.serviciomigraciones.cl',
+          'tramites.serviciomigraciones.cl'
         ),
         'www.srcei.cl',
         'www.registrocivil.cl'
@@ -24,7 +24,7 @@ SET content = REPLACE(
   'idNorma=1158549'
 )
 WHERE
-  content LIKE '%tramitesmigratorios.interior.gob.cl%'
+  content LIKE '%tramites.serviciomigraciones.cl%'
   OR content LIKE '%www.srcei.cl%'
   OR content LIKE '%comisaria.pdichile.cl%'
   OR content LIKE '%www.sermig.gob.cl%'

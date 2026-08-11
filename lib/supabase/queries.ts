@@ -1,6 +1,8 @@
 import { createClient } from '@supabase/supabase-js'
 import { unstable_cache } from 'next/cache'
 import type { Article, GlossaryTerm } from '@/types/content'
+import { isCurrentArticleSlug } from '@/lib/seo/indexing'
+import { normalizeArticleRecord } from '@/lib/content/article-normalization'
 
 function getSupabase() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -23,9 +25,9 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
         .single()
 
       if (error) return null
-      return data as Article
+      return normalizeArticleRecord(data as Article)
     },
-    [`article-${slug}`],
+    [`article-v2-${slug}`],
     { revalidate: 86400, tags: [`article-${slug}`] }
   )()
 }
@@ -45,9 +47,11 @@ export async function getArticlesBySilo(
         .eq('is_published', true)
         .order('created_at', { ascending: true })
 
-      return (data ?? []) as Pick<Article, 'id' | 'slug' | 'title' | 'h1' | 'type'>[]
+      return ((data ?? []) as Pick<Article, 'id' | 'slug' | 'title' | 'h1' | 'type'>[])
+        .filter((article) => isCurrentArticleSlug(article.slug))
+        .map(normalizeArticleRecord)
     },
-    [`silo-${silo}`],
+    [`silo-v2-${silo}`],
     { revalidate: 86400, tags: [`silo-${silo}`] }
   )()
 }
@@ -57,7 +61,7 @@ export async function getRelatedArticles(
 ): Promise<Pick<Article, 'id' | 'slug' | 'title' | 'h1' | 'meta_description' | 'silo' | 'type'>[]> {
   if (slugs.length === 0) return []
   
-  const cacheKey = `related-${slugs.sort().join('-')}`
+  const cacheKey = `related-v2-${slugs.sort().join('-')}`
   return unstable_cache(
     async () => {
       const supabase = getSupabase()
@@ -69,10 +73,12 @@ export async function getRelatedArticles(
         .in('slug', slugs)
         .eq('is_published', true)
 
-      return (data ?? []) as Pick<
+      return ((data ?? []) as Pick<
         Article,
         'id' | 'slug' | 'title' | 'h1' | 'meta_description' | 'silo' | 'type'
-      >[]
+      >[])
+        .filter((article) => isCurrentArticleSlug(article.slug))
+        .map(normalizeArticleRecord)
     },
     [cacheKey],
     { revalidate: 86400, tags: [cacheKey] }
@@ -92,9 +98,12 @@ export async function getPublishedClustersBySilo(silo: string): Promise<string[]
         .eq('type', 'cluster')
         .eq('is_published', true)
 
-      return (data ?? []).map(({ slug }: { slug: string }) => slug.split('/')[1])
+      return (data ?? [])
+        .map(({ slug }: { slug: string }) => slug)
+        .filter(isCurrentArticleSlug)
+        .map((slug) => slug.split('/')[1])
     },
-    [`clusters-${silo}`],
+    [`clusters-v2-${silo}`],
     { revalidate: 86400, tags: [`silo-${silo}`] }
   )()
 }
@@ -113,7 +122,7 @@ export async function getPublishedSlugs(type: 'hub'): Promise<string[]> {
 }
 
 export async function getAllPublishedArticles(): Promise<
-  Pick<Article, 'slug' | 'silo' | 'type' | 'updated_at' | 'country_tags'>[]
+  Pick<Article, 'slug' | 'silo' | 'type' | 'updated_at' | 'country_tags' | 'content'>[]
 > {
   return unstable_cache(
     async () => {
@@ -122,15 +131,15 @@ export async function getAllPublishedArticles(): Promise<
 
       const { data } = await supabase
         .from('articles')
-        .select('slug, silo, type, updated_at, country_tags')
+        .select('slug, silo, type, updated_at, country_tags, content')
         .eq('is_published', true)
 
-      return (data ?? []) as Pick<
+      return ((data ?? []) as Pick<
         Article,
-        'slug' | 'silo' | 'type' | 'updated_at' | 'country_tags'
-      >[]
+        'slug' | 'silo' | 'type' | 'updated_at' | 'country_tags' | 'content'
+      >[]).map(normalizeArticleRecord)
     },
-    ['all-published-articles'],
+    ['all-published-articles-v2'],
     { revalidate: 21600, tags: ['all-published-articles'] }
   )()
 }
@@ -150,12 +159,12 @@ export async function getNewsArticles(): Promise<
         .eq('is_published', true)
         .order('published_at', { ascending: false })
 
-      return (data ?? []) as Pick<
+      return ((data ?? []) as Pick<
         Article,
         'slug' | 'title' | 'h1' | 'meta_description' | 'published_at' | 'updated_at'
-      >[]
+      >[]).map(normalizeArticleRecord)
     },
-    ['news-articles'],
+    ['news-articles-v2'],
     { revalidate: 21600, tags: ['silo-actualidad'] }
   )()
 }
@@ -210,12 +219,13 @@ export async function getArticleWithRelated(
       .in('slug', article.related_slugs.filter((s: string) => s !== slug))
       .eq('is_published', true)
 
-    related = (relatedData ?? []) as Pick<
+    related = ((relatedData ?? []) as Pick<
       Article,
       'id' | 'slug' | 'title' | 'h1' | 'meta_description' | 'silo' | 'type'
-    >[]
+    >[])
+      .filter((relatedArticle) => isCurrentArticleSlug(relatedArticle.slug))
+      .map(normalizeArticleRecord)
   }
 
-  return { article: article as Article, related }
+  return { article: normalizeArticleRecord(article as Article), related }
 }
-

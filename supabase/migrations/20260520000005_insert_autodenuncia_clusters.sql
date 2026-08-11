@@ -156,7 +156,7 @@ VALUES (
   'Dónde y cómo verificar el estado de tu trámite migratorio tras la autodenuncia: portal SERMIG, qué significa cada estado y qué hacer si está detenido.',
   'consultar estado tramite autodenuncia sermig migracion chile',
   $content$<h2>Portal de trámites del SERMIG</h2>
-<p>El SERMIG dispone del portal <strong>tramitesmigratorios.interior.gob.cl</strong> donde puedes consultar el estado de tu solicitud ingresando el número de trámite que te entregaron al presentar la autodenuncia o la solicitud de residencia.</p>
+<p>El SERMIG dispone del portal <strong>tramites.serviciomigraciones.cl</strong> donde puedes consultar el estado de tu solicitud ingresando el número de trámite que te entregaron al presentar la autodenuncia o la solicitud de residencia.</p>
 <h2>¿Qué información necesitas para consultar?</h2>
 <ul>
 <li>Número de trámite o folio (aparece en el comprobante que recibiste).</li>

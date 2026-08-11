@@ -18,7 +18,7 @@ SET content = REPLACE(
             REPLACE(
               content,
               -- Fix 1 (innermost): URL cruda como anchor text
-              '>tramitesmigratorios.interior.gob.cl</a>. Los pasos son:',
+              '>tramites.serviciomigraciones.cl</a>. Los pasos son:',
               '>Portal de Trámites Migratorios del SERMIG</a>. Los pasos son:'
             ),
             -- Fix 2: pasaporte "al menos 6 meses de vigencia" — plazo absoluto

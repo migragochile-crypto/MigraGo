@@ -28,7 +28,7 @@ INSERT INTO articles (
 <p>Si llevas <strong>más del doble del plazo real habitual</strong> sin ningún cambio de estado (ni observaciones ni aprobación), es momento de actuar.</p>
 
 <h2>Paso 1: Revisar el estado en el portal</h2>
-<p>Antes de cualquier acción, verifica en <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a>:</p>
+<p>Antes de cualquier acción, verifica en <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a>:</p>
 <ul>
   <li>¿El estado dice "Con observaciones"? — revisa el correo (incluyendo spam). Hay un plazo de 10 días hábiles para responder.</li>
   <li>¿El estado dice "En revisión" desde hace meses? — sigue los pasos abajo.</li>

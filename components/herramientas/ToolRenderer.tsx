@@ -5,7 +5,6 @@ import SimuladorPlazos from './SimuladorPlazos'
 import ChecklistPermanencia from './ChecklistPermanencia'
 import ChecklistTemporaria from './ChecklistTemporaria'
 import ConsultarEstado from './ConsultarEstado'
-import QuizVisas from './QuizVisas'
 import CalculadoraMultas from './CalculadoraMultas'
 import MatrizVisas from './MatrizVisas'
 
@@ -21,8 +20,6 @@ export default function ToolRenderer({ slug }: { slug: string }) {
       return <ChecklistTemporaria />
     case 'consultar-estado':
       return <ConsultarEstado />
-    case 'quiz-visas':
-      return <QuizVisas />
     case 'calculadora-multas':
       return <CalculadoraMultas />
     case 'matriz-visas':

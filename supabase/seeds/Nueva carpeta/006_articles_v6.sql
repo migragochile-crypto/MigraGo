@@ -55,7 +55,7 @@ INSERT INTO articles (
 
 <h2>¿Dónde están ubicados?</h2>
 <p><strong>PDI:</strong> tiene comisarías en todo Chile. Puedes presentarte en cualquier comisaría PDI, no solo en la de tu ciudad. Para la autodenuncia, el horario habitual es de lunes a viernes de 8:00 a 13:00, aunque puede variar por sucursal.</p>
-<p><strong>SERMIG:</strong> opera principalmente a través del portal online <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a>. Tiene oficinas presenciales en Santiago y regiones para casos que requieren atención directa, pero la mayoría de los trámites son 100% digitales.</p>
+<p><strong>SERMIG:</strong> opera principalmente a través del portal online <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a>. Tiene oficinas presenciales en Santiago y regiones para casos que requieren atención directa, pero la mayoría de los trámites son 100% digitales.</p>
 
 <h2>Resumen visual del flujo completo</h2>
 <ol>
@@ -142,7 +142,7 @@ INSERT INTO articles (
 <h2>Cómo consultar el estado de tu trámite</h2>
 <p>Puedes verificar el estado de tu solicitud en cualquier momento en el portal del SERMIG:</p>
 <ol>
-  <li>Ingresa a <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a>.</li>
+  <li>Ingresa a <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a>.</li>
   <li>Inicia sesión con tu cuenta.</li>
   <li>Ve a <strong>Mis trámites</strong> y busca el número de solicitud.</li>
   <li>El estado puede aparecer como: En revisión, Con observaciones, Aprobado, Rechazado.</li>
@@ -252,7 +252,7 @@ INSERT INTO articles (
 </ul>
 
 <h2>¿Dónde se presenta?</h2>
-<p>El recurso de reposición se presenta en el portal online del SERMIG (<a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a>) o presencialmente en las oficinas del SERMIG. El recurso jerárquico se presenta ante el Ministerio del Interior.</p>
+<p>El recurso de reposición se presenta en el portal online del SERMIG (<a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a>) o presencialmente en las oficinas del SERMIG. El recurso jerárquico se presenta ante el Ministerio del Interior.</p>
 
 <h2>¿Qué pasa mientras el recurso está pendiente?</h2>
 <p>Mientras el recurso esté activo, puedes permanecer en Chile. El comprobante de recurso presentado actúa como habilitante de residencia hasta que se resuelva.</p>
@@ -375,7 +375,7 @@ INSERT INTO articles (
   <li>Formaliza el vínculo (matrimonio o AUC) e inscríbelo en el SRCeI si fue celebrado en el extranjero.</li>
   <li>Si estás en situación irregular, completa la autodenuncia en la PDI.</li>
   <li>Reúne todos los documentos con fechas vigentes.</li>
-  <li>Ingresa al portal <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a>.</li>
+  <li>Ingresa al portal <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a>.</li>
   <li>Selecciona <strong>Visa Temporaria → Vínculo con ciudadano chileno → Cónyuge / Conviviente civil</strong>.</li>
   <li>Carga los documentos y paga el arancel.</li>
 </ol>
@@ -388,7 +388,7 @@ INSERT INTO articles (
     {"name": "Formalizar el vínculo e inscribirlo en el SRCeI", "text": "Si estás casado o tienes AUC, asegúrate de que el vínculo esté inscrito en el Registro Civil chileno. Los matrimonios extranjeros deben inscribirse con el certificado apostillado."},
     {"name": "Autodenuncia si estás en situación irregular", "text": "Si tu visa venció, preséntate a la PDI para obtener el Certificado de Autodenuncia antes de solicitar la visa."},
     {"name": "Obtener los certificados con fecha vigente", "text": "Certificado de matrimonio/AUC del SRCeI (no mayor a 90 días), antecedentes penales de tu país apostillados y certificado de antecedentes de Chile."},
-    {"name": "Presentar la solicitud en el portal del SERMIG", "text": "Ingresa a tramitesmigratorios.interior.gob.cl, selecciona Visa Temporaria → Vínculo con ciudadano chileno → Cónyuge/Conviviente civil."},
+    {"name": "Presentar la solicitud en el portal del SERMIG", "text": "Ingresa a tramites.serviciomigraciones.cl, selecciona Visa Temporaria → Vínculo con ciudadano chileno → Cónyuge/Conviviente civil."},
     {"name": "Pagar el arancel y conservar el comprobante", "text": "El comprobante de trámite te habilita para permanecer y trabajar en Chile durante la espera."},
     {"name": "Con la visa aprobada, obtener la cédula en el SRCeI", "text": "Solicita tu cédula de identidad para extranjeros con el documento de aprobación del SERMIG."}
   ]'::jsonb,

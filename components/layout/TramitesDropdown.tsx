@@ -27,10 +27,6 @@ export default function TramitesDropdown() {
     return () => document.removeEventListener('mousedown', handleClick)
   }, [open])
 
-  useEffect(() => {
-    setOpen(false)
-  }, [pathname])
-
   return (
     <div ref={ref} className="relative">
       <button

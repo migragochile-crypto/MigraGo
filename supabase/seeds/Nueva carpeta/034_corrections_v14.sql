@@ -97,7 +97,7 @@ SET content = REPLACE(
     'La normativa migratoria contempla plazos de tramitación de referencia. En la práctica, los tiempos reales en 2025-2026 han sido:'
   ),
   -- Fix 14 (outermost): URL cruda del portal → texto institucional
-  '>tramitesmigratorios.interior.gob.cl</a>',
+  '>tramites.serviciomigraciones.cl</a>',
   '>Portal de Trámites Migratorios del SERMIG</a>'
 )
 WHERE slug = 'visa-temporaria';

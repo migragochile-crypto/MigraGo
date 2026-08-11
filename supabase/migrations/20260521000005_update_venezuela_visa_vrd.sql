@@ -54,7 +54,7 @@ UPDATE articles SET
 <p>Ver guía completa: <a href="/residencia-definitiva">Residencia Definitiva en Chile →</a></p>
 
 <h2>¿Dónde hacer los trámites?</h2>
-<p>Todos los trámites de Residencia Temporal se realizan en el portal oficial del SERMIG: <strong>tramitesmigratorios.interior.gob.cl</strong>. Verifica en la plataforma cuál es la categoría disponible para tu situación.</p>$content$,
+<p>Todos los trámites de Residencia Temporal se realizan en el portal oficial del SERMIG: <strong>tramites.serviciomigraciones.cl</strong>. Verifica en la plataforma cuál es la categoría disponible para tu situación.</p>$content$,
   faq_items = $faq$[
     {
       "question": "¿La Visa de Responsabilidad Democrática (VRD) sigue disponible?",
@@ -66,7 +66,7 @@ UPDATE articles SET
     },
     {
       "question": "¿Puedo pedir Residencia Definitiva si tuve VRD?",
-      "answer": "Sí, si acumulaste 2 años continuos de residencia legal en Chile (el tiempo con VRD vigente cuenta). El plazo se reduce a 1 año si tienes cónyuge chileno/a o hijos chilenos. Solicita en tramitesmigratorios.interior.gob.cl."
+      "answer": "Sí, si acumulaste 2 años continuos de residencia legal en Chile (el tiempo con VRD vigente cuenta). El plazo se reduce a 1 año si tienes cónyuge chileno/a o hijos chilenos. Solicita en tramites.serviciomigraciones.cl."
     },
     {
       "question": "¿Los venezolanos pueden usar la visa MERCOSUR?",

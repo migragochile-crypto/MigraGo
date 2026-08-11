@@ -52,7 +52,7 @@ SET content = $$
 
 <h2>Cómo consultar el estado de tu solicitud</h2>
 <ol>
-  <li>Ingresa al <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">Portal de Trámites Migratorios del SERMIG</a>.</li>
+  <li>Ingresa al <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">Portal de Trámites Migratorios del SERMIG</a>.</li>
   <li>Inicia sesión con tu cuenta.</li>
   <li>Ve a <strong>Mis trámites</strong> y busca la solicitud de Permanencia Definitiva.</li>
   <li>Los estados posibles son: <strong>En revisión, Con observaciones, Aprobado, Rechazado</strong>.</li>

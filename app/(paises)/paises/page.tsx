@@ -55,6 +55,38 @@ export default function PaisesHubPage() {
             </Link>
           ))}
         </div>
+
+        <section className="mt-12 border-t border-border pt-8">
+          <h2 className="text-2xl font-bold text-gray-900">Qué cambia según tu país de origen</h2>
+          <p className="mt-3 leading-relaxed text-gray-700">
+            La nacionalidad puede cambiar la subcategoría disponible, el documento de identidad que
+            debes presentar y la forma de obtener o apostillar certificados de antecedentes. También
+            puede existir un acuerdo internacional aplicable. Por eso estas páginas separan los
+            antecedentes propios del país de las reglas generales de residencia en Chile.
+          </p>
+          <div className="mt-6 grid gap-5 sm:grid-cols-2">
+            <div className="rounded-xl bg-gray-50 p-5">
+              <h3 className="font-semibold text-gray-900">Revisa en la guía de tu país</h3>
+              <ul className="mt-3 space-y-2 text-sm text-gray-600 list-disc pl-5">
+                <li>Autoridad que emite los antecedentes penales.</li>
+                <li>Apostilla, legalización o traducción que puede corresponder.</li>
+                <li>Acuerdos o instrucciones especiales expresamente vigentes.</li>
+              </ul>
+            </div>
+            <div className="rounded-xl bg-gray-50 p-5">
+              <h3 className="font-semibold text-gray-900">Lo que siempre debes confirmar</h3>
+              <ul className="mt-3 space-y-2 text-sm text-gray-600 list-disc pl-5">
+                <li>La subcategoría exacta y el lugar desde donde se solicita.</li>
+                <li>La vigencia exigida para cada documento.</li>
+                <li>El formulario y las instrucciones visibles en el portal oficial.</li>
+              </ul>
+            </div>
+          </div>
+          <p className="mt-5 text-sm text-gray-500">
+            MigraGo no presume que una regla se aplica a todas las nacionalidades. Cuando no existe
+            una guía específica terminada, la página se mantiene fuera del índice hasta completar su revisión.
+          </p>
+        </section>
       </div>
     </>
   )

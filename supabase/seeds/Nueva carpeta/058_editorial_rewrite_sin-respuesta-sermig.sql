@@ -27,7 +27,7 @@ SET content = $$
 <p>Si llevas <strong>más del doble del plazo real habitual</strong> sin ningún cambio de estado (ni observaciones ni aprobación), es momento de actuar.</p>
 
 <h2>Paso 1: Verifica el estado real en el portal</h2>
-<p>Antes de cualquier acción, revisa en el <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">Portal de Trámites Migratorios del SERMIG</a>:</p>
+<p>Antes de cualquier acción, revisa en el <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">Portal de Trámites Migratorios del SERMIG</a>:</p>
 <ul>
   <li>¿El estado dice <strong>Con observaciones</strong>? — revisa el correo, incluyendo la carpeta de spam. Generalmente hay un plazo para responder; verifica el plazo indicado en la notificación del SERMIG.</li>
   <li>¿El estado dice <strong>En revisión</strong> desde hace meses? — sigue los pasos abajo.</li>

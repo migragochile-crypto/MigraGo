@@ -542,7 +542,7 @@ INSERT INTO articles (
   <li><strong>Paso 1:</strong> Define cuál categoría aplica a tu situación (humanitaria, contrato, familia, etc.)</li>
   <li><strong>Paso 2:</strong> Obtén documentos en Haití (acta de nacimiento, antecedentes penales, pasaporte). Ver <a href="/haiti/documentos-haiti">Documentos Haitianos para Chile</a>.</li>
   <li><strong>Paso 3:</strong> Apostilla y traducción (Haití no es signatorio de La Haya; requiere legalización consular más compleja)</li>
-  <li><strong>Paso 4:</strong> Presenta solicitud en <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a></li>
+  <li><strong>Paso 4:</strong> Presenta solicitud en <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a></li>
   <li><strong>Paso 5:</strong> Espera resolución (2-6 meses según complejidad)</li>
   <li><strong>Paso 6:</strong> Si se aprueba, obtén tu visa en el Consulado de Chile en Haití (si existe) o en el Consulado más cercano</li>
 </ol>
@@ -563,14 +563,14 @@ INSERT INTO articles (
 <p>Los documentos haitianos pueden estar en francés o creole haitiano. Necesitarás traducción jurada de todos ellos. Ver <a href="/haiti/documentos-haiti">guía de documentos haitianos</a>.</p>
 
 <h3>Plazo de respuesta del SERMIG</h3>
-<p>Para solicitantes de razones humanitarias o de países menos comunes, el SERMIG puede ser lento. Sigue tu caso online en tramitesmigratorios.interior.gob.cl. Si pasan 180 días sin respuesta, puedes presentar recurso administrativo.</p>
+<p>Para solicitantes de razones humanitarias o de países menos comunes, el SERMIG puede ser lento. Sigue tu caso online en tramites.serviciomigraciones.cl. Si pasan 180 días sin respuesta, puedes presentar recurso administrativo.</p>
 
 <h2>Después de la visa: Permanencia Definitiva</h2>
 <p>Si obtienes una visa temporaria, después de 2 años de residencia continuada puedes solicitar la <a href="/permanencia-definitiva">Permanencia Definitiva</a>. Los requisitos son los mismos para todos, independientemente de la categoría de visa.</p>
 
 <h2>Recursos adicionales</h2>
 <ul>
-  <li><a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">Portal de trámites migratorios (SERMIG)</a></li>
+  <li><a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">Portal de trámites migratorios (SERMIG)</a></li>
   <li><a href="https://www.acnur.org/haiti" target="_blank" rel="noopener noreferrer">ACNUR Haití (refugio, migrantes forzados)</a></li>
   <li><a href="https://oim.org.ht" target="_blank" rel="noopener noreferrer">OIM Haití (organización internacional para la migración)</a></li>
   <li><a href="/haiti">Hub Haití: Información general para haitianos</a></li>
@@ -587,7 +587,7 @@ INSERT INTO articles (
     },
     {
       "question": "¿Cuánto tarda el SERMIG en responder una solicitud haitiana?",
-      "answer": "Los plazos legales son 60-180 días según la categoría. En práctica, haitianos a veces enfrentan plazos más largos (hasta 6 meses) si hay requisitos adicionales de investigación. Puedes hacer seguimiento online en tramitesmigratorios.interior.gob.cl."
+      "answer": "Los plazos legales son 60-180 días según la categoría. En práctica, haitianos a veces enfrentan plazos más largos (hasta 6 meses) si hay requisitos adicionales de investigación. Puedes hacer seguimiento online en tramites.serviciomigraciones.cl."
     },
     {
       "question": "Si estoy irregular en Chile y soy haitiano, ¿cómo me regularizo?",

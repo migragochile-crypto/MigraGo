@@ -48,7 +48,7 @@ export default function SimuladorPlazos() {
     const inicio = new Date(fechaInput + 'T00:00:00')
     const pd = tienePD && fechaPDInput
       ? new Date(fechaPDInput + 'T00:00:00')
-      : addYears(inicio, 1)
+      : addYears(inicio, 2)
     const nat = addYears(inicio, 5)
 
     setCalculado({
@@ -79,10 +79,10 @@ export default function SimuladorPlazos() {
             {/* Fecha inicio visa */}
             <div>
               <label className="block text-sm font-medium text-gray-900 mb-1">
-                ¿Cuándo obtuviste tu primera visa temporaria en Chile?
+                ¿Cuándo comenzó la Residencia Temporal que usarás para el cálculo?
               </label>
               <p className="text-xs text-gray-500 mb-2">
-                Si hiciste autodenuncia, usa la fecha del Certificado de Autodenuncia como punto de inicio.
+                Usa la fecha del Estampado Electrónico o la que indique tu resolución. Una autodenuncia no inicia este cómputo.
               </p>
               <input
                 type="date"
@@ -97,7 +97,7 @@ export default function SimuladorPlazos() {
             {fechaInput && (
               <div>
                 <p className="text-sm font-medium text-gray-900 mb-2">
-                  ¿Ya tienes Permanencia Definitiva aprobada?
+                  ¿Ya tienes Residencia Definitiva aprobada?
                 </p>
                 <div className="flex gap-3">
                   {([true, false] as const).map((val) => (
@@ -125,7 +125,7 @@ export default function SimuladorPlazos() {
             {tienePD === true && (
               <div>
                 <label className="block text-sm font-medium text-gray-900 mb-1">
-                  ¿Cuándo fue aprobada tu Permanencia Definitiva?
+                  ¿Cuándo fue aprobada tu Residencia Definitiva?
                 </label>
                 <input
                   type="date"
@@ -166,7 +166,7 @@ export default function SimuladorPlazos() {
               <div>
                 <p className="text-xs text-gray-500 font-medium uppercase tracking-wide">Inicio</p>
                 <p className="text-sm font-semibold text-gray-900">{formatDate(calculado.fechaInicio)}</p>
-                <p className="text-xs text-gray-500">Primera visa temporaria</p>
+                <p className="text-xs text-gray-500">Inicio de la Residencia Temporal</p>
               </div>
             </div>
 
@@ -182,14 +182,14 @@ export default function SimuladorPlazos() {
               </div>
               <div className={`rounded-xl p-4 flex-1 ${calculado.pdAlcanzada ? 'bg-green-50 border border-green-200' : 'bg-amber-50 border border-amber-200'}`}>
                 <p className="text-xs font-medium uppercase tracking-wide text-gray-500">
-                  Permanencia Definitiva
+                  Residencia Definitiva
                 </p>
                 <p className="text-base font-bold text-gray-900 mt-0.5">
                   {formatDate(calculado.fechaPD)}
                 </p>
                 <p className="text-sm mt-1">
                   {calculado.pdAlcanzada ? (
-                    <span className="text-green-700 font-medium">Ya alcanzada — puedes solicitar la PD ahora</span>
+                    <span className="text-green-700 font-medium">Fecha base alcanzada — confirma los demás requisitos</span>
                   ) : (
                     <span className="text-amber-700">
                       En {calculado.mesesParaPD} {calculado.mesesParaPD === 1 ? 'mes' : 'meses'} aproximadamente
@@ -197,7 +197,7 @@ export default function SimuladorPlazos() {
                   )}
                 </p>
                 <Link href="/residencia-definitiva" className="mt-2 inline-block text-xs text-primary hover:underline">
-                  Ver guía de Permanencia Definitiva →
+                  Ver guía de Residencia Definitiva →
                 </Link>
               </div>
             </div>
@@ -220,7 +220,7 @@ export default function SimuladorPlazos() {
                 </p>
                 <p className="text-sm mt-1">
                   {calculado.natAlcanzada ? (
-                    <span className="text-green-700 font-medium">Ya alcanzada — puedes solicitar la nacionalidad</span>
+                    <span className="text-green-700 font-medium">Fecha base alcanzada — confirma que cumples los demás requisitos</span>
                   ) : (
                     <span className="text-gray-600">
                       En {calculado.mesesParaNat} {calculado.mesesParaNat === 1 ? 'mes' : 'meses'} aproximadamente
@@ -238,10 +238,10 @@ export default function SimuladorPlazos() {
           <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-xs text-amber-800 space-y-1">
             <p className="font-semibold">Importante — estas fechas son de referencia</p>
             <ul className="list-disc list-inside space-y-0.5 text-amber-700">
-              <li>El plazo de 1 año para PD aplica a la mayoría de categorías, pero puede variar según el tipo de visa y las condiciones de la resolución.</li>
-              <li>El plazo de 5 años para naturalización requiere residencia legal continua; ausencias prolongadas pueden afectarlo.</li>
+              <li>La referencia general para Residencia Definitiva es de 24 meses. Puede reducirse a 12 meses o aumentar a 30, 36 o 48 meses según tus circunstancias y ausencias.</li>
+              <li>La fecha de cinco años no basta por sí sola para nacionalizarse: también se exige Residencia Definitiva vigente y los demás requisitos aplicables.</li>
               <li>Verifica los requisitos actualizados en el{' '}
-                <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer" className="underline">
+                <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer" className="underline">
                   portal del SERMIG
                 </a>
                 {' '}antes de presentar.
@@ -253,4 +253,3 @@ export default function SimuladorPlazos() {
     </div>
   )
 }
-

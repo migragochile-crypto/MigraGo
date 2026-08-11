@@ -111,7 +111,7 @@ INSERT INTO articles (
 <h2>Proceso de solicitud</h2>
 <ol>
   <li>Reúne los documentos apostillados.</li>
-  <li>Ingresa al portal <strong>tramitesmigratorios.interior.gob.cl</strong>.</li>
+  <li>Ingresa al portal <strong>tramites.serviciomigraciones.cl</strong>.</li>
   <li>Crea cuenta y selecciona categoría <strong>MERCOSUR</strong>.</li>
   <li>Sube los documentos escaneados.</li>
   <li>Paga el arancel (ver monto vigente en el portal).</li>
@@ -131,7 +131,7 @@ INSERT INTO articles (
     },
     {
       "question": "¿Cuánto demora el SERMIG en aprobar la visa MERCOSUR?",
-      "answer": "El plazo legal es 60 días. En práctica puede extenderse a 90-180 días según la carga del SERMIG. Puedes hacer seguimiento en tramitesmigratorios.interior.gob.cl con tu número de solicitud."
+      "answer": "El plazo legal es 60 días. En práctica puede extenderse a 90-180 días según la carga del SERMIG. Puedes hacer seguimiento en tramites.serviciomigraciones.cl con tu número de solicitud."
     },
     {
       "question": "¿Los peruanos pueden entrar a Chile con solo el DNI?",
@@ -256,7 +256,7 @@ INSERT INTO articles (
 <h2>Proceso paso a paso</h2>
 <ol>
   <li>Obtén y apostilla todos los documentos (todo puede hacerse online desde Chile en 1 semana).</li>
-  <li>Ingresa al portal <strong>tramitesmigratorios.interior.gob.cl</strong>.</li>
+  <li>Ingresa al portal <strong>tramites.serviciomigraciones.cl</strong>.</li>
   <li>Crea cuenta y selecciona categoría <strong>MERCOSUR</strong>.</li>
   <li>Sube los documentos escaneados.</li>
   <li>Paga el arancel.</li>
@@ -401,7 +401,7 @@ INSERT INTO articles (
 <h2>Proceso paso a paso</h2>
 <ol>
   <li>Reúne los documentos apostillados (RNR + partida de nacimiento).</li>
-  <li>Ingresa al portal <strong>tramitesmigratorios.interior.gob.cl</strong>.</li>
+  <li>Ingresa al portal <strong>tramites.serviciomigraciones.cl</strong>.</li>
   <li>Crea cuenta y selecciona categoría <strong>MERCOSUR</strong>.</li>
   <li>Sube los documentos escaneados.</li>
   <li>Paga el arancel.</li>
@@ -429,7 +429,7 @@ INSERT INTO articles (
     },
     {
       "question": "¿Cuánto demora el SERMIG en resolver la MERCOSUR para argentinos?",
-      "answer": "El plazo legal es 60 días. En práctica puede extenderse a 90-180 días. Puedes hacer seguimiento en tramitesmigratorios.interior.gob.cl con tu número de solicitud."
+      "answer": "El plazo legal es 60 días. En práctica puede extenderse a 90-180 días. Puedes hacer seguimiento en tramites.serviciomigraciones.cl con tu número de solicitud."
     }
   ]$faq$,
   ARRAY[

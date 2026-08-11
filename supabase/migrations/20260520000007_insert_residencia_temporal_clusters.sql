@@ -29,7 +29,7 @@ VALUES (
 <li>Esta categoría puede dar acceso a Residencia Definitiva directamente sin esperar 24 meses.</li>
 </ul>
 <h2>Proceso</h2>
-<p>La solicitud se presenta en el portal del SERMIG (<strong>tramitesmigratorios.interior.gob.cl</strong>). Una vez aprobada, la Residencia Temporal tiene vigencia de 2 años renovables.</p>$content$,
+<p>La solicitud se presenta en el portal del SERMIG (<strong>tramites.serviciomigraciones.cl</strong>). Una vez aprobada, la Residencia Temporal tiene vigencia de 2 años renovables.</p>$content$,
   'FAQPage',
   '[{"question":"¿Puedo solicitarla si mi hijo nació en Chile pero aún no está inscrito?","answer":"Debes inscribirlo primero en el SRCeI para que tenga nacionalidad chilena reconocida. Una vez inscrito, puedes postular a la Residencia Temporal por hijo chileno."},{"question":"¿Esta categoría me permite trabajar en Chile?","answer":"Sí. La Residencia Temporal en cualquiera de sus categorías incluye autorización para trabajar en Chile."}]'::jsonb,
   ARRAY['residencia-temporal/pareja-chilena', 'residencia-temporal/renovacion', 'residencia-temporal/rechazo'],

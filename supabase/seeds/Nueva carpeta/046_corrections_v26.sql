@@ -49,7 +49,7 @@ SET content = REPLACE(
       'Los certificados deben cumplir el plazo de vigencia indicado por el SERMIG al momento de presentar.'
     ),
     -- Fix 5: URL cruda como anchor text
-    '>tramitesmigratorios.interior.gob.cl</a> con tu cuenta existente.',
+    '>tramites.serviciomigraciones.cl</a> con tu cuenta existente.',
     '>Portal de Trámites Migratorios del SERMIG</a> con tu cuenta existente.'
   ),
   -- Fix 6 (outermost): "máximo 5 MB por archivo" — dato técnico del portal sujeto a cambio
@@ -85,7 +85,7 @@ SET content = REPLACE(
       '(apostillado; verifica el plazo de vigencia exigido por el SERMIG).'
     ),
     -- Fix 2: URL cruda como anchor text
-    '>tramitesmigratorios.interior.gob.cl</a>:',
+    '>tramites.serviciomigraciones.cl</a>:',
     '>Portal de Trámites Migratorios del SERMIG</a>:'
   ),
   -- Fix 3 (outermost): "plazo legal es 30 días hábiles" — presenta plazo como garantía

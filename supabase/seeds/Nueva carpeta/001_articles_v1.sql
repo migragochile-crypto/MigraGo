@@ -39,7 +39,7 @@ UPDATE articles SET
 <p>Los valores en pesos son referenciales. Verifica el valor actualizado de la UTM en el <a href="https://www.sii.cl" target="_blank" rel="noopener noreferrer">sitio del SII</a>.</p>
 
 <h2>¿Qué pasa después de la autodenuncia?</h2>
-<p>Con el Certificado de Autodenuncia en mano, debes solicitar la visa temporaria que corresponda a tu situación a través del portal de <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">Trámites Migratorios</a>. Las causales más comunes son:</p>
+<p>Con el Certificado de Autodenuncia en mano, debes solicitar la visa temporaria que corresponda a tu situación a través del portal de <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">Trámites Migratorios</a>. Las causales más comunes son:</p>
 <ul>
   <li><a href="/visa-temporaria/hijo-chileno">Visa por hijo/a chileno</a>: si tienes un hijo o hija con nacionalidad chilena.</li>
   <li><a href="/visa-temporaria/pareja-chilena">Visa por pareja chilena</a>: si estás casado/a o tienes AUC con un/a ciudadano/a chileno/a.</li>
@@ -144,7 +144,7 @@ INSERT INTO articles (
 <p>Con el comprobante de pago presentado, recibirás el <strong>Certificado de Autodenuncia Migratoria</strong>. Este documento es fundamental: suspende cualquier procedimiento de expulsión y te habilita para solicitar una visa temporaria en el portal online del SERMIG.</p>
 
 <h2>¿Qué sigue?</h2>
-<p>Con el certificado en mano, ingresa al portal <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a> y presenta tu solicitud de visa. Las más comunes son:</p>
+<p>Con el certificado en mano, ingresa al portal <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a> y presenta tu solicitud de visa. Las más comunes son:</p>
 <ul>
   <li><a href="/visa-temporaria/hijo-chileno">Visa por hijo/a chileno/a</a></li>
   <li><a href="/visa-temporaria/contrato-trabajo">Visa por contrato de trabajo</a></li>
@@ -263,7 +263,7 @@ INSERT INTO articles (
 <ol>
   <li>Reúne todos los documentos indicados. Verifica que ningún certificado supere los 90 días de antigüedad al momento de presentar.</li>
   <li>Si estás en situación irregular, completa la <a href="/autodenuncia/pdi-paso-a-paso">autodenuncia en la PDI</a> antes de continuar.</li>
-  <li>Ingresa al portal <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a>.</li>
+  <li>Ingresa al portal <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a>.</li>
   <li>Crea una cuenta o inicia sesión con tu RUN o pasaporte.</li>
   <li>Selecciona <strong>Solicitud de visa → Visa Temporaria → Vínculo con ciudadano chileno → Hijo/a</strong>.</li>
   <li>Carga los documentos en formato PDF o JPG (máximo 5 MB por archivo).</li>
@@ -345,7 +345,7 @@ UPDATE articles SET
 </ul>
 
 <h2>Proceso general de solicitud</h2>
-<p>Independientemente de la categoría, todas las visas temporarias se solicitan a través del portal <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a>. El proceso general incluye:</p>
+<p>Independientemente de la categoría, todas las visas temporarias se solicitan a través del portal <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a>. El proceso general incluye:</p>
 <ol>
   <li>Reunir los documentos requeridos para la categoría específica.</li>
   <li>Si estás en situación irregular, completar primero la <a href="/autodenuncia">autodenuncia migratoria</a>.</li>

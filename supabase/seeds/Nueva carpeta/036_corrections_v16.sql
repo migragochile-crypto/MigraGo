@@ -44,8 +44,8 @@ SET content = REPLACE(
                   'Fue creada en el contexto de la situación política y migratoria venezolana.'
                 ),
                 -- Fix 5: H2 vigencia — afirma vigencia activa como hecho estable (mayor riesgo)
-                'Sí. La VRD continúa disponible para venezolanos en Chile. Sin embargo, su vigencia ha estado sujeta a renovaciones periódicas y el gobierno chileno puede establecer condiciones adicionales o plazos de presentación. Verifica siempre el estado actualizado en el <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">portal oficial del SERMIG</a> antes de presentar.',
-                'La situación y disponibilidad de esta categoría migratoria ha cambiado en distintos períodos y ha estado sujeta a modificaciones, restricciones y ajustes administrativos. Antes de iniciar cualquier trámite, verifica directamente en el <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">Portal de Trámites Migratorios del SERMIG</a> o en el consulado chileno correspondiente si esta categoría se encuentra disponible y bajo qué condiciones vigentes.'
+                'Sí. La VRD continúa disponible para venezolanos en Chile. Sin embargo, su vigencia ha estado sujeta a renovaciones periódicas y el gobierno chileno puede establecer condiciones adicionales o plazos de presentación. Verifica siempre el estado actualizado en el <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">portal oficial del SERMIG</a> antes de presentar.',
+                'La situación y disponibilidad de esta categoría migratoria ha cambiado en distintos períodos y ha estado sujeta a modificaciones, restricciones y ajustes administrativos. Antes de iniciar cualquier trámite, verifica directamente en el <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">Portal de Trámites Migratorios del SERMIG</a> o en el consulado chileno correspondiente si esta categoría se encuentra disponible y bajo qué condiciones vigentes.'
               ),
               -- Fix 6: Tabla pasaporte "al menos 6 meses" → criterio SERMIG
               'Con al menos 6 meses de vigencia. Si está vencido, consulta el procedimiento con pasaporte caducado más abajo.',
@@ -64,7 +64,7 @@ SET content = REPLACE(
         'Carga los documentos en los formatos y condiciones indicados por el portal, y paga el arancel correspondiente.'
       ),
       -- Fix 10: URL cruda como anchor text en paso 3
-      '>tramitesmigratorios.interior.gob.cl</a> y crea una cuenta.',
+      '>tramites.serviciomigraciones.cl</a> y crea una cuenta.',
       '>Portal de Trámites Migratorios del SERMIG</a> y crea una cuenta.'
     ),
     -- Fix 11: Vigencia y renovación — "1 año calendario" + "1 año continuo" + "residir y trabajar sin límite"

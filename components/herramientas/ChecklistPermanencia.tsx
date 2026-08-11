@@ -1,46 +1,61 @@
-﻿'use client'
+'use client'
 
-import { useEffect, useState } from 'react'
+import { useMemo, useSyncExternalStore } from 'react'
 import Link from 'next/link'
 import { CHECKLIST_RESIDENCIA_DEFINITIVA as ITEMS } from '@/lib/content/checklists'
 import LeadMagnet from '@/components/ui/LeadMagnet'
 
 const STORAGE_KEY = 'checklist-pd-v1'
+const CHANGE_EVENT = 'checklist-pd-change'
+
+function subscribe(callback: () => void) {
+  window.addEventListener('storage', callback)
+  window.addEventListener(CHANGE_EVENT, callback)
+  return () => {
+    window.removeEventListener('storage', callback)
+    window.removeEventListener(CHANGE_EVENT, callback)
+  }
+}
+
+function getSnapshot() {
+  return localStorage.getItem(STORAGE_KEY) ?? '[]'
+}
+
+function getServerSnapshot() {
+  return '[]'
+}
+
+function saveChecked(ids: string[]) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(ids))
+    window.dispatchEvent(new Event(CHANGE_EVENT))
+  } catch {}
+}
 
 export default function ChecklistPermanencia() {
-  const [checked, setChecked] = useState<Set<string>>(new Set())
-  const [hydrated, setHydrated] = useState(false)
-
-  useEffect(() => {
+  const stored = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
+  const checked = useMemo(() => {
     try {
-      const saved = localStorage.getItem(STORAGE_KEY)
-      if (saved) setChecked(new Set(JSON.parse(saved) as string[]))
-    } catch {}
-    setHydrated(true)
-  }, [])
+      return new Set(JSON.parse(stored) as string[])
+    } catch {
+      return new Set<string>()
+    }
+  }, [stored])
 
   function toggle(id: string) {
-    setChecked((prev) => {
-      const next = new Set(prev)
-      if (next.has(id)) next.delete(id)
-      else next.add(id)
-      try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify([...next]))
-      } catch {}
-      return next
-    })
+    const next = new Set(checked)
+    if (next.has(id)) next.delete(id)
+    else next.add(id)
+    saveChecked([...next])
   }
 
   function limpiar() {
-    setChecked(new Set())
-    try { localStorage.removeItem(STORAGE_KEY) } catch {}
+    saveChecked([])
   }
 
   const total = ITEMS.length
   const completados = ITEMS.filter((i) => checked.has(i.id)).length
   const porcentaje = Math.round((completados / total) * 100)
-
-  if (!hydrated) return null
 
   return (
     <div className="space-y-6">
@@ -70,12 +85,12 @@ export default function ChecklistPermanencia() {
         Los requisitos exactos y los plazos de vigencia de cada documento los determina el SERMIG.
         Verifica en{' '}
         <a
-          href="https://tramites.extranjeria.gob.cl"
+          href="https://tramites.serviciomigraciones.cl"
           target="_blank"
           rel="noopener noreferrer"
           className="underline"
         >
-          tramites.extranjeria.gob.cl
+          tramites.serviciomigraciones.cl
         </a>
         {' '}antes de presentar tu solicitud.
       </div>
@@ -139,4 +154,3 @@ export default function ChecklistPermanencia() {
     </div>
   )
 }
-

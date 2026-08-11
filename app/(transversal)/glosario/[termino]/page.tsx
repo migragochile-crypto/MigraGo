@@ -27,6 +27,9 @@ export async function generateMetadata({
     title: `${term.term} — Glosario migratorio`,
     description: term.definition.slice(0, 160),
     alternates: { canonical: `${SITE_URL}/glosario/${termino}` },
+    // Las definiciones breves ayudan dentro del sitio, pero no aportan suficiente
+    // valor como resultados independientes. El glosario completo sí se indexa.
+    robots: { index: false, follow: true },
   }
 }
 

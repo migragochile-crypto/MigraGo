@@ -24,11 +24,12 @@ export async function generateMetadata({ params }: { params: Promise<{ pais: str
   const paisConfig = PAISES[pais]
   if (!paisConfig) return {}
   const article = await getArticleBySlug(pais)
-  if (!article) {
+  if (!article?.content?.trim()) {
     return buildMetadata({
       title: `${paisConfig.label}: Guía de Trámites Migratorios en Chile 2026`,
-      description: `Guía completa para inmigrantes de ${paisConfig.label} en Chile: visas, requisitos, trámites y vida cotidiana.`,
+      description: `Acceso a guías generales y recursos para personas de ${paisConfig.label} que realizan trámites migratorios en Chile.`,
       slug: `paises/${pais}`,
+      noIndex: true,
     })
   }
   const meta = articleMetadata(article)
@@ -86,6 +87,14 @@ export default async function PaisHubPage({ params }: { params: Promise<{ pais: 
         )}
 
         {article?.content && <ArticleBody content={article.content} />}
+
+        {!article?.content?.trim() && (
+          <div className="rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-900">
+            La guía editorial específica para {paisConfig.label} aún está en preparación. Mientras
+            tanto, usa los accesos generales de esta página y confirma los requisitos en el SERMIG.
+            Esta página no se presenta a buscadores como una guía terminada.
+          </div>
+        )}
 
         {clusters.length > 0 && (
           <section className="mt-10">

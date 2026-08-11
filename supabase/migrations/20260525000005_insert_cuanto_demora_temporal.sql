@@ -60,7 +60,7 @@ INSERT INTO articles (
 <ul>
   <li>Permanecer legalmente en Chile mientras el trámite está en proceso (tu situación queda regularizada).</li>
   <li>En muchos casos, trabajar con el comprobante de solicitud vigente — verifica con tu empleador.</li>
-  <li>Consultar el estado en <strong>tramites.extranjeria.gob.cl</strong> con tu número de radicación.</li>
+  <li>Consultar el estado en <strong>tramites.serviciomigraciones.cl</strong> con tu número de radicación.</li>
 </ul>
 
 <h2>Factores que alargan el proceso</h2>
@@ -93,7 +93,7 @@ $content$,
     {"q": "¿Cuánto demora la Residencia Temporal en Chile?", "a": "Depende de la categoría. Las más rápidas (hijo chileno, MERCOSUR) pueden resolverse en 2-5 meses. Las más complejas (razones humanitarias, contrato de trabajo) pueden tomar 4-10 meses. El SERMIG no publica plazos oficiales."},
     {"q": "¿Puedo trabajar mientras espero la resolución de mi Residencia Temporal?", "a": "En muchos casos sí, con el comprobante de solicitud vigente. Sin embargo, la validez legal del comprobante para trabajar depende de la categoría. Verifica con tu empleador y consulta el portal del SERMIG para tu caso específico."},
     {"q": "¿Qué pasa si mi visa vence mientras espero la resolución?", "a": "Si presentaste la solicitud de renovación antes del vencimiento, tu situación queda regularizada mientras el trámite está en proceso. No estás en situación irregular durante la espera."},
-    {"q": "¿Cómo sé si hay un requerimiento pendiente en mi trámite?", "a": "Revisa periódicamente el portal tramites.extranjeria.gob.cl y tu correo electrónico registrado. El SERMIG envía notificaciones de requerimientos, pero es recomendable hacer seguimiento activo."},
+    {"q": "¿Cómo sé si hay un requerimiento pendiente en mi trámite?", "a": "Revisa periódicamente el portal tramites.serviciomigraciones.cl y tu correo electrónico registrado. El SERMIG envía notificaciones de requerimientos, pero es recomendable hacer seguimiento activo."},
     {"q": "¿Puedo salir de Chile mientras espero la Residencia Temporal?", "a": "Puedes salir, pero debes ser cuidadoso. Si tu visa de turista o permiso anterior venció y solo tienes el comprobante de radicación, podrías tener problemas al reingresar. Consulta con el SERMIG o un abogado antes de viajar."}
   ]'::jsonb,
   '[]'::jsonb,

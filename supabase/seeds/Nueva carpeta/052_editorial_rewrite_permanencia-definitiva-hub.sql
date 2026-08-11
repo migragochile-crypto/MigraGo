@@ -38,7 +38,7 @@ SET content = $$
 <p>Si solicitas por vínculo familiar (hijo chileno, pareja chilena), se agregan los documentos que acreditan ese vínculo. La vigencia de los certificados es uno de los puntos donde el SERMIG suele hacer observaciones: los documentos deben estar vigentes no solo al subirse al portal, sino en el momento en que se evalúan.</p>
 
 <h2>El proceso de solicitud</h2>
-<p>La solicitud se presenta en el <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">Portal de Trámites Migratorios del SERMIG</a>. Los pasos son:</p>
+<p>La solicitud se presenta en el <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">Portal de Trámites Migratorios del SERMIG</a>. Los pasos son:</p>
 <ol>
   <li>Verifica que cumples el tiempo mínimo de residencia con visa temporaria vigente.</li>
   <li>Reúne todos los documentos con fechas vigentes conforme a los plazos de vigencia indicados por el SERMIG.</li>

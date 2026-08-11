@@ -52,7 +52,7 @@ INSERT INTO articles (
 
 <h2>Proceso de renovación</h2>
 <ol>
-  <li>Accede a <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a>.</li>
+  <li>Accede a <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a>.</li>
   <li>Inicia sesión y selecciona "Renovar visa temporaria".</li>
   <li>Completa el formulario y sube los documentos requeridos en PDF.</li>
   <li>Envía la solicitud. Recibirás el comprobante de trámite.</li>
@@ -69,7 +69,7 @@ INSERT INTO articles (
   '[
     {"name": "Calcular cuándo iniciar el trámite", "text": "Revisa la fecha de vencimiento de tu visa actual. Inicia el trámite 90 días antes (o mínimo 30). Si ya cumples 2 años continuos, evalúa solicitar Permanencia Definitiva directamente."},
     {"name": "Reunir documentos actualizados", "text": "Prepara pasaporte y cédula vigentes, certificado de antecedentes penales de Chile (máximo 30 días), y comprobante de actividad lícita actualizado (contrato + últimas 3 liquidaciones)."},
-    {"name": "Ingresar la solicitud en el portal SERMIG", "text": "Accede a tramitesmigratorios.interior.gob.cl, selecciona renovación de visa temporaria para tu categoría, sube los documentos y envía."},
+    {"name": "Ingresar la solicitud en el portal SERMIG", "text": "Accede a tramites.serviciomigraciones.cl, selecciona renovación de visa temporaria para tu categoría, sube los documentos y envía."},
     {"name": "Guardar el comprobante de trámite", "text": "Una vez enviada la solicitud, guarda el comprobante. Este documento te habilita para permanecer y trabajar en Chile mientras se resuelve la renovación."},
     {"name": "Monitorear el estado en el portal", "text": "Revisa periódicamente el estado de tu solicitud. Si aparece Con observaciones, responde dentro de los 10 días hábiles de plazo para no perder el trámite."},
     {"name": "Recibir la resolución y tramitar la cédula renovada", "text": "Al aprobarse la renovación, la nueva cédula de identidad para extranjeros se tramita en el Registro Civil (SRCeI)."}
@@ -165,7 +165,7 @@ INSERT INTO articles (
     {"name": "Decidir: ¿extender turismo o solicitar visa?", "text": "Si quieres trabajar o quedarte más de 180 días, solicita visa temporaria directamente. Si solo necesitas más tiempo como turista, procede con la extensión."},
     {"name": "Reunir documentos para la extensión", "text": "Prepara pasaporte con sello de entrada y comprobante de medios económicos (extracto bancario, tarjeta de crédito con saldo suficiente)."},
     {"name": "Ir a la PDI o SERMIG antes del vencimiento", "text": "Preséntate presencialmente con los documentos. No hay un sistema online para este trámite — debe hacerse en persona."},
-    {"name": "Si calificas: solicitar visa temporaria en su lugar", "text": "Si tienes trabajo, familia o arraigo en Chile, solicita la visa temporaria correspondiente en el portal tramitesmigratorios.interior.gob.cl en lugar de extender el turismo."}
+    {"name": "Si calificas: solicitar visa temporaria en su lugar", "text": "Si tienes trabajo, familia o arraigo en Chile, solicita la visa temporaria correspondiente en el portal tramites.serviciomigraciones.cl en lugar de extender el turismo."}
   ]'::jsonb,
   '[
     {

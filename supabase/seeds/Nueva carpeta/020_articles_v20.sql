@@ -135,7 +135,7 @@ INSERT INTO articles (
 
 <h2>Proceso en el portal SERMIG</h2>
 <ol>
-  <li>Accede a <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a>.</li>
+  <li>Accede a <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a>.</li>
   <li>Selecciona "Solicitar visa temporaria" y elige la nueva categoría que quieres solicitar.</li>
   <li>Sube los documentos que acreditan los requisitos de la nueva categoría.</li>
   <li>Envía la solicitud. Recibirás un número y comprobante.</li>
@@ -150,7 +150,7 @@ INSERT INTO articles (
     {"name": "Verificar que tu situación migratoria actual está vigente", "text": "Revisa la fecha de vencimiento de tu permiso de turismo o visa. El cambio solo puede hacerse con situación vigente — si ya venció, debes hacer el proceso de autodenuncia primero."},
     {"name": "Identificar la nueva categoría y sus requisitos", "text": "Determina qué categoría de visa temporaria quieres solicitar (por trabajo, pareja, hijo chileno, razones humanitarias, etc.) y reúne los documentos que acreditan los requisitos de esa categoría."},
     {"name": "Preparar los documentos", "text": "Reúne pasaporte vigente, fotografía según especificaciones SERMIG, certificado de antecedentes, y los documentos específicos de la nueva categoría (contrato de trabajo, certificado de matrimonio, etc.)."},
-    {"name": "Ingresar la solicitud en el portal SERMIG", "text": "Accede a tramitesmigratorios.interior.gob.cl, selecciona la nueva categoría, sube todos los documentos y envía la solicitud antes de que venza tu permiso actual."},
+    {"name": "Ingresar la solicitud en el portal SERMIG", "text": "Accede a tramites.serviciomigraciones.cl, selecciona la nueva categoría, sube todos los documentos y envía la solicitud antes de que venza tu permiso actual."},
     {"name": "Guardar el comprobante y continuar en situación regular", "text": "El comprobante de solicitud activa te mantiene en situación migratoria regular. Guárdalo en formato digital e impreso — es tu respaldo mientras el SERMIG resuelve."}
   ]'::jsonb,
   '[

@@ -71,7 +71,7 @@ SET content = $$
   <li>El empleador formaliza el contrato de trabajo y cumple con las obligaciones registrales aplicables conforme a la normativa laboral chilena.</li>
   <li>Si estás en situación irregular, completa la <a href="/autodenuncia/pdi-paso-a-paso">autodenuncia en la PDI</a> antes de continuar.</li>
   <li>Reúne los documentos personales con fechas vigentes.</li>
-  <li>Ingresa al <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">Portal de Trámites Migratorios del SERMIG</a>.</li>
+  <li>Ingresa al <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">Portal de Trámites Migratorios del SERMIG</a>.</li>
   <li>Selecciona la categoría correspondiente a residencia temporal por motivos laborales (contrato de trabajo) conforme a las opciones disponibles en el portal.</li>
   <li>Carga los documentos y paga el arancel de solicitud.</li>
   <li>Guarda el número de trámite para seguimiento.</li>

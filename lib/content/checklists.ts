@@ -13,8 +13,8 @@ export const CHECKLIST_RESIDENCIA_DEFINITIVA: ChecklistItem[] = [
   },
   {
     id: 'pd-visa',
-    doc: 'Residencia Temporal vigente o comprobante de renovación',
-    detalle: 'Debes tener residencia legal continua. Si tu visa está en proceso de renovación, el comprobante puede habilitar la presentación.',
+    doc: 'Residencia Temporal y comprobantes asociados',
+    detalle: 'Confirma en el portal que tu subcategoría permite postular y que cumples el periodo de residencia exigido.',
     href: '/residencia-temporal/renovacion',
   },
   {
@@ -30,22 +30,22 @@ export const CHECKLIST_RESIDENCIA_DEFINITIVA: ChecklistItem[] = [
   {
     id: 'pd-ant-origen',
     doc: 'Certificado de antecedentes del país de origen',
-    detalle: 'Debe estar apostillado y, si no está en español, traducido por un traductor oficial. Verifica el plazo de vigencia exigido por el SERMIG.',
+    detalle: 'Revisa si corresponde a tu caso y si debe estar apostillado, legalizado o traducido. Verifica la vigencia exigida por el SERMIG.',
     href: '/problemas-migratorios/antecedentes-penales-chile',
   },
   {
     id: 'pd-domicilio',
-    doc: 'Comprobante de domicilio en Chile',
-    detalle: 'Puede ser contrato de arriendo, boleta de servicio o declaración jurada según lo que acepte el SERMIG.',
+    doc: 'Comprobante de domicilio, si el formulario lo solicita',
+    detalle: 'Usa únicamente uno de los documentos aceptados en las instrucciones de tu solicitud.',
   },
   {
     id: 'pd-foto',
-    doc: 'Fotografía reciente tamaño carnet',
-    detalle: 'El SERMIG puede solicitarla al presentar en oficina. Verifica los requisitos específicos en el portal.',
+    doc: 'Fotografía, si el formulario lo solicita',
+    detalle: 'Verifica formato y características directamente en el portal antes de prepararla.',
   },
   {
     id: 'pd-formulario',
     doc: 'Formulario de solicitud completado en el portal del SERMIG',
-    detalle: 'Accede a tramites.extranjeria.gob.cl e inicia la solicitud de Residencia Definitiva con tu cuenta.',
+    detalle: 'Accede a tramites.serviciomigraciones.cl e inicia la solicitud de Residencia Definitiva con tu cuenta.',
   },
 ]

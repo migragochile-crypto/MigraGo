@@ -1,4 +1,3 @@
-import { getAllGlossaryTerms } from '@/lib/supabase/queries'
 import { SITE_URL } from '@/lib/constants'
 
 
@@ -20,11 +19,8 @@ ${items}
 }
 
 export async function GET() {
-  const terms = await getAllGlossaryTerms()
-
   const urls = [
     { loc: `${SITE_URL}/glosario`, priority: 0.7 },
-    ...terms.map((t) => ({ loc: `${SITE_URL}/glosario/${t.slug}`, priority: 0.5 })),
   ]
 
   return new Response(buildXml(urls), {

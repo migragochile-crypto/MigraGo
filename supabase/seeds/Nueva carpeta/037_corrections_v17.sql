@@ -56,7 +56,7 @@ SET content = REPLACE(
           'Si estás en situación irregular, en muchos casos deberás completar previamente la autodenuncia en la PDI.'
         ),
         -- Fix 9: URL cruda como anchor text (paso 4)
-        '>tramitesmigratorios.interior.gob.cl</a>.',
+        '>tramites.serviciomigraciones.cl</a>.',
         '>Portal de Trámites Migratorios del SERMIG</a>.'
       ),
       -- Fix 10: navegación exacta (paso 5)
@@ -136,7 +136,7 @@ SET content = REPLACE(
         'Si estás en situación irregular, en muchos casos deberás completar previamente la autodenuncia en la PDI.'
       ),
       -- Fix 8: URL cruda como anchor text (paso 4)
-      '>tramitesmigratorios.interior.gob.cl</a>.',
+      '>tramites.serviciomigraciones.cl</a>.',
       '>Portal de Trámites Migratorios del SERMIG</a>.'
     ),
     -- Fix 9: navegación exacta (paso 5)

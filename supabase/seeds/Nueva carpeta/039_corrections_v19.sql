@@ -20,7 +20,7 @@ SET content = REPLACE(
         'Lo gestiona el SERMIG con apoyo del ACNUR.'
       ),
       -- Fix 2: URL cruda como anchor text (nota: cierra con paréntesis, no punto)
-      '>tramitesmigratorios.interior.gob.cl</a>)',
+      '>tramites.serviciomigraciones.cl</a>)',
       '>Portal de Trámites Migratorios del SERMIG</a>)'
     ),
     -- Fix 3: navegación exacta "Visa Temporaria → Razones Humanitarias"
@@ -65,7 +65,7 @@ SET content = REPLACE(
       '<strong>Certificado de antecedentes penales de Chile</strong> (SRCeI, vigente conforme a los requisitos del SERMIG al momento de la solicitud).'
     ),
     -- Fix 3: URL cruda como anchor text (paso 1)
-    '>tramitesmigratorios.interior.gob.cl</a>.',
+    '>tramites.serviciomigraciones.cl</a>.',
     '>Portal de Trámites Migratorios del SERMIG</a>.'
   ),
   -- Fix 4 (outermost): "te permite seguir en Chile y trabajando legalmente" — absoluto

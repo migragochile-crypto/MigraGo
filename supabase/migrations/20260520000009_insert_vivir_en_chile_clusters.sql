@@ -82,7 +82,7 @@ VALUES
 
 <h2>Proceso paso a paso</h2>
 <ol>
-  <li>Recibe la notificación de aprobación de visa del SERMIG (por correo o en el portal tramitesmigratorios.interior.gob.cl).</li>
+  <li>Recibe la notificación de aprobación de visa del SERMIG (por correo o en el portal tramites.serviciomigraciones.cl).</li>
   <li>Agenda hora en el Registro Civil en registrocivil.cl o presencialmente en la oficina más cercana.</li>
   <li>Asiste con tu pasaporte y la resolución de aprobación.</li>
   <li>Te toman fotografía y huella dactilar en el momento.</li>

@@ -19,7 +19,7 @@ SET content = REPLACE(
       'En la práctica, los tiempos reales aproximados han sido, como referencia orientativa:'
     ),
     -- Fix 2: URL cruda como anchor text (termina con dos puntos)
-    '>tramitesmigratorios.interior.gob.cl</a>:',
+    '>tramites.serviciomigraciones.cl</a>:',
     '>Portal de Trámites Migratorios del SERMIG</a>:'
   ),
   -- Fix 3 (outermost): "Hay un plazo de 10 días hábiles para responder" — plazo absoluto

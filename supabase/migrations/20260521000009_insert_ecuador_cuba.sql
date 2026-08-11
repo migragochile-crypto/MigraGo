@@ -40,7 +40,7 @@ INSERT INTO articles (
 </ul>
 
 <h2>¿Por dónde empezar?</h2>
-<p>El trámite se inicia en el portal <a href="https://tramites.extranjeria.gob.cl" target="_blank" rel="noopener noreferrer">tramites.extranjeria.gob.cl</a>. Antes de postular, asegúrate de tener todos los documentos apostillados y traducidos si corresponde (Ecuador usa español, por lo que no se requiere traducción).</p>
+<p>El trámite se inicia en el portal <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a>. Antes de postular, asegúrate de tener todos los documentos apostillados y traducidos si corresponde (Ecuador usa español, por lo que no se requiere traducción).</p>
 
 <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 mt-6 text-sm text-blue-900">
   <strong>Consejo:</strong> Tramita el certificado de antecedentes penales en Ecuador antes de viajar. El proceso puede tardar varias semanas y es uno de los documentos más difíciles de obtener desde Chile.
@@ -117,7 +117,7 @@ INSERT INTO articles (
     {"name": "Reunir los documentos originales en Ecuador", "text": "Obtén los documentos originales: antecedentes penales, partida de nacimiento, certificado de matrimonio u otros según tu caso."},
     {"name": "Presentar en el Ministerio de Relaciones Exteriores de Ecuador", "text": "Lleva los documentos originales a la oficina del Ministerio de RR.EE. más cercana (Quito, Guayaquil u otras ciudades habilitadas) para tramitar la apostilla."},
     {"name": "Pagar el arancel y retirar documentos apostillados", "text": "Cancela el valor del trámite y retira los documentos con la apostilla estampada."},
-    {"name": "Subir los documentos al portal del SERMIG", "text": "Ingresa a tramites.extranjeria.gob.cl y adjunta los documentos apostillados en el formulario de solicitud de Residencia Temporal."}
+    {"name": "Subir los documentos al portal del SERMIG", "text": "Ingresa a tramites.serviciomigraciones.cl y adjunta los documentos apostillados en el formulario de solicitud de Residencia Temporal."}
   ]'::jsonb,
   ARRAY[
     'ecuador/antecedentes-penales',

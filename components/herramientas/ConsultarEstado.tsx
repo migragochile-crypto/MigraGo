@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import Link from 'next/link'
 
@@ -75,7 +75,7 @@ export default function ConsultarEstado() {
           Migratorios del SERMIG. Accede con la cuenta que usaste para presentar la solicitud.
         </p>
         <a
-          href="https://tramites.extranjeria.gob.cl"
+          href="https://tramites.serviciomigraciones.cl"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-white text-primary font-semibold px-5 py-2.5 rounded-lg text-sm hover:bg-gray-100 transition-colors"
@@ -83,7 +83,7 @@ export default function ConsultarEstado() {
           Ir al portal del SERMIG ↗
         </a>
         <p className="mt-3 text-xs text-white/60">
-          Sitio oficial del Gobierno de Chile — tramites.extranjeria.gob.cl
+          Sitio oficial del Gobierno de Chile — tramites.serviciomigraciones.cl
         </p>
       </div>
 
@@ -92,7 +92,7 @@ export default function ConsultarEstado() {
         <h2 className="text-base font-semibold text-gray-900 mb-3">Cómo ver el estado de tu solicitud</h2>
         <ol className="space-y-3">
           {[
-            'Accede a tramites.extranjeria.gob.cl e inicia sesión con tu cuenta.',
+            'Accede a tramites.serviciomigraciones.cl e inicia sesión con tu cuenta.',
             'En el menú principal, selecciona "Mis solicitudes" o "Mis trámites".',
             'Busca la solicitud por número de radicación o por fecha de presentación.',
             'El estado actual aparece junto a los datos de la solicitud. Si hay una notificación pendiente, verás un aviso.',

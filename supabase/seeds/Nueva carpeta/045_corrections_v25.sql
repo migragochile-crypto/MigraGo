@@ -48,7 +48,7 @@ SET content = REPLACE(
       REPLACE(
         content,
         -- Fix 1 (innermost): URL cruda como anchor text
-        '>tramitesmigratorios.interior.gob.cl</a>. Los documentos',
+        '>tramites.serviciomigraciones.cl</a>. Los documentos',
         '>Portal de Trámites Migratorios del SERMIG</a>. Los documentos'
       ),
       -- Fix 2: encabezado tabla "Vigencia máxima" — absoluto

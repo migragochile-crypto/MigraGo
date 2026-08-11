@@ -340,7 +340,7 @@ INSERT INTO articles (
     {"name": "Identificar qué familiares califican como carga", "text": "Determina si tu familiar califica: cónyuge, conviviente civil, hijos menores de 18, hijos mayores con discapacidad, o padres dependientes. Los hijos adultos sin discapacidad deben solicitar visa propia."},
     {"name": "Obtener y apostillar los documentos del familiar", "text": "Reúne certificados de nacimiento o matrimonio del país de origen. Apostíllalos si el país es signatario del Convenio de La Haya, o gestiona la legalización consular si no lo es."},
     {"name": "Decidir la vía: inclusión como carga, solicitud separada o visa consular", "text": "Si el familiar ya está en Chile: solicitud separada de visa por arraigo familiar. Si está en el exterior: visa consular desde el Consulado de Chile en su país. Si aún estás tramitando tu propia visa: inclúyelos como carga en tu solicitud."},
-    {"name": "Presentar la solicitud con documentos del vínculo familiar", "text": "Accede al portal tramitesmigratorios.interior.gob.cl. Incluye los documentos del familiar y los que acreditan el vínculo (certificado de nacimiento, matrimonio) más tu propia documentación de residencia."},
+    {"name": "Presentar la solicitud con documentos del vínculo familiar", "text": "Accede al portal tramites.serviciomigraciones.cl. Incluye los documentos del familiar y los que acreditan el vínculo (certificado de nacimiento, matrimonio) más tu propia documentación de residencia."},
     {"name": "Tramitar la cédula para cada familiar una vez aprobada la visa", "text": "Cuando el SERMIG apruebe la visa, cada familiar debe ir al Registro Civil (SRCeI) para obtener su cédula de identidad para extranjeros. Cada persona tiene su propia cédula."}
   ]'::jsonb,
   '[

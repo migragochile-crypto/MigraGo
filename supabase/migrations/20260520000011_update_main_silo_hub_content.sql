@@ -27,7 +27,7 @@ UPDATE articles SET
 </ul>
 
 <h2>Cómo solicitarla</h2>
-<p>Todos los trámites se hacen en el portal del SERMIG: <strong>tramitesmigratorios.interior.gob.cl</strong>. El proceso es 100% en línea. Crea una cuenta, selecciona la categoría que corresponde a tu situación y sube los documentos requeridos.</p>
+<p>Todos los trámites se hacen en el portal del SERMIG: <strong>tramites.serviciomigraciones.cl</strong>. El proceso es 100% en línea. Crea una cuenta, selecciona la categoría que corresponde a tu situación y sube los documentos requeridos.</p>
 
 <h2>¿Qué pasa después?</h2>
 <p>Una vez aprobada, el SERMIG te notifica y puedes ir al <strong>Registro Civil</strong> a obtener tu <strong>cédula de identidad de extranjero</strong>, que incluye tu RUT permanente.</p>
@@ -66,7 +66,7 @@ UPDATE articles SET
 <p>El plazo de 2 años se reduce a <strong>1 año</strong> si cumples alguna condición especial: tener cónyuge o conviviente civil chileno, tener hijos chilenos, o en otros casos contemplados por la ley.</p>
 
 <h2>Cómo solicitarla</h2>
-<p>El trámite se realiza en el portal <strong>tramitesmigratorios.interior.gob.cl</strong>. Debes tener todos tus documentos en regla y tu visa temporal vigente o en prórroga al momento de presentar la solicitud.</p>
+<p>El trámite se realiza en el portal <strong>tramites.serviciomigraciones.cl</strong>. Debes tener todos tus documentos en regla y tu visa temporal vigente o en prórroga al momento de presentar la solicitud.</p>
 
 <h2>Selecciona tu consulta</h2>
 <p>Usa el menú de esta sección para guías sobre requisitos, tiempos, casos especiales, rechazos y más.</p>$content$,

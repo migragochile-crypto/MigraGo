@@ -66,7 +66,7 @@ SET content = $$
 <ol>
   <li>Verifica que los documentos estén vigentes conforme a los requisitos actualizados del SERMIG al momento de presentar.</li>
   <li>Si estás en situación irregular, completa la <a href="/autodenuncia/pdi-paso-a-paso">autodenuncia en la PDI</a> antes de continuar.</li>
-  <li>Ingresa al <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">Portal de Trámites Migratorios del SERMIG</a>.</li>
+  <li>Ingresa al <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">Portal de Trámites Migratorios del SERMIG</a>.</li>
   <li>Crea una cuenta o inicia sesión.</li>
   <li>Selecciona la categoría correspondiente a <strong>vínculo con ciudadano chileno (hijo/a)</strong> conforme a las opciones disponibles en el portal.</li>
   <li>Carga los documentos en los formatos y condiciones indicados por el portal al momento de la solicitud.</li>

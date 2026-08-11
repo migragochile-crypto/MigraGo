@@ -245,7 +245,7 @@ INSERT INTO articles (
 <p>Ver: <a href="/haiti/documentos-traducidos">Cómo legalizar y traducir documentos haitianos</a>.</p>
 
 <h2>Paso 4: Presentar solicitud al SERMIG</h2>
-<p>La solicitud se presenta en el portal online del SERMIG: <strong>tramitesmigratorios.interior.gob.cl</strong>. Debes subir todos los documentos escaneados. El SERMIG notificará la resolución — puede tardar 60-180 días.</p>
+<p>La solicitud se presenta en el portal online del SERMIG: <strong>tramites.serviciomigraciones.cl</strong>. Debes subir todos los documentos escaneados. El SERMIG notificará la resolución — puede tardar 60-180 días.</p>
 
 <h2>¿Qué pasa con las multas acumuladas?</h2>
 <p>Si estuviste en situación irregular, habrás acumulado multas. Estas deben pagarse antes de completar la regularización. El monto depende de los días de irregularidad. Ver: <a href="/problemas-migratorios/multas-migratorias">Multas migratorias: cómo calcularlas y pagarlas</a>.</p>
@@ -336,7 +336,7 @@ INSERT INTO articles (
 <ol>
   <li>El familiar debe solicitar la visa en el <strong>Consulado de Chile más cercano a Haití</strong> (puede ser en República Dominicana, ya que Chile no tiene consulado en Puerto Príncipe de forma permanente).</li>
   <li>También es posible que el familiar ingrese como turista a Chile y solicite la visa de reagrupación directamente al SERMIG desde Chile — pero esto implica el riesgo de que la visa no sea aprobada y deban salir.</li>
-  <li>La solicitud online se hace en <strong>tramitesmigratorios.interior.gob.cl</strong>.</li>
+  <li>La solicitud online se hace en <strong>tramites.serviciomigraciones.cl</strong>.</li>
   <li>El SERMIG puede tardar 60-180 días en resolver.</li>
 </ol>
 
@@ -556,7 +556,7 @@ INSERT INTO articles (
 <h2>Después de llegar a Chile con la visa</h2>
 <p>Con la visa consular aprobada y el ingreso a Chile, debes:</p>
 <ol>
-  <li>Registrarte en el SERMIG en los primeros 30 días: <strong>tramitesmigratorios.interior.gob.cl</strong>.</li>
+  <li>Registrarte en el SERMIG en los primeros 30 días: <strong>tramites.serviciomigraciones.cl</strong>.</li>
   <li>Obtener tu <strong>cédula de identidad de extranjero</strong> en el Registro Civil (incluye tu RUT).</li>
 </ol>$content$,
   $faq$[
@@ -574,7 +574,7 @@ INSERT INTO articles (
     },
     {
       "question": "¿Qué hago cuando llego a Chile con la visa aprobada?",
-      "answer": "Tienes 30 días para registrarte en el SERMIG (tramitesmigratorios.interior.gob.cl). Luego ve al Registro Civil para obtener tu cédula de identidad de extranjero y tu RUT definitivo."
+      "answer": "Tienes 30 días para registrarte en el SERMIG (tramites.serviciomigraciones.cl). Luego ve al Registro Civil para obtener tu cédula de identidad de extranjero y tu RUT definitivo."
     },
     {
       "question": "¿Puedo solicitar la visa directamente en Chile si estoy de turista?",

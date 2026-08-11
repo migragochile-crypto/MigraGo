@@ -38,7 +38,7 @@ UPDATE articles SET
 <p>Si solicitas por vínculo familiar (hijo chileno, pareja chilena), también se requieren los documentos que acreditan ese vínculo.</p>
 
 <h2>El proceso de solicitud</h2>
-<p>La solicitud se presenta en el portal online del SERMIG: <a href="https://tramitesmigratorios.interior.gob.cl" target="_blank" rel="noopener noreferrer">tramitesmigratorios.interior.gob.cl</a>. Los pasos son:</p>
+<p>La solicitud se presenta en el portal online del SERMIG: <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer">tramites.serviciomigraciones.cl</a>. Los pasos son:</p>
 <ol>
   <li>Verifica que cumples el tiempo mínimo de residencia con visa temporaria vigente.</li>
   <li>Reúne todos los documentos con fechas vigentes (máximo 90 días de antigüedad).</li>

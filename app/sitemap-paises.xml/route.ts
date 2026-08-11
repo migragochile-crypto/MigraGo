@@ -1,6 +1,7 @@
 import { getAllPublishedArticles } from '@/lib/supabase/queries'
 import { PAISES } from '@/lib/content/silos'
 import { SITE_URL } from '@/lib/constants'
+import { hasSubstantiveArticleContent, isCurrentArticleSlug } from '@/lib/seo/indexing'
 
 
 function buildXml(urls: { loc: string; lastmod?: string; priority?: number }[]): string {
@@ -33,6 +34,7 @@ export async function GET() {
   // Hub por país: /paises/{pais}
   paisSlugs.forEach((pais) => {
     const article = published.find((a) => a.slug === pais)
+    if (!hasSubstantiveArticleContent(article?.content)) return
     urls.push({
       loc: `${SITE_URL}/paises/${pais}`,
       lastmod: article?.updated_at?.split('T')[0],
@@ -44,7 +46,12 @@ export async function GET() {
   published
     .filter((a) => {
       const parts = a.slug.split('/')
-      return parts.length === 2 && paisSlugs.includes(parts[0])
+      return (
+        parts.length === 2 &&
+        paisSlugs.includes(parts[0]) &&
+        isCurrentArticleSlug(a.slug) &&
+        hasSubstantiveArticleContent(a.content)
+      )
     })
     .forEach((a) => {
       urls.push({
@@ -61,4 +68,3 @@ export async function GET() {
     },
   })
 }
-

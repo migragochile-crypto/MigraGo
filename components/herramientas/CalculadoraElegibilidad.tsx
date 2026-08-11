@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-type Situacion = 'turista' | 'irregular' | 'visa-vigente'
+type Situacion = 'turista' | 'permiso-vencido' | 'ingreso-irregular' | 'visa-vigente'
 type Nacionalidad = 'mercosur' | 'venezuela' | 'otro'
 type Vinculo = 'hijo-chileno' | 'pareja-chilena'
 type Laboral = 'contrato' | 'estudiante' | 'jubilado' | 'ninguno'
@@ -26,16 +26,30 @@ interface Recomendacion {
 function calcularResultado(r: Respuestas): { previo?: Recomendacion; visas: Recomendacion[] } {
   const visas: Recomendacion[] = []
 
-  const previo: Recomendacion | undefined =
-    r.situacion === 'irregular'
-      ? {
-          titulo: 'Antes de todo: autodenuncia migratoria',
-          descripcion:
-            'Dado que tu visa venció o ingresaste sin los requisitos, el primer paso es presentarte en la PDI para obtener el Certificado de Autodenuncia. Con ese certificado puedes luego solicitar la visa que corresponda.',
-          href: '/autodenuncia',
-          urgente: true,
-        }
-      : undefined
+  let previo: Recomendacion | undefined
+
+  if (r.situacion === 'permiso-vencido') {
+    previo = {
+      titulo: 'Primero revisa la infracción por permiso vencido',
+      descripcion:
+        'La declaración y el cálculo de esta infracción se realizan ante el SERMIG. Pagar una multa no concede por sí solo un nuevo permiso de residencia.',
+      href: '/problemas-migratorios/visa-vencida',
+      urgente: true,
+    }
+  }
+
+  if (r.situacion === 'ingreso-irregular') {
+    return {
+      previo: {
+        titulo: 'Ingreso por paso no habilitado: requiere orientación individual',
+        descripcion:
+          'La autodenuncia ante la PDI deja constancia del ingreso, pero no equivale a una regularización ni permite solicitar automáticamente una Residencia Temporal desde Chile. Revisa tu situación antes de iniciar otro trámite.',
+        href: '/autodenuncia',
+        urgente: true,
+      },
+      visas: [],
+    }
+  }
 
   if (r.vinculos.includes('hijo-chileno')) {
     visas.push({
@@ -53,34 +67,25 @@ function calcularResultado(r: Respuestas): { previo?: Recomendacion; visas: Reco
     })
   }
 
-  if (r.nacionalidad === 'venezuela') {
-    visas.push({
-      titulo: 'Visa de Responsabilidad Democrática (VRD)',
-      descripcion: 'Categoría especial para ciudadanos venezolanos. No exige contrato de trabajo ni vínculo familiar con un chileno.',
-      href: '/residencia-temporal/responsabilidad-democratica',
-      nota: 'Verifica la disponibilidad y condiciones vigentes directamente en el portal del SERMIG antes de presentar.',
-    })
-  }
-
   if (r.nacionalidad === 'mercosur') {
     visas.push({
-      titulo: 'Visa Mercosur',
-      descripcion: 'Los ciudadanos de países miembros o asociados del MERCOSUR (Argentina, Bolivia, Colombia, Perú y otros) acceden a esta visa con menos documentación. No requiere contrato ni vínculo familiar.',
+      titulo: 'Residencia Temporal por acuerdo Mercosur',
+      descripcion: 'Puede corresponder a nacionales de Argentina, Bolivia, Brasil, Paraguay o Uruguay. Debes acreditar la nacionalidad y cumplir los requisitos vigentes de la subcategoría.',
       href: '/residencia-temporal/mercosur',
     })
   }
 
   if (r.laboral === 'contrato') {
     visas.push({
-      titulo: 'Visa por contrato de trabajo',
-      descripcion: 'Si tienes o puedes conseguir un empleador formal en Chile, esta es una categoría directa que depende del empleador.',
+      titulo: 'Residencia para actividades remuneradas',
+      descripcion: 'Un contrato u oferta puede servir como respaldo de una subcategoría para desarrollar actividades lícitas remuneradas. Revisa dónde debes postular y los documentos exigidos.',
       href: '/residencia-temporal/contrato-trabajo',
     })
   }
 
   if (r.laboral === 'estudiante') {
     visas.push({
-      titulo: 'Visa de estudiante',
+      titulo: 'Residencia para estudiantes',
       descripcion: 'Requiere carta de aceptación de una institución educativa reconocida por el Estado chileno.',
       href: '/residencia-temporal/estudiante',
     })
@@ -88,7 +93,7 @@ function calcularResultado(r: Respuestas): { previo?: Recomendacion; visas: Reco
 
   if (r.laboral === 'jubilado') {
     visas.push({
-      titulo: 'Visa de jubilado o rentista',
+      titulo: 'Residencia para jubilados o rentistas',
       descripcion: 'Para quienes reciben pensión u otros ingresos regulares del exterior. Requiere acreditarlos documentalmente.',
       href: '/residencia-temporal/jubilado-rentista',
     })
@@ -96,9 +101,9 @@ function calcularResultado(r: Respuestas): { previo?: Recomendacion; visas: Reco
 
   if (visas.length === 0) {
     visas.push({
-      titulo: 'Visa por razones humanitarias',
-      descripcion: 'Si no calificas para otras categorías, puedes evaluar esta opción por situación de vulnerabilidad, arraigo familiar o necesidades especiales evaluadas por el SERMIG.',
-      href: '/residencia-temporal/razones-humanitarias',
+      titulo: 'Revisa todas las subcategorías vigentes',
+      descripcion: 'Con estas respuestas no se puede identificar una opción concreta. Razones humanitarias no es una categoría residual: exige encuadrar en uno de los casos definidos por la normativa.',
+      href: '/residencia-temporal',
     })
   }
 
@@ -191,7 +196,7 @@ export default function CalculadoraElegibilidad() {
           Esta calculadora es orientativa. Los requisitos exactos y la disponibilidad de cada categoría
           pueden variar. Verifica siempre en el{' '}
           <a
-            href="https://tramitesmigratorios.interior.gob.cl"
+            href="https://tramites.serviciomigraciones.cl"
             target="_blank"
             rel="noopener noreferrer"
             className="underline"
@@ -232,7 +237,8 @@ export default function CalculadoraElegibilidad() {
           {(
             [
               ['turista', 'Estoy como turista con permiso vigente'],
-              ['irregular', 'Mi visa o permiso venció, o ingresé sin los requisitos'],
+              ['permiso-vencido', 'Mi permiso venció después de un ingreso habilitado'],
+              ['ingreso-irregular', 'Ingresé por un paso no habilitado o eludí el control'],
               ['visa-vigente', 'Tengo visa temporaria vigente y quiero cambiar o renovar'],
             ] as [Situacion, string][]
           ).map(([val, label]) => (
@@ -264,7 +270,7 @@ export default function CalculadoraElegibilidad() {
           <legend className="text-lg font-semibold text-gray-900">¿Cuál es tu nacionalidad?</legend>
           {(
             [
-              ['mercosur', 'Argentina, Bolivia, Brasil, Colombia, Paraguay, Perú o Uruguay (MERCOSUR)'],
+              ['mercosur', 'Argentina, Bolivia, Brasil, Paraguay o Uruguay (acuerdo Mercosur)'],
               ['venezuela', 'Venezuela'],
               ['otro', 'Otro país (Haití, República Dominicana, Ecuador, etc.)'],
             ] as [Nacionalidad, string][]
@@ -382,4 +388,3 @@ export default function CalculadoraElegibilidad() {
     </div>
   )
 }
-

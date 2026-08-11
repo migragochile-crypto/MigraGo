@@ -1,6 +1,7 @@
 import { getAllPublishedArticles } from '@/lib/supabase/queries'
 import { MAIN_SILOS } from '@/lib/content/silos'
 import { SITE_URL } from '@/lib/constants'
+import { hasSubstantiveArticleContent, isCurrentArticleSlug } from '@/lib/seo/indexing'
 
 
 function buildXml(urls: { loc: string; lastmod?: string; priority?: number }[]): string {
@@ -38,7 +39,13 @@ export async function GET() {
 
   // Cluster pages de esos silos
   published
-    .filter((a) => (MAIN_SILOS as readonly string[]).includes(a.silo) && a.type === 'cluster')
+    .filter(
+      (a) =>
+        (MAIN_SILOS as readonly string[]).includes(a.silo) &&
+        a.type === 'cluster' &&
+        isCurrentArticleSlug(a.slug) &&
+        hasSubstantiveArticleContent(a.content)
+    )
     .forEach((a) => {
       urls.push({
         loc: `${SITE_URL}/${a.slug}`,
@@ -54,4 +61,3 @@ export async function GET() {
     },
   })
 }
-

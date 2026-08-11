@@ -59,7 +59,7 @@ VALUES (
 <li>Comprobante de medios de subsistencia (liquidaciones, contratos, boletas de honorarios).</li>
 </ul>
 <h2>Paso 3: Presenta la solicitud</h2>
-<p>La solicitud se presenta en el portal de trámites del SERMIG (<strong>tramitesmigratorios.interior.gob.cl</strong>). Crea o accede a tu cuenta, selecciona "Residencia Definitiva" y sube los documentos digitalizados según los formatos requeridos.</p>
+<p>La solicitud se presenta en el portal de trámites del SERMIG (<strong>tramites.serviciomigraciones.cl</strong>). Crea o accede a tu cuenta, selecciona "Residencia Definitiva" y sube los documentos digitalizados según los formatos requeridos.</p>
 <h2>Paso 4: Paga el arancel</h2>
 <p>La solicitud de Residencia Definitiva tiene un costo en UTM. El monto se indica al momento del ingreso en el portal. El pago se realiza en línea o en entidades habilitadas.</p>
 <h2>Paso 5: Seguimiento</h2>
@@ -216,7 +216,7 @@ VALUES (
   'Dónde y cómo verificar el estado de tu solicitud de Residencia Definitiva: portal SERMIG, estados posibles y qué hacer en cada caso.',
   'consultar estado solicitud residencia definitiva chile portal sermig',
   $content$<h2>Portal de trámites del SERMIG</h2>
-<p>Accede a <strong>tramitesmigratorios.interior.gob.cl</strong> con tu cuenta y número de folio para ver el estado actualizado de tu solicitud.</p>
+<p>Accede a <strong>tramites.serviciomigraciones.cl</strong> con tu cuenta y número de folio para ver el estado actualizado de tu solicitud.</p>
 <h2>Estados posibles</h2>
 <ul>
 <li><strong>Ingresado / En validación:</strong> la solicitud fue recibida y se está verificando que los documentos sean correctos.</li>
