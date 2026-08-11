@@ -45,7 +45,7 @@ export default function HomePage() {
           </p>
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
             <Link
-              href="/herramientas/quiz-visas"
+              href="/herramientas/calculadora-elegibilidad"
               className="bg-accent hover:bg-accent-dark text-white font-semibold px-8 py-4 rounded-2xl transition-colors text-base min-w-[220px]"
             >
               ¿Qué permiso necesito?
@@ -63,7 +63,7 @@ export default function HomePage() {
               Ley 21.325, SERMIG, PDI y Registro Civil. Citamos la fuente en cada artículo.
             </div>
             <div className="rounded-3xl border border-white/15 bg-white/5 px-4 py-4 text-sm text-white/90">
-              <strong className="block font-semibold text-white">8 herramientas gratuitas</strong>
+              <strong className="block font-semibold text-white">Herramientas gratuitas</strong>
               Calculadoras de plazos, checklists y simuladores interactivos.
             </div>
             <div className="rounded-3xl border border-white/15 bg-white/5 px-4 py-4 text-sm text-white/90">
