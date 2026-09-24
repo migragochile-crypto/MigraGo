@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { SILOS, PAISES, slugToLabel } from '@/lib/content/silos'
 import { getArticlesBySilo } from '@/lib/supabase/queries'
+import { isIndexableArticleSlug } from '@/lib/seo/indexing'
 
 interface Props {
   silo: string
@@ -20,7 +21,9 @@ export default async function SiloSidebar({ silo, currentSlug }: Props) {
   const clusters =
     published.length > 0
       ? published.filter((a) => a.type === 'cluster')
-      : siloConfig.clusters.map((c) => ({ slug: `${silo}/${c}`, h1: slugToLabel(c), type: 'cluster' as const }))
+      : siloConfig.clusters
+          .map((c) => ({ slug: `${silo}/${c}`, h1: slugToLabel(c), type: 'cluster' as const }))
+          .filter((article) => isIndexableArticleSlug(article.slug))
 
   return (
     <div className="bg-white rounded-xl border border-gray-200 p-5 sticky top-24">
@@ -60,4 +63,3 @@ export default async function SiloSidebar({ silo, currentSlug }: Props) {
     </div>
   )
 }
-

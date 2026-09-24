@@ -1,7 +1,7 @@
 import { getAllPublishedArticles } from '@/lib/supabase/queries'
 import { PAISES } from '@/lib/content/silos'
 import { SITE_URL } from '@/lib/constants'
-import { hasSubstantiveArticleContent, isCurrentArticleSlug } from '@/lib/seo/indexing'
+import { hasSubstantiveArticleContent, isIndexableArticleSlug } from '@/lib/seo/indexing'
 
 
 function buildXml(urls: { loc: string; lastmod?: string; priority?: number }[]): string {
@@ -34,7 +34,7 @@ export async function GET() {
   // Hub por país: /paises/{pais}
   paisSlugs.forEach((pais) => {
     const article = published.find((a) => a.slug === pais)
-    if (!hasSubstantiveArticleContent(article?.content)) return
+    if (!isIndexableArticleSlug(pais) || !hasSubstantiveArticleContent(article?.content)) return
     urls.push({
       loc: `${SITE_URL}/paises/${pais}`,
       lastmod: article?.updated_at?.split('T')[0],
@@ -49,7 +49,7 @@ export async function GET() {
       return (
         parts.length === 2 &&
         paisSlugs.includes(parts[0]) &&
-        isCurrentArticleSlug(a.slug) &&
+        isIndexableArticleSlug(a.slug) &&
         hasSubstantiveArticleContent(a.content)
       )
     })
@@ -61,7 +61,9 @@ export async function GET() {
       })
     })
 
-  return new Response(buildXml(urls), {
+  const uniqueUrls = [...new Map(urls.map((url) => [url.loc, url])).values()]
+
+  return new Response(buildXml(uniqueUrls), {
     headers: {
       'Content-Type': 'application/xml',
       'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',

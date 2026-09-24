@@ -4,6 +4,7 @@ import JsonLd from '@/components/seo/JsonLd'
 import { organizationSchema, webSiteSchema } from '@/lib/seo/schemas'
 import { SILOS, PAISES, HERRAMIENTAS_LIST, MAIN_SILOS } from '@/lib/content/silos'
 import { SITE_URL } from '@/lib/constants'
+import { isIndexableArticleSlug, isIndexableToolSlug } from '@/lib/seo/indexing'
 
 export const metadata: Metadata = {
   title: 'MigraGo — Tu guía migratoria en Chile',
@@ -23,7 +24,8 @@ const SILO_ICONS: Record<string, string> = {
 
 export default function HomePage() {
   const siloEntries = MAIN_SILOS.map((slug) => [slug, SILOS[slug]] as const).filter(([, config]) => config)
-  const paisEntries = Object.entries(PAISES)
+  const paisEntries = Object.entries(PAISES).filter(([slug]) => isIndexableArticleSlug(slug))
+  const featuredTools = HERRAMIENTAS_LIST.filter((tool) => isIndexableToolSlug(tool.slug))
 
   return (
     <>
@@ -67,8 +69,8 @@ export default function HomePage() {
               Calculadoras de plazos, checklists y simuladores interactivos.
             </div>
             <div className="rounded-3xl border border-white/15 bg-white/5 px-4 py-4 text-sm text-white/90">
-              <strong className="block font-semibold text-white">60+ artículos en 2026</strong>
-              Contenido revisado y actualizado regularmente con la normativa vigente.
+              <strong className="block font-semibold text-white">Inventario editorial priorizado</strong>
+              Destacamos las guías con mejor cobertura y dejamos fuera las que siguen en revisión.
             </div>
           </div>
         </div>
@@ -148,7 +150,7 @@ export default function HomePage() {
             Calcula plazos, verifica elegibilidad y prepara tu documentación
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {HERRAMIENTAS_LIST.map((tool) => (
+            {featuredTools.map((tool) => (
               <Link
                 key={tool.slug}
                 href={`/herramientas/${tool.slug}`}

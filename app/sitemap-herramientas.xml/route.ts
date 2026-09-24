@@ -1,11 +1,12 @@
 import { HERRAMIENTAS_LIST } from '@/lib/content/silos'
 import { SITE_URL } from '@/lib/constants'
+import { isIndexableToolSlug } from '@/lib/seo/indexing'
 
 
 export async function GET() {
   const items = [
     `  <url><loc>${SITE_URL}/herramientas</loc><priority>0.7</priority></url>`,
-    ...HERRAMIENTAS_LIST.map(
+    ...HERRAMIENTAS_LIST.filter((tool) => isIndexableToolSlug(tool.slug)).map(
       (t) => `  <url><loc>${SITE_URL}/herramientas/${t.slug}</loc><priority>0.7</priority></url>`
     ),
   ].join('\n')

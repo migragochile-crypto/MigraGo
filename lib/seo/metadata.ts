@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import type { Article } from '@/types/content'
 import { SITE_URL, SITE_NAME } from '@/lib/constants'
 import { getPublicAuthorName } from '@/lib/editorial'
+import { isIndexableArticleSlug } from '@/lib/seo/indexing'
 
 
 export function buildMetadata(opts: {
@@ -93,5 +94,8 @@ export function articleMetadata(article: Article): Metadata {
       description: article.meta_description,
       images: [imageUrl],
     },
+    robots: isIndexableArticleSlug(article.slug)
+      ? undefined
+      : { index: false, follow: true },
   }
 }

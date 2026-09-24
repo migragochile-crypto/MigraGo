@@ -33,7 +33,9 @@ export async function generateMetadata({ params }: { params: Promise<{ pais: str
     })
   }
   const meta = articleMetadata(article)
-  meta.alternates = { canonical: `${SITE_URL}/paises/${pais}` }
+  const canonical = `${SITE_URL}/paises/${pais}`
+  meta.alternates = { canonical }
+  meta.openGraph = { ...meta.openGraph, url: canonical }
   return meta
 }
 

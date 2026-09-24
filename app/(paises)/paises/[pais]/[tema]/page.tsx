@@ -5,6 +5,7 @@ import { articleMetadata, buildMetadata } from '@/lib/seo/metadata'
 import ArticlePageTemplate from '@/components/templates/ArticlePageTemplate'
 import { PAISES, slugToLabel } from '@/lib/content/silos'
 import { SITE_URL } from '@/lib/constants'
+import { isIndexableArticleSlug } from '@/lib/seo/indexing'
 
 
 export const revalidate = 86400
@@ -18,7 +19,11 @@ export async function generateStaticParams() {
     .filter((article) => {
       if (!article.country_tags || article.country_tags.length === 0) return false
       const slugParts = article.slug.split('/')
-      return slugParts.length === 2 && paisSlugs.includes(slugParts[0])
+      return (
+        slugParts.length === 2 &&
+        paisSlugs.includes(slugParts[0]) &&
+        isIndexableArticleSlug(article.slug)
+      )
     })
     .map((article) => {
       const [pais, tema] = article.slug.split('/')
@@ -40,10 +45,13 @@ export async function generateMetadata({
       title: `${slugToLabel(tema)} — ${paisConfig.label}`,
       description: `Información específica para ${paisConfig.demonym} sobre ${slugToLabel(tema)} en Chile.`,
       slug: `paises/${pais}/${tema}`,
+      noIndex: true,
     })
   }
   const meta = articleMetadata(article)
-  meta.alternates = { canonical: `${SITE_URL}/paises/${pais}/${tema}` }
+  const canonical = `${SITE_URL}/paises/${pais}/${tema}`
+  meta.alternates = { canonical }
+  meta.openGraph = { ...meta.openGraph, url: canonical }
   return meta
 }
 

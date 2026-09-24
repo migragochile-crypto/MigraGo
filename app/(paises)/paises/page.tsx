@@ -6,6 +6,7 @@ import JsonLd from '@/components/seo/JsonLd'
 import { breadcrumbSchema } from '@/lib/seo/schemas'
 import { PAISES } from '@/lib/content/silos'
 import { SITE_URL } from '@/lib/constants'
+import { isIndexableArticleSlug } from '@/lib/seo/indexing'
 
 
 export const metadata: Metadata = buildMetadata({
@@ -21,6 +22,10 @@ const breadcrumbs = [
 ]
 
 export default function PaisesHubPage() {
+  const countries = Object.entries(PAISES)
+  const reviewedCountries = countries.filter(([slug]) => isIndexableArticleSlug(slug))
+  const pendingCountries = countries.filter(([slug]) => !isIndexableArticleSlug(slug))
+
   return (
     <>
       <JsonLd schema={breadcrumbSchema(breadcrumbs.map((b) => ({ name: b.label, url: b.href })))} />
@@ -37,7 +42,7 @@ export default function PaisesHubPage() {
         </header>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {Object.entries(PAISES).map(([slug, config]) => (
+          {reviewedCountries.map(([slug, config]) => (
             <Link
               key={slug}
               href={`/paises/${slug}`}
@@ -55,6 +60,17 @@ export default function PaisesHubPage() {
             </Link>
           ))}
         </div>
+
+        {pendingCountries.length > 0 && (
+          <aside className="mt-6 rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm text-amber-900">
+            <p className="font-semibold">Guías específicas en revisión</p>
+            <p className="mt-1 leading-relaxed">
+              {pendingCountries.map(([, config]) => config.label).join(', ')}. Mientras completamos
+              su revisión editorial, consulta las guías generales de residencia y confirma los
+              requisitos en el SERMIG.
+            </p>
+          </aside>
+        )}
 
         <section className="mt-12 border-t border-border pt-8">
           <h2 className="text-2xl font-bold text-gray-900">Qué cambia según tu país de origen</h2>

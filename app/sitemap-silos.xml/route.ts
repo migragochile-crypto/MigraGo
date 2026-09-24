@@ -1,7 +1,7 @@
 import { getAllPublishedArticles } from '@/lib/supabase/queries'
 import { MAIN_SILOS } from '@/lib/content/silos'
 import { SITE_URL } from '@/lib/constants'
-import { hasSubstantiveArticleContent, isCurrentArticleSlug } from '@/lib/seo/indexing'
+import { hasSubstantiveArticleContent, isIndexableArticleSlug } from '@/lib/seo/indexing'
 
 
 function buildXml(urls: { loc: string; lastmod?: string; priority?: number }[]): string {
@@ -43,7 +43,7 @@ export async function GET() {
       (a) =>
         (MAIN_SILOS as readonly string[]).includes(a.silo) &&
         a.type === 'cluster' &&
-        isCurrentArticleSlug(a.slug) &&
+        isIndexableArticleSlug(a.slug) &&
         hasSubstantiveArticleContent(a.content)
     )
     .forEach((a) => {
@@ -54,7 +54,9 @@ export async function GET() {
       })
     })
 
-  return new Response(buildXml(urls), {
+  const uniqueUrls = [...new Map(urls.map((url) => [url.loc, url])).values()]
+
+  return new Response(buildXml(uniqueUrls), {
     headers: {
       'Content-Type': 'application/xml',
       'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',

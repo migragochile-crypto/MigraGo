@@ -1,8 +1,11 @@
 import { createClient } from '@supabase/supabase-js'
 import { unstable_cache } from 'next/cache'
 import type { Article, GlossaryTerm } from '@/types/content'
-import { isCurrentArticleSlug } from '@/lib/seo/indexing'
-import { normalizeArticleRecord } from '@/lib/content/article-normalization'
+import { isIndexableArticleSlug } from '@/lib/seo/indexing'
+import {
+  getArticleLookupSlugs,
+  normalizeArticleRecord,
+} from '@/lib/content/article-normalization'
 
 function getSupabase() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -17,17 +20,23 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
       const supabase = getSupabase()
       if (!supabase) return null
 
+      const lookupSlugs = getArticleLookupSlugs(slug)
+
       const { data, error } = await supabase
         .from('articles')
         .select('*')
-        .eq('slug', slug)
+        .in('slug', lookupSlugs)
         .eq('is_published', true)
-        .single()
 
-      if (error) return null
-      return normalizeArticleRecord(data as Article)
+      if (error || !data?.length) return null
+
+      const selected = lookupSlugs
+        .map((candidate) => data.find((article) => article.slug === candidate))
+        .find(Boolean)
+
+      return selected ? normalizeArticleRecord(selected as Article) : null
     },
-    [`article-v2-${slug}`],
+    [`article-v4-${slug}`],
     { revalidate: 86400, tags: [`article-${slug}`] }
   )()
 }
@@ -48,10 +57,10 @@ export async function getArticlesBySilo(
         .order('created_at', { ascending: true })
 
       return ((data ?? []) as Pick<Article, 'id' | 'slug' | 'title' | 'h1' | 'type'>[])
-        .filter((article) => isCurrentArticleSlug(article.slug))
         .map(normalizeArticleRecord)
+        .filter((article) => isIndexableArticleSlug(article.slug))
     },
-    [`silo-v2-${silo}`],
+    [`silo-v4-${silo}`],
     { revalidate: 86400, tags: [`silo-${silo}`] }
   )()
 }
@@ -61,7 +70,7 @@ export async function getRelatedArticles(
 ): Promise<Pick<Article, 'id' | 'slug' | 'title' | 'h1' | 'meta_description' | 'silo' | 'type'>[]> {
   if (slugs.length === 0) return []
   
-  const cacheKey = `related-v2-${slugs.sort().join('-')}`
+  const cacheKey = `related-v4-${[...slugs].sort().join('-')}`
   return unstable_cache(
     async () => {
       const supabase = getSupabase()
@@ -77,8 +86,8 @@ export async function getRelatedArticles(
         Article,
         'id' | 'slug' | 'title' | 'h1' | 'meta_description' | 'silo' | 'type'
       >[])
-        .filter((article) => isCurrentArticleSlug(article.slug))
         .map(normalizeArticleRecord)
+        .filter((article) => isIndexableArticleSlug(article.slug))
     },
     [cacheKey],
     { revalidate: 86400, tags: [cacheKey] }
@@ -99,11 +108,11 @@ export async function getPublishedClustersBySilo(silo: string): Promise<string[]
         .eq('is_published', true)
 
       return (data ?? [])
-        .map(({ slug }: { slug: string }) => slug)
-        .filter(isCurrentArticleSlug)
+        .map(({ slug }: { slug: string }) => normalizeArticleRecord({ slug }).slug)
+        .filter(isIndexableArticleSlug)
         .map((slug) => slug.split('/')[1])
     },
-    [`clusters-v2-${silo}`],
+    [`clusters-v4-${silo}`],
     { revalidate: 86400, tags: [`silo-${silo}`] }
   )()
 }
@@ -139,7 +148,7 @@ export async function getAllPublishedArticles(): Promise<
         'slug' | 'silo' | 'type' | 'updated_at' | 'country_tags' | 'content'
       >[]).map(normalizeArticleRecord)
     },
-    ['all-published-articles-v2'],
+    ['all-published-articles-v4'],
     { revalidate: 21600, tags: ['all-published-articles'] }
   )()
 }
@@ -162,9 +171,11 @@ export async function getNewsArticles(): Promise<
       return ((data ?? []) as Pick<
         Article,
         'slug' | 'title' | 'h1' | 'meta_description' | 'published_at' | 'updated_at'
-      >[]).map(normalizeArticleRecord)
+      >[])
+        .map(normalizeArticleRecord)
+        .filter((article) => isIndexableArticleSlug(article.slug))
     },
-    ['news-articles-v2'],
+    ['news-articles-v4'],
     { revalidate: 21600, tags: ['silo-actualidad'] }
   )()
 }
@@ -223,8 +234,8 @@ export async function getArticleWithRelated(
       Article,
       'id' | 'slug' | 'title' | 'h1' | 'meta_description' | 'silo' | 'type'
     >[])
-      .filter((relatedArticle) => isCurrentArticleSlug(relatedArticle.slug))
       .map(normalizeArticleRecord)
+      .filter((relatedArticle) => isIndexableArticleSlug(relatedArticle.slug))
   }
 
   return { article: normalizeArticleRecord(article as Article), related }

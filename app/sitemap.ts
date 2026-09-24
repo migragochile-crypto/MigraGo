@@ -2,7 +2,11 @@ import type { MetadataRoute } from 'next'
 import { SITE_URL } from '@/lib/constants'
 import { PAISES, MAIN_SILOS, HERRAMIENTAS_LIST } from '@/lib/content/silos'
 import { getAllPublishedArticles } from '@/lib/supabase/queries'
-import { hasSubstantiveArticleContent, isCurrentArticleSlug } from '@/lib/seo/indexing'
+import {
+  hasSubstantiveArticleContent,
+  isIndexableArticleSlug,
+  isIndexableToolSlug,
+} from '@/lib/seo/indexing'
 
 export const revalidate = 86400
 
@@ -17,7 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .filter(
       (article) =>
         !HUB_SLUGS.has(article.slug) &&
-        isCurrentArticleSlug(article.slug) &&
+        isIndexableArticleSlug(article.slug) &&
         hasSubstantiveArticleContent(article.content)
     )
     .map((article) => {
@@ -48,11 +52,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/metodologia`, changeFrequency: 'yearly', priority: 0.5 },
   ]
 
-  const toolUrls: MetadataRoute.Sitemap = HERRAMIENTAS_LIST.map(({ slug }) => ({
-    url: `${SITE_URL}/herramientas/${slug}`,
-    changeFrequency: 'monthly',
-    priority: 0.7,
-  }))
+  const toolUrls: MetadataRoute.Sitemap = HERRAMIENTAS_LIST
+    .filter(({ slug }) => isIndexableToolSlug(slug))
+    .map(({ slug }) => ({
+      url: `${SITE_URL}/herramientas/${slug}`,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    }))
 
-  return [...staticUrls, ...toolUrls, ...articleUrls]
+  const uniqueUrls = new Map<string, MetadataRoute.Sitemap[number]>()
+  for (const entry of [...staticUrls, ...toolUrls, ...articleUrls]) {
+    uniqueUrls.set(entry.url, entry)
+  }
+
+  return [...uniqueUrls.values()]
 }

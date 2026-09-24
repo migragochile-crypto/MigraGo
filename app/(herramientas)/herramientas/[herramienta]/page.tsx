@@ -7,6 +7,7 @@ import { HERRAMIENTAS_LIST } from '@/lib/content/silos'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { softwareApplicationSchema } from '@/lib/seo/schemas'
 import { SITE_URL } from '@/lib/constants'
+import { isIndexableToolSlug } from '@/lib/seo/indexing'
 
 
 export const revalidate = 86400
@@ -28,6 +29,7 @@ export async function generateMetadata({
     title: tool.label,
     description: `Herramienta interactiva: ${tool.label}. Gratis y actualizada.`,
     slug: `herramientas/${herramienta}`,
+    noIndex: !isIndexableToolSlug(herramienta),
   })
 }
 
