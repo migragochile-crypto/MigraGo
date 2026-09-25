@@ -153,6 +153,31 @@ export async function getAllPublishedArticles(): Promise<
   )()
 }
 
+export type SearchArticle = Pick<
+  Article,
+  'slug' | 'silo' | 'type' | 'title' | 'h1' | 'meta_description' | 'keyword_primary' | 'updated_at'
+>
+
+export async function getSearchIndex(): Promise<SearchArticle[]> {
+  return unstable_cache(
+    async () => {
+      const supabase = getSupabase()
+      if (!supabase) return []
+
+      const { data } = await supabase
+        .from('articles')
+        .select('slug, silo, type, title, h1, meta_description, keyword_primary, updated_at')
+        .eq('is_published', true)
+
+      return ((data ?? []) as SearchArticle[])
+        .map(normalizeArticleRecord)
+        .filter((article) => isIndexableArticleSlug(article.slug))
+    },
+    ['search-index-v1'],
+    { revalidate: 21600, tags: ['all-published-articles'] }
+  )()
+}
+
 export async function getNewsArticles(): Promise<
   Pick<Article, 'slug' | 'title' | 'h1' | 'meta_description' | 'published_at' | 'updated_at'>[]
 > {

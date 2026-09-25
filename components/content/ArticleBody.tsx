@@ -1,8 +1,12 @@
+import { addHeadingIds } from '@/lib/content/headings'
+
 interface Props {
   content: string
 }
 
 export default function ArticleBody({ content }: Props) {
+  const contentWithAnchors = addHeadingIds(content)
+
   return (
     <div
       className="prose prose-lg max-w-none
@@ -18,7 +22,7 @@ export default function ArticleBody({ content }: Props) {
         prose-code:text-primary prose-code:bg-gray-100 prose-code:px-1 prose-code:rounded
         prose-table:text-sm
         prose-th:bg-gray-100 prose-th:font-semibold"
-      dangerouslySetInnerHTML={{ __html: content }}
+      dangerouslySetInnerHTML={{ __html: contentWithAnchors }}
     />
   )
 }

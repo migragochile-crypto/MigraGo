@@ -5,6 +5,7 @@ import { organizationSchema, webSiteSchema } from '@/lib/seo/schemas'
 import { SILOS, PAISES, HERRAMIENTAS_LIST, MAIN_SILOS } from '@/lib/content/silos'
 import { SITE_URL } from '@/lib/constants'
 import { isIndexableArticleSlug, isIndexableToolSlug } from '@/lib/seo/indexing'
+import MigrationRouteFinder from '@/components/home/MigrationRouteFinder'
 
 export const metadata: Metadata = {
   title: 'MigraGo — Tu guía migratoria en Chile',
@@ -33,9 +34,9 @@ export default function HomePage() {
       <JsonLd schema={webSiteSchema()} />
 
       {/* Hero */}
-      <section className="bg-primary text-white py-24 px-4">
+      <section className="bg-primary px-4 py-16 text-white lg:py-24">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+          <h1 className="text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
             Tu trámite migratorio en Chile, explicado paso a paso
           </h1>
           <p className="mt-6 text-lg lg:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
@@ -45,12 +46,43 @@ export default function HomePage() {
               Basado en Ley 21.325 y normativa oficial del SERMIG.
             </span>
           </p>
+          <form
+            action="/buscar"
+            method="get"
+            role="search"
+            className="mx-auto mt-8 flex max-w-2xl flex-col gap-3 rounded-2xl border border-white/15 bg-white/10 p-2 backdrop-blur sm:flex-row"
+          >
+            <label htmlFor="home-search" className="sr-only">Buscar una respuesta en MigraGo</label>
+            <div className="relative flex-1">
+              <svg
+                aria-hidden="true"
+                className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+              </svg>
+              <input
+                id="home-search"
+                name="q"
+                type="search"
+                minLength={2}
+                maxLength={120}
+                placeholder="Escribe tu situación: visa vencida, RUT, cuenta bancaria…"
+                className="h-14 w-full rounded-xl border-0 bg-white pl-12 pr-4 text-base text-gray-900 outline-none ring-accent transition placeholder:text-gray-400 focus:ring-4"
+              />
+            </div>
+            <button type="submit" className="h-14 rounded-xl bg-accent px-6 font-semibold text-white transition hover:bg-accent-dark">
+              Buscar
+            </button>
+          </form>
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
             <Link
-              href="/herramientas/calculadora-elegibilidad"
+              href="#orientador"
               className="bg-accent hover:bg-accent-dark text-white font-semibold px-8 py-4 rounded-2xl transition-colors text-base min-w-[220px]"
             >
-              ¿Qué permiso necesito?
+              Orientar mi situación
             </Link>
             <Link
               href="/residencia-temporal"
@@ -75,6 +107,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <MigrationRouteFinder />
 
       {/* Silos */}
       <section className="py-16 px-4 bg-surface">

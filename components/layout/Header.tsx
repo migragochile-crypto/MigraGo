@@ -19,6 +19,8 @@ const SECONDARY_LINKS = [
   { href: '/glosario', label: 'Glosario' },
 ]
 
+const MOBILE_LINKS = [{ href: '/buscar', label: 'Buscar' }, ...SECONDARY_LINKS]
+
 export default function Header() {
   return (
     <header className="bg-primary text-white shadow-md sticky top-0 z-50">
@@ -40,6 +42,17 @@ export default function Header() {
             ))}
           </nav>
 
+          <Link
+            href="/buscar"
+            aria-label="Buscar en MigraGo"
+            className="hidden lg:inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-white/90 transition-colors hover:bg-white/10 hover:text-white"
+          >
+            <svg aria-hidden="true" className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+            </svg>
+            <span className="hidden xl:inline">Buscar</span>
+          </Link>
+
           {/* Desktop CTA */}
           <Link
             href="/herramientas/consultar-estado"
@@ -49,7 +62,7 @@ export default function Header() {
           </Link>
 
           {/* Mobile toggle */}
-          <MobileMenuToggle siloLinks={NAV_SILOS} secondaryLinks={SECONDARY_LINKS} />
+          <MobileMenuToggle siloLinks={NAV_SILOS} secondaryLinks={MOBILE_LINKS} />
         </div>
       </div>
     </header>
