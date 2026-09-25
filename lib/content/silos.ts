@@ -101,6 +101,7 @@ export const SILOS: Record<string, SiloConfig> = {
       'afp-extranjero',
       'arriendo',
       'remesas',
+      'enviar-dinero-colombia',
       'educacion-hijos',
       'convalidacion-titulos',
       'apostilla-traduccion',

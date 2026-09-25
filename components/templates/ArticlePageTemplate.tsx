@@ -33,7 +33,13 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
     ? 'cuenta-bancaria'
     : article.slug === 'vivir-en-chile/remesas'
       ? 'remesas'
+      : article.slug === 'vivir-en-chile/enviar-dinero-colombia'
+        ? 'enviar-dinero-colombia'
       : null
+  const wiseMarker = '<!-- WISE_AFFILIATE_CTA -->'
+  const contentParts = wisePlacement && article.content?.includes(wiseMarker)
+    ? article.content.split(wiseMarker)
+    : null
 
   const schemas: Record<string, unknown>[] = [
     isHowTo ? howToSchema(article.h1, article.howto_steps) : articleSchema(article),
@@ -97,9 +103,18 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
                 <EditorialDisclosure updatedAt={article.updated_at} />
               </div>
 
-              {article.content && <ArticleBody content={article.content} />}
-
-              {wisePlacement && <WiseAffiliateBlock placement={wisePlacement} />}
+              {contentParts ? (
+                <>
+                  <ArticleBody content={contentParts[0]} />
+                  {wisePlacement && <WiseAffiliateBlock placement={wisePlacement} />}
+                  <ArticleBody content={contentParts.slice(1).join('')} />
+                </>
+              ) : (
+                <>
+                  {article.content && <ArticleBody content={article.content} />}
+                  {wisePlacement && <WiseAffiliateBlock placement={wisePlacement} />}
+                </>
+              )}
 
               {article.faq_items?.length > 0 && (
                 <section className="mt-12">

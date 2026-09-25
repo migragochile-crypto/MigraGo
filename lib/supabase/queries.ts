@@ -36,7 +36,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
 
       return selected ? normalizeArticleRecord(selected as Article) : null
     },
-    [`article-v5-${slug}`],
+    [`article-v6-${slug}`],
     { revalidate: 86400, tags: [`article-${slug}`] }
   )()
 }
@@ -60,7 +60,7 @@ export async function getArticlesBySilo(
         .map(normalizeArticleRecord)
         .filter((article) => isIndexableArticleSlug(article.slug))
     },
-    [`silo-v5-${silo}`],
+    [`silo-v6-${silo}`],
     { revalidate: 86400, tags: [`silo-${silo}`] }
   )()
 }
@@ -70,7 +70,7 @@ export async function getRelatedArticles(
 ): Promise<Pick<Article, 'id' | 'slug' | 'title' | 'h1' | 'meta_description' | 'silo' | 'type'>[]> {
   if (slugs.length === 0) return []
   
-  const cacheKey = `related-v5-${[...slugs].sort().join('-')}`
+  const cacheKey = `related-v6-${[...slugs].sort().join('-')}`
   return unstable_cache(
     async () => {
       const supabase = getSupabase()
@@ -112,7 +112,7 @@ export async function getPublishedClustersBySilo(silo: string): Promise<string[]
         .filter(isIndexableArticleSlug)
         .map((slug) => slug.split('/')[1])
     },
-    [`clusters-v5-${silo}`],
+    [`clusters-v6-${silo}`],
     { revalidate: 86400, tags: [`silo-${silo}`] }
   )()
 }
@@ -148,7 +148,7 @@ export async function getAllPublishedArticles(): Promise<
         'slug' | 'silo' | 'type' | 'updated_at' | 'country_tags' | 'content'
       >[]).map(normalizeArticleRecord)
     },
-    ['all-published-articles-v5'],
+    ['all-published-articles-v6'],
     { revalidate: 21600, tags: ['all-published-articles'] }
   )()
 }
@@ -175,7 +175,7 @@ export async function getNewsArticles(): Promise<
         .map(normalizeArticleRecord)
         .filter((article) => isIndexableArticleSlug(article.slug))
     },
-    ['news-articles-v5'],
+    ['news-articles-v6'],
     { revalidate: 21600, tags: ['silo-actualidad'] }
   )()
 }
