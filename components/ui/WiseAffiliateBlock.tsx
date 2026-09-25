@@ -6,7 +6,7 @@ const WISE_LINKS = {
   'enviar-dinero-colombia': 'https://wise.prf.hn/click/camref:1101l6u5z5/pubref:enviar-dinero-colombia',
 } as const
 
-const WISE_REMESAS_CREATIVE = {
+const WISE_CREATIVE = {
   href: 'https://wise.prf.hn/click/camref:1101l6u5z5/creativeref:1101l107624/pubref:remesas-banner',
   src: 'https://wise-creative.prf.hn/source/camref:1101l6u5z5/creativeref:1101l107624',
 } as const
@@ -18,8 +18,8 @@ interface Props {
 export default function WiseAffiliateBlock({ placement }: Props) {
   const isRemesas = placement === 'remesas'
   const isColombiaRoute = placement === 'enviar-dinero-colombia'
-  const showCreative = isRemesas || isColombiaRoute
-  const creativePubref = isColombiaRoute ? 'enviar-dinero-colombia-banner' : 'remesas-banner'
+  const isBankAccount = placement === 'cuenta-bancaria'
+  const creativePubref = `${placement}-banner`
 
   return (
     <aside
@@ -27,44 +27,42 @@ export default function WiseAffiliateBlock({ placement }: Props) {
       className="mt-10 rounded-2xl border border-sky-200 bg-sky-50/70 p-6"
     >
       <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-sky-800">
-        Opción para evaluar
+        {isBankAccount ? 'Alternativa para tus primeros días' : 'Opción para evaluar'}
       </p>
       <h2 id={`wise-${placement}-title`} className="text-xl font-bold text-gray-900">
         {isRemesas
           ? 'Revisa el costo de tu transferencia en Wise'
           : isColombiaRoute
             ? 'Cotiza cuánto recibirán en Colombia'
-          : '¿Necesitas enviar o recibir dinero internacionalmente?'}
+          : '¿Aún no tienes una cuenta bancaria chilena?'}
       </h2>
 
-      {showCreative && (
-        <a
-          href={`${WISE_REMESAS_CREATIVE.href.replace('remesas-banner', creativePubref)}`}
-          target="_blank"
-          rel="sponsored noopener noreferrer"
-          className="mt-5 block overflow-hidden rounded-xl border border-emerald-950/10 bg-[#163300] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
-          aria-label="Cotizar una transferencia internacional en Wise (abre en una pestaña nueva)"
-        >
-          {/* La carga directa conserva la creatividad y su medición oficial en Partnerize. */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={WISE_REMESAS_CREATIVE.src}
-            alt="Wise: Muy rápido, muy justo. Tipo de cambio medio del mercado y comisiones justas."
-            width="1200"
-            height="628"
-            loading="lazy"
-            decoding="async"
-            className="h-auto w-full"
-          />
-        </a>
-      )}
+      <a
+        href={WISE_CREATIVE.href.replace('remesas-banner', creativePubref)}
+        target="_blank"
+        rel="sponsored noopener noreferrer"
+        className="mt-5 block overflow-hidden rounded-xl border border-emerald-950/10 bg-[#163300] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+        aria-label="Revisar Wise (enlace de afiliado; abre en una pestaña nueva)"
+      >
+        {/* La carga directa conserva la creatividad y su medición oficial en Partnerize. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={WISE_CREATIVE.src}
+          alt="Wise: Muy rápido, muy justo. Tipo de cambio medio del mercado y comisiones justas."
+          width="1200"
+          height="628"
+          loading="lazy"
+          decoding="async"
+          className="h-auto w-full"
+        />
+      </a>
 
       <p className="mt-3 leading-7 text-gray-700">
         {isRemesas
           ? 'Antes de enviar, compara la comisión, el tipo de cambio, el monto que recibirá la otra persona y el plazo estimado. Wise es una alternativa disponible para ciertas rutas desde y hacia Chile; la disponibilidad y el precio dependen de la moneda, el país y el método de pago.'
           : isColombiaRoute
             ? 'Compara usando el mismo monto en pesos chilenos y revisa cuántos pesos colombianos recibirá exactamente el destinatario. La cotización final depende del método de pago, la verificación y la ruta disponible para tu cuenta.'
-          : 'Una cuenta bancaria chilena sirve para pagos locales. Para mover dinero entre países también puedes evaluar un servicio de transferencias internacionales y compararlo con el costo total que ofrece tu banco.'}
+          : 'Mientras completas tu RUT y la apertura de una cuenta chilena, puedes revisar si Wise está disponible para enviar o recibir dinero internacionalmente. No reemplaza una cuenta bancaria local: compara la ruta, el costo total y el monto final antes de operar.'}
       </p>
 
       <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -86,7 +84,7 @@ export default function WiseAffiliateBlock({ placement }: Props) {
               : 'border border-primary bg-white text-primary hover:bg-primary/5'
           }`}
         >
-          {showCreative ? 'Cotizar transferencia en Wise' : 'Conocer Wise'}
+          {isBankAccount ? 'Revisar disponibilidad en Wise' : 'Cotizar transferencia en Wise'}
           <span className="sr-only"> (abre en una pestaña nueva)</span>
         </a>
       </div>

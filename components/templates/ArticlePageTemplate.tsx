@@ -34,6 +34,15 @@ function linkFirstWiseMention(content: string, placement: string) {
   return content.replace(firstMention, linkedMention)
 }
 
+function addWiseMarkerFallback(content: string, placement: string, marker: string) {
+  if (content.includes(marker) || placement !== 'cuenta-bancaria') return content
+
+  const nextSection = '<h2>¿Puedo abrir una cuenta antes de llegar a Chile?</h2>'
+  return content.includes(nextSection)
+    ? content.replace(nextSection, `${marker}${nextSection}`)
+    : content
+}
+
 export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Props) {
   const siloConfig = SILOS[silo]
   const publicAuthor = getPublicAuthorName(article.author)
@@ -48,7 +57,11 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
       : null
   const wiseMarker = '<!-- WISE_AFFILIATE_CTA -->'
   const articleContent = wisePlacement && article.content
-    ? linkFirstWiseMention(article.content, wisePlacement)
+    ? addWiseMarkerFallback(
+        linkFirstWiseMention(article.content, wisePlacement),
+        wisePlacement,
+        wiseMarker
+      )
     : article.content
   const contentParts = wisePlacement && articleContent?.includes(wiseMarker)
     ? articleContent.split(wiseMarker)
