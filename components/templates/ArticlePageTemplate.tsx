@@ -24,6 +24,16 @@ interface Props {
   silo: string
 }
 
+function linkFirstWiseMention(content: string, placement: string) {
+  const firstMention = 'Wise es una'
+  if (!content.includes(firstMention)) return content
+
+  const href = `https://wise.prf.hn/click/camref:1101l6u5z5/pubref:${placement}-contextual`
+  const linkedMention = `<a href="${href}" target="_blank" rel="sponsored noopener noreferrer" aria-label="Conocer Wise (enlace de afiliado; abre en una pestaña nueva)">Wise</a> es una`
+
+  return content.replace(firstMention, linkedMention)
+}
+
 export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Props) {
   const siloConfig = SILOS[silo]
   const publicAuthor = getPublicAuthorName(article.author)
@@ -37,8 +47,11 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
         ? 'enviar-dinero-colombia'
       : null
   const wiseMarker = '<!-- WISE_AFFILIATE_CTA -->'
-  const contentParts = wisePlacement && article.content?.includes(wiseMarker)
-    ? article.content.split(wiseMarker)
+  const articleContent = wisePlacement && article.content
+    ? linkFirstWiseMention(article.content, wisePlacement)
+    : article.content
+  const contentParts = wisePlacement && articleContent?.includes(wiseMarker)
+    ? articleContent.split(wiseMarker)
     : null
 
   const schemas: Record<string, unknown>[] = [
@@ -107,7 +120,7 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
                 </>
               ) : (
                 <>
-                  {article.content && <ArticleBody content={article.content} />}
+                  {articleContent && <ArticleBody content={articleContent} />}
                   {wisePlacement && <WiseAffiliateBlock placement={wisePlacement} />}
                 </>
               )}
