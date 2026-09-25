@@ -68,6 +68,7 @@ export const INDEXABLE_ARTICLE_SLUGS = new Set([
   'vivir-en-chile/cuenta-bancaria',
   'vivir-en-chile/homologacion-titulos',
   'vivir-en-chile/pension-afp',
+  'vivir-en-chile/remesas',
   'vivir-en-chile/rut-extranjero',
   'vivir-en-chile/sistema-salud',
   'vivir-en-chile/trabajar-en-chile',

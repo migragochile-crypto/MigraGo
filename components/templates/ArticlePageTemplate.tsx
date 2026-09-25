@@ -5,6 +5,7 @@ import CtaBanner from '@/components/ui/CtaBanner'
 import LeadMagnet from '@/components/ui/LeadMagnet'
 import ArticleBody from '@/components/content/ArticleBody'
 import EditorialDisclosure from '@/components/ui/EditorialDisclosure'
+import WiseAffiliateBlock from '@/components/ui/WiseAffiliateBlock'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import {
@@ -28,6 +29,11 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
   const publicAuthor = getPublicAuthorName(article.author)
 
   const isHowTo = article.schema_type === 'HowTo' && article.howto_steps?.length > 0
+  const wisePlacement = article.slug === 'vivir-en-chile/cuenta-bancaria'
+    ? 'cuenta-bancaria'
+    : article.slug === 'vivir-en-chile/remesas'
+      ? 'remesas'
+      : null
 
   const schemas: Record<string, unknown>[] = [
     isHowTo ? howToSchema(article.h1, article.howto_steps) : articleSchema(article),
@@ -92,6 +98,8 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
               </div>
 
               {article.content && <ArticleBody content={article.content} />}
+
+              {wisePlacement && <WiseAffiliateBlock placement={wisePlacement} />}
 
               {article.faq_items?.length > 0 && (
                 <section className="mt-12">

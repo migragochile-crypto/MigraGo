@@ -16,7 +16,7 @@ const breadcrumbs = [
   { label: 'Política de Privacidad', href: `${SITE_URL}/privacidad` },
 ]
 
-const LAST_UPDATED = '21 de mayo de 2026'
+const LAST_UPDATED = '25 de septiembre de 2026'
 
 export default function PrivacidadPage() {
   return (
@@ -93,8 +93,9 @@ export default function PrivacidadPage() {
             <li><strong>Google Analytics</strong> — analítica de tráfico web.</li>
             <li><strong>Supabase</strong> — infraestructura utilizada para almacenar contenido y direcciones de correo de suscriptores.</li>
             <li><strong>Proveedores de publicidad</strong> — si el sitio muestra anuncios, estos pueden usar cookies de terceros para segmentación contextual.</li>
+            <li><strong>Wise y Partnerize</strong> — algunos contenidos incluyen enlaces de afiliado de Wise gestionados mediante Partnerize. Al seguir uno de estos enlaces, el proveedor puede registrar el clic, la referencia de la página y una eventual conversión para atribuir una comisión.</li>
           </ul>
-          <p className="mt-3">{SITE_NAME} no controla las políticas de privacidad de estos terceros. Te recomendamos consultarlas directamente.</p>
+          <p className="mt-3">Los enlaces de afiliado se identifican de forma visible antes del clic. {SITE_NAME} no recibe tus datos bancarios ni los datos de la operación realizada en Wise. Tampoco controla las políticas de privacidad de estos terceros; te recomendamos consultarlas directamente.</p>
         </section>
 
         <section>

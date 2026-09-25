@@ -16,7 +16,7 @@ const breadcrumbs = [
   { label: 'Términos de Uso', href: `${SITE_URL}/terminos` },
 ]
 
-const LAST_UPDATED = '21 de mayo de 2026'
+const LAST_UPDATED = '25 de septiembre de 2026'
 
 export default function TerminosPage() {
   return (
@@ -116,7 +116,24 @@ export default function TerminosPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-gray-900 mb-3">8. Modificaciones</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-3">8. Enlaces de afiliados</h2>
+          <p>
+            Algunas guías pueden incluir enlaces de afiliado identificados de forma visible. Si visitas
+            un proveedor mediante uno de estos enlaces y completas una acción válida, {SITE_NAME} puede
+            recibir una comisión sin costo adicional para ti. Actualmente podemos participar en el
+            programa de afiliados de Wise, cuyo seguimiento es gestionado por Partnerize.
+          </p>
+          <p className="mt-3">
+            La inclusión de un enlace no constituye una recomendación personalizada ni garantiza que el
+            servicio sea el más económico o adecuado para tu caso. Las tarifas, el tipo de cambio, los
+            países admitidos y las condiciones los determina cada proveedor. Revisa el costo total y las
+            condiciones vigentes antes de contratar. La compensación no determina nuestras conclusiones
+            editoriales.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-gray-900 mb-3">9. Modificaciones</h2>
           <p>
             Nos reservamos el derecho de modificar estos Términos de Uso en cualquier momento. Los
             cambios entran en vigencia al publicarse en esta página. El uso continuado del sitio tras
@@ -125,7 +142,7 @@ export default function TerminosPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-gray-900 mb-3">9. Ley aplicable y jurisdicción</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-3">10. Ley aplicable y jurisdicción</h2>
           <p>
             Estos Términos de Uso se rigen por las leyes de la República de Chile. Cualquier
             controversia derivada del uso de este sitio se someterá a la jurisdicción de los
@@ -134,7 +151,7 @@ export default function TerminosPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-gray-900 mb-3">10. Contacto</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-3">11. Contacto</h2>
           <p>
             Para consultas sobre estos términos, escríbenos a{' '}
             <a href="mailto:hola@migrago.cl" className="text-primary underline">hola@migrago.cl</a>.
