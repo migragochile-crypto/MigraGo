@@ -34,33 +34,33 @@ export default function EditorialDisclosure({ updatedAt, compact = false }: Prop
         <div className="min-w-0">
           <p className="font-semibold text-gray-900">Cómo se elaboró esta información</p>
           <dl className="mt-3 space-y-2 text-sm leading-relaxed text-gray-700">
-            <div>
-              <dt className="inline font-semibold text-gray-900">Responsable editorial: </dt>
-              <dd className="inline">
+            <div className="grid gap-0.5 sm:grid-cols-[10.5rem_1fr] sm:gap-3">
+              <dt className="font-semibold text-gray-900">Responsable editorial:</dt>
+              <dd>
                 <Link href="/acerca#marcelo" className="text-primary underline underline-offset-2">
                   {EDITOR_NAME}
                 </Link>
                 , {EDITOR_ROLE}.
               </dd>
             </div>
-            <div>
-              <dt className="inline font-semibold text-gray-900">Uso de IA: </dt>
-              <dd className="inline">
-                se utiliza para investigar, organizar información y preparar borradores. El contenido
+            <div className="grid gap-0.5 sm:grid-cols-[10.5rem_1fr] sm:gap-3">
+              <dt className="font-semibold text-gray-900">Uso de IA:</dt>
+              <dd>
+                Se utiliza para investigar, organizar información y preparar borradores. El contenido
                 se contrasta con fuentes públicas oficiales antes de publicarse.
               </dd>
             </div>
-            <div>
-              <dt className="inline font-semibold text-gray-900">Revisión jurídica: </dt>
-              <dd className="inline">
-                no cuenta con revisión profesional de un abogado, salvo que la página lo indique
+            <div className="grid gap-0.5 sm:grid-cols-[10.5rem_1fr] sm:gap-3">
+              <dt className="font-semibold text-gray-900">Revisión jurídica:</dt>
+              <dd>
+                No cuenta con revisión profesional de un abogado, salvo que la página lo indique
                 expresamente. No constituye asesoría legal.
               </dd>
             </div>
             {updatedLabel && (
-              <div>
-                <dt className="inline font-semibold text-gray-900">Última actualización: </dt>
-                <dd className="inline">{updatedLabel}.</dd>
+              <div className="grid gap-0.5 sm:grid-cols-[10.5rem_1fr] sm:gap-3">
+                <dt className="font-semibold text-gray-900">Última actualización:</dt>
+                <dd>{updatedLabel}.</dd>
               </div>
             )}
           </dl>

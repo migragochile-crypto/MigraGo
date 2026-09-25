@@ -99,10 +99,6 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
                 </div>
               </header>
 
-              <div className="mb-8">
-                <EditorialDisclosure updatedAt={article.updated_at} />
-              </div>
-
               {contentParts ? (
                 <>
                   <ArticleBody content={contentParts[0]} />
@@ -115,6 +111,10 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
                   {wisePlacement && <WiseAffiliateBlock placement={wisePlacement} />}
                 </>
               )}
+
+              <div className="mt-12">
+                <EditorialDisclosure updatedAt={article.updated_at} />
+              </div>
 
               {article.faq_items?.length > 0 && (
                 <section className="mt-12">
