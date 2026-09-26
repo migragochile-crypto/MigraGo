@@ -23,6 +23,26 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/paises/colombia/visa-mercosur',
+        destination: '/paises/colombia',
+        permanent: true,
+      },
+      {
+        source: '/paises/peru/visa-mercosur',
+        destination: '/paises/peru',
+        permanent: true,
+      },
+      {
+        source: '/colombia/visa-mercosur',
+        destination: '/paises/colombia',
+        permanent: true,
+      },
+      {
+        source: '/peru/visa-mercosur',
+        destination: '/paises/peru',
+        permanent: true,
+      },
+      {
         source: '/actualidad/nuevo-sueldo-minimo-553553-mayo-2026',
         destination: '/actualidad/sueldo-minimo-2026-tramites',
         permanent: true,

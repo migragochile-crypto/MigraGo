@@ -58,12 +58,12 @@ const SNIPPET_OVERRIDES: Record<string, SnippetOverride> = {
   'nacionalizacion/carta-naturalizacion': { title: 'Carta de nacionalización chilena: requisitos 2026' },
   'residencia-temporal/contrato-trabajo': { title: 'Residencia por contrato de trabajo en Chile' },
   colombia: {
-    title: 'Colombianos en Chile: visa y documentos 2026',
-    description: 'Guía para colombianos en Chile: Residencia Temporal MERCOSUR, documentos apostillados, antecedentes penales, cuenta bancaria y vida cotidiana.',
+    title: 'Colombianos en Chile: residencia y documentos 2026',
+    description: 'Guía para colombianos en Chile: opciones vigentes de Residencia Temporal, documentos apostillados, ingreso como turista y vida cotidiana.',
   },
-  venezuela: { title: 'Venezolanos en Chile: visa y regularización 2026' },
+  venezuela: { title: 'Venezolanos en Chile: ingreso y residencia 2026' },
   argentina: { title: 'Argentinos en Chile: residencia MERCOSUR 2026' },
-  peru: { title: 'Peruanos en Chile: visa y documentos 2026' },
+  peru: { title: 'Peruanos en Chile: residencia y documentos 2026' },
   'residencia-definitiva/documentos': {
     description: 'Revisa los documentos para solicitar la Residencia Definitiva en Chile, su vigencia, apostilla y los antecedentes que pueden pedirte según tu caso.',
   },
