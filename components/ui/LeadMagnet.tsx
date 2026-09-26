@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { trackAnalyticsEvent } from '@/lib/analytics'
 
 interface Props {
   /** Identificador de la página/recurso para saber de dónde vino el suscriptor */
@@ -39,6 +40,11 @@ export default function LeadMagnet({
         setStatus('error')
         return
       }
+      trackAnalyticsEvent('newsletter_signup', {
+        source,
+        page_path: window.location.pathname,
+        form_type: downloadHref ? 'lead_magnet_download' : 'regulatory_updates',
+      })
       setStatus('success')
     } catch {
       setErrorMsg('Error de conexión. Intenta de nuevo.')

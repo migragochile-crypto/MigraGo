@@ -30,7 +30,7 @@ function linkFirstWiseMention(content: string, placement: string) {
   if (!content.includes(firstMention)) return content
 
   const href = `https://wise.prf.hn/click/camref:1101l6u5z5/pubref:${placement}-contextual`
-  const linkedMention = `<a href="${href}" target="_blank" rel="sponsored noopener noreferrer" aria-label="Conocer Wise (enlace de afiliado; abre en una pestaña nueva)">Wise</a> es una`
+  const linkedMention = `<a href="${href}" target="_blank" rel="sponsored noopener noreferrer" data-affiliate-provider="wise" data-affiliate-placement="${placement}" data-affiliate-link-type="contextual_text" aria-label="Conocer Wise (enlace de afiliado; abre en una pestaña nueva)">Wise</a> es una`
 
   return content.replace(firstMention, linkedMention)
 }

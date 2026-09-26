@@ -4,6 +4,7 @@ import Script from 'next/script'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import AnalyticsEvents from '@/components/analytics/AnalyticsEvents'
 import { SITE_URL, SITE_NAME } from '@/lib/constants'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
@@ -59,14 +60,28 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         ) : null}
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-M3F08MR4KC" strategy="afterInteractive" />
         <Script id="ga4" strategy="afterInteractive">{`
+          try {
+            var internalParam = new URLSearchParams(window.location.search).get('migrago_internal');
+            if (internalParam === '1' || internalParam === '0') {
+              localStorage.setItem('migrago_internal_traffic', internalParam);
+              var cleanUrl = new URL(window.location.href);
+              cleanUrl.searchParams.delete('migrago_internal');
+              history.replaceState({}, '', cleanUrl.pathname + cleanUrl.search + cleanUrl.hash);
+            }
+            if (localStorage.getItem('migrago_internal_traffic') === '1') {
+              window['ga-disable-G-M3F08MR4KC'] = true;
+            }
+          } catch (error) {}
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
           gtag('js', new Date());
           gtag('config', 'G-M3F08MR4KC');
         `}</Script>
       </head>
       <body className="min-h-full flex flex-col antialiased">
         <Header />
+        <AnalyticsEvents />
         <div className="flex-1 flex flex-col">{children}</div>
         <Footer />
       </body>

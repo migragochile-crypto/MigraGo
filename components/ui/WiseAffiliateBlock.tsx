@@ -39,6 +39,9 @@ export default function WiseAffiliateBlock({ placement }: Props) {
 
       <a
         href={WISE_CREATIVE.href.replace('remesas-banner', creativePubref)}
+        data-affiliate-provider="wise"
+        data-affiliate-placement={placement}
+        data-affiliate-link-type="banner"
         target="_blank"
         rel="sponsored noopener noreferrer"
         className="mt-5 block overflow-hidden rounded-xl border border-emerald-950/10 bg-[#163300] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
@@ -76,6 +79,9 @@ export default function WiseAffiliateBlock({ placement }: Props) {
         )}
         <a
           href={WISE_LINKS[placement]}
+          data-affiliate-provider="wise"
+          data-affiliate-placement={placement}
+          data-affiliate-link-type="button"
           target="_blank"
           rel="sponsored noopener noreferrer"
           className={`inline-flex min-h-11 items-center justify-center rounded-lg px-5 py-3 font-semibold transition-colors ${
