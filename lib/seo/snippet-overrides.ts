@@ -57,13 +57,13 @@ const SNIPPET_OVERRIDES: Record<string, SnippetOverride> = {
   'residencia-temporal/mercosur': { title: 'Residencia Temporal MERCOSUR en Chile 2026' },
   'nacionalizacion/carta-naturalizacion': { title: 'Carta de nacionalización chilena: requisitos 2026' },
   'residencia-temporal/contrato-trabajo': { title: 'Residencia por contrato de trabajo en Chile' },
-  'paises/colombia': {
+  colombia: {
     title: 'Colombianos en Chile: visa y documentos 2026',
     description: 'Guía para colombianos en Chile: Residencia Temporal MERCOSUR, documentos apostillados, antecedentes penales, cuenta bancaria y vida cotidiana.',
   },
-  'paises/venezuela': { title: 'Venezolanos en Chile: visa y regularización 2026' },
-  'paises/argentina': { title: 'Argentinos en Chile: residencia MERCOSUR 2026' },
-  'paises/peru': { title: 'Peruanos en Chile: visa y documentos 2026' },
+  venezuela: { title: 'Venezolanos en Chile: visa y regularización 2026' },
+  argentina: { title: 'Argentinos en Chile: residencia MERCOSUR 2026' },
+  peru: { title: 'Peruanos en Chile: visa y documentos 2026' },
   'residencia-definitiva/documentos': {
     description: 'Revisa los documentos para solicitar la Residencia Definitiva en Chile, su vigencia, apostilla y los antecedentes que pueden pedirte según tu caso.',
   },
@@ -72,4 +72,3 @@ const SNIPPET_OVERRIDES: Record<string, SnippetOverride> = {
 export function getSnippetOverride(slug: string): SnippetOverride {
   return SNIPPET_OVERRIDES[slug] ?? {}
 }
-
