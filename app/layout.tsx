@@ -27,6 +27,18 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     locale: 'es_CL',
     type: 'website',
+    images: [
+      {
+        url: `/api/og?title=${encodeURIComponent(`${SITE_NAME} — Tu guía migratoria en Chile`)}`,
+        width: 1200,
+        height: 630,
+        alt: `${SITE_NAME} — Tu guía migratoria en Chile`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: [`/api/og?title=${encodeURIComponent(`${SITE_NAME} — Tu guía migratoria en Chile`)}`],
   },
   robots: { index: true, follow: true },
   verification: { google: googleSiteVerification },
@@ -61,4 +73,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   )
 }
-

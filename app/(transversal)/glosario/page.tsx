@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { getAllGlossaryTerms } from '@/lib/supabase/queries'
 import Breadcrumbs from '@/components/ui/Breadcrumbs'
 import { SITE_URL } from '@/lib/constants'
+import JsonLd from '@/components/seo/JsonLd'
+import { collectionPageSchema } from '@/lib/seo/schemas'
 
 
 export const revalidate = 86400
@@ -29,7 +31,14 @@ export default async function GlosarioPage() {
   }, {})
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10">
+    <>
+      <JsonLd schema={collectionPageSchema({
+        name: 'Glosario migratorio de Chile',
+        description: 'Definiciones claras de términos usados en trámites migratorios en Chile.',
+        url: `${SITE_URL}/glosario`,
+        items: terms.map((term) => ({ name: term.term, url: `${SITE_URL}/glosario/${term.slug}` })),
+      })} />
+      <div className="max-w-4xl mx-auto px-4 py-10">
       <Breadcrumbs items={breadcrumbs} />
       <h1 className="mt-6 text-3xl font-bold text-gray-900">Glosario migratorio</h1>
       <p className="mt-3 text-gray-600">
@@ -64,7 +73,7 @@ export default async function GlosarioPage() {
             ))}
         </div>
       )}
-    </div>
+      </div>
+    </>
   )
 }
-

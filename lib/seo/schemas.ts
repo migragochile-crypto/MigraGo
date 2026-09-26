@@ -120,6 +120,30 @@ export function breadcrumbSchema(items: { name: string; url: string }[]) {
   }
 }
 
+export function collectionPageSchema(opts: {
+  name: string
+  description: string
+  url: string
+  items: { name: string; url: string }[]
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: opts.name,
+    description: opts.description,
+    url: opts.url,
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: opts.items.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        url: item.url,
+      })),
+    },
+  }
+}
+
 export function softwareApplicationSchema(opts: {
   name: string
   description: string

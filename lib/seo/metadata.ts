@@ -3,6 +3,7 @@ import type { Article } from '@/types/content'
 import { SITE_URL, SITE_NAME } from '@/lib/constants'
 import { getPublicAuthorName } from '@/lib/editorial'
 import { isIndexableArticleSlug } from '@/lib/seo/indexing'
+import { getSnippetOverride } from '@/lib/seo/snippet-overrides'
 
 
 export function buildMetadata(opts: {
@@ -57,7 +58,9 @@ export function articleMetadata(article: Article): Metadata {
 
   // El layout raíz aplica template '%s | MigraGo'. Si el título de DB ya trae
   // el brand, se elimina para que el template no lo duplique.
-  const titleStr = article.title.replace(/\s*\|\s*MigraGo\s*$/i, '')
+  const snippetOverride = getSnippetOverride(article.slug)
+  const titleStr = snippetOverride.title ?? article.title.replace(/\s*\|\s*MigraGo\s*$/i, '')
+  const description = snippetOverride.description ?? article.meta_description
 
   const sectionLabel = article.silo
     .split('-')
@@ -67,11 +70,11 @@ export function articleMetadata(article: Article): Metadata {
 
   return {
     title: titleStr,
-    description: article.meta_description,
+    description,
     alternates: { canonical: canonicalUrl },
     openGraph: {
-      title: article.title,
-      description: article.meta_description,
+      title: titleStr,
+      description,
       url,
       siteName: SITE_NAME,
       locale: 'es_CL',
@@ -90,8 +93,8 @@ export function articleMetadata(article: Article): Metadata {
     },
     twitter: {
       card: 'summary_large_image',
-      title: article.title,
-      description: article.meta_description,
+      title: titleStr,
+      description,
       images: [imageUrl],
     },
     robots: isIndexableArticleSlug(article.slug)

@@ -4,6 +4,8 @@ import { HERRAMIENTAS_LIST } from '@/lib/content/silos'
 import Breadcrumbs from '@/components/ui/Breadcrumbs'
 import { SITE_URL } from '@/lib/constants'
 import { buildMetadata } from '@/lib/seo/metadata'
+import JsonLd from '@/components/seo/JsonLd'
+import { collectionPageSchema } from '@/lib/seo/schemas'
 
 
 export const metadata: Metadata = buildMetadata({
@@ -30,7 +32,14 @@ export default function HerramientasIndexPage() {
   ]
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-10">
+    <>
+      <JsonLd schema={collectionPageSchema({
+        name: 'Herramientas migratorias gratuitas',
+        description: 'Calculadoras, simuladores y listas para preparar trámites migratorios en Chile.',
+        url: `${SITE_URL}/herramientas`,
+        items: HERRAMIENTAS_LIST.map((tool) => ({ name: tool.label, url: `${SITE_URL}/herramientas/${tool.slug}` })),
+      })} />
+      <div className="max-w-5xl mx-auto px-4 py-10">
       <Breadcrumbs items={breadcrumbs} />
       <h1 className="mt-6 text-3xl font-bold text-gray-900">Herramientas migratorias</h1>
       <p className="mt-3 text-lg text-gray-600">
@@ -66,6 +75,7 @@ export default function HerramientasIndexPage() {
         </ul>
         <p className="mt-4 text-sm text-gray-500">Revisión normativa de las herramientas: 10 de agosto de 2026.</p>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
