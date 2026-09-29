@@ -6,6 +6,8 @@ import LeadMagnet from '@/components/ui/LeadMagnet'
 import ArticleBody from '@/components/content/ArticleBody'
 import EditorialDisclosure from '@/components/ui/EditorialDisclosure'
 import WiseAffiliateBlock from '@/components/ui/WiseAffiliateBlock'
+import WiseConversionCta from '@/components/ui/WiseConversionCta'
+import WiseStickyCta from '@/components/ui/WiseStickyCta'
 import Link from 'next/link'
 import JsonLd from '@/components/seo/JsonLd'
 import {
@@ -18,6 +20,7 @@ import { SILOS } from '@/lib/content/silos'
 import type { Article, BreadcrumbItem } from '@/types/content'
 import { getPublicAuthorName } from '@/lib/editorial'
 import { getArticleHeadings } from '@/lib/content/headings'
+import type { WisePlacement } from '@/lib/affiliates/wise'
 
 interface Props {
   article: Article
@@ -49,13 +52,19 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
   const publicAuthor = getPublicAuthorName(article.author)
 
   const isHowTo = article.schema_type === 'HowTo' && article.howto_steps?.length > 0
-  const wisePlacement = article.slug === 'vivir-en-chile/cuenta-bancaria'
-    ? 'cuenta-bancaria'
-    : article.slug === 'vivir-en-chile/remesas'
-      ? 'remesas'
-      : article.slug === 'vivir-en-chile/enviar-dinero-colombia'
-        ? 'enviar-dinero-colombia'
-      : null
+  const wisePlacementBySlug: Record<string, WisePlacement> = {
+    'vivir-en-chile/cuenta-bancaria': 'cuenta-bancaria',
+    'vivir-en-chile/remesas': 'remesas',
+    'vivir-en-chile/enviar-dinero-colombia': 'enviar-dinero-colombia',
+    'vivir-en-chile/costo-de-vida': 'costo-de-vida',
+    'vivir-en-chile/trabajar-en-chile': 'trabajar-en-chile',
+    'vivir-en-chile/como-emigrar-a-chile': 'como-emigrar-a-chile',
+    'vivir-en-chile/rut-extranjero': 'rut-extranjero',
+  }
+  const wisePlacement = wisePlacementBySlug[article.slug] ?? null
+  const isPrimaryWisePage = wisePlacement === 'cuenta-bancaria'
+    || wisePlacement === 'remesas'
+    || wisePlacement === 'enviar-dinero-colombia'
   const wiseMarker = '<!-- WISE_AFFILIATE_CTA -->'
   const articleContent = wisePlacement && article.content
     ? addWiseMarkerFallback(
@@ -143,6 +152,8 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
                 </div>
               </header>
 
+              {wisePlacement && <WiseConversionCta placement={wisePlacement} format="top_inline" />}
+
               {articleHeadings.length > 1 && (
                 <nav aria-label="Contenido de esta guía" className="mb-9 rounded-2xl border border-gray-200 bg-white p-5">
                   <div className="flex items-center justify-between gap-3">
@@ -165,14 +176,18 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
               {contentParts ? (
                 <>
                   <ArticleBody content={contentParts[0]} />
-                  {wisePlacement && <WiseAffiliateBlock placement={wisePlacement} />}
+                  {isPrimaryWisePage && <WiseAffiliateBlock placement={wisePlacement} />}
                   <ArticleBody content={contentParts.slice(1).join('')} />
                 </>
               ) : (
                 <>
                   {articleContent && <ArticleBody content={articleContent} />}
-                  {wisePlacement && <WiseAffiliateBlock placement={wisePlacement} />}
+                  {isPrimaryWisePage && <WiseAffiliateBlock placement={wisePlacement} />}
                 </>
+              )}
+
+              {isPrimaryWisePage && wisePlacement && (
+                <WiseConversionCta placement={wisePlacement} format="bottom_inline" />
               )}
 
               <div className="mt-12">
@@ -216,7 +231,7 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
             <RelatedContent slugs={article.related_slugs ?? []} currentSlug={article.slug} />
 
             {/* CTA mobile — visible solo en pantallas < lg */}
-            {siloConfig && (
+            {siloConfig && !isPrimaryWisePage && (
               <div className="lg:hidden mt-10 rounded-xl border border-primary/20 bg-primary/5 p-6 text-center">
                 <p className="font-semibold text-gray-900 mb-3">{siloConfig.cta.text}</p>
                 <a
@@ -233,12 +248,15 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
 
           {/* Right sidebar — CTA */}
           <aside className="hidden lg:block">
-            {siloConfig && (
+            {isPrimaryWisePage && wisePlacement ? (
+              <WiseConversionCta placement={wisePlacement} format="desktop_sidebar" />
+            ) : siloConfig && (
               <CtaBanner text={siloConfig.cta.text} href={siloConfig.cta.href} silo={silo} />
             )}
           </aside>
         </div>
       </div>
+      {isPrimaryWisePage && wisePlacement && <WiseStickyCta placement={wisePlacement} />}
     </>
   )
 }

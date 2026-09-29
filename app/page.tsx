@@ -110,6 +110,24 @@ export default function HomePage() {
 
       <MigrationRouteFinder />
 
+      <section className="border-y border-emerald-900/10 bg-[#eef7e8] px-4 py-8">
+        <div className="mx-auto flex max-w-5xl flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-emerald-800">Dinero y primeros pasos</p>
+            <h2 className="mt-1 text-2xl font-bold text-gray-900">¿Necesitas enviar o recibir dinero internacionalmente?</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-gray-600">
+              Revisa las opciones, los costos y el monto final antes de elegir cómo transferir.
+            </p>
+          </div>
+          <Link
+            href="/vivir-en-chile/remesas"
+            className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-xl bg-[#163300] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#285500]"
+          >
+            Ver guía para enviar dinero →
+          </Link>
+        </div>
+      </section>
+
       {/* Silos */}
       <section className="py-16 px-4 bg-surface">
         <div className="max-w-7xl mx-auto">

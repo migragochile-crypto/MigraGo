@@ -1,10 +1,5 @@
 import Link from 'next/link'
-
-const WISE_LINKS = {
-  'cuenta-bancaria': 'https://wise.prf.hn/click/camref:1101l6u5z5/pubref:cuenta-bancaria',
-  remesas: 'https://wise.prf.hn/click/camref:1101l6u5z5/pubref:remesas',
-  'enviar-dinero-colombia': 'https://wise.prf.hn/click/camref:1101l6u5z5/pubref:enviar-dinero-colombia',
-} as const
+import { getWiseAffiliateHref, type WisePlacement } from '@/lib/affiliates/wise'
 
 const WISE_CREATIVE = {
   href: 'https://wise.prf.hn/click/camref:1101l6u5z5/creativeref:1101l107624/pubref:remesas-banner',
@@ -12,7 +7,7 @@ const WISE_CREATIVE = {
 } as const
 
 interface Props {
-  placement: keyof typeof WISE_LINKS
+  placement: Extract<WisePlacement, 'cuenta-bancaria' | 'remesas' | 'enviar-dinero-colombia'>
 }
 
 export default function WiseAffiliateBlock({ placement }: Props) {
@@ -78,7 +73,7 @@ export default function WiseAffiliateBlock({ placement }: Props) {
           </Link>
         )}
         <a
-          href={WISE_LINKS[placement]}
+          href={getWiseAffiliateHref(placement)}
           data-affiliate-provider="wise"
           data-affiliate-placement={placement}
           data-affiliate-link-type="button"
