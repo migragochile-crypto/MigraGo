@@ -19,7 +19,7 @@ export default function WiseAffiliateBlock({ placement }: Props) {
   return (
     <aside
       aria-labelledby={`wise-${placement}-title`}
-      className="mt-10 rounded-2xl border border-sky-200 bg-sky-50/70 p-6"
+      className="mb-8 rounded-2xl border border-sky-200 bg-sky-50/70 p-6"
     >
       <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-sky-800">
         {isBankAccount ? 'Alternativa para tus primeros días' : 'Opción para evaluar'}

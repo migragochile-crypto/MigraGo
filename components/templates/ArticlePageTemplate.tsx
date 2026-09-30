@@ -152,7 +152,13 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
                 </div>
               </header>
 
-              {wisePlacement && <WiseConversionCta placement={wisePlacement} format="top_inline" />}
+              {wisePlacement && (
+                isPrimaryWisePage ? (
+                  <WiseAffiliateBlock placement={wisePlacement} />
+                ) : (
+                  <WiseConversionCta placement={wisePlacement} format="top_inline" />
+                )
+              )}
 
               {articleHeadings.length > 1 && (
                 <nav aria-label="Contenido de esta guía" className="mb-9 rounded-2xl border border-gray-200 bg-white p-5">
@@ -176,13 +182,21 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
               {contentParts ? (
                 <>
                   <ArticleBody content={contentParts[0]} />
-                  {isPrimaryWisePage && <WiseAffiliateBlock placement={wisePlacement} />}
+                  {isPrimaryWisePage && wisePlacement && (
+                    <div className="mt-10">
+                      <WiseConversionCta placement={wisePlacement} format="top_inline" />
+                    </div>
+                  )}
                   <ArticleBody content={contentParts.slice(1).join('')} />
                 </>
               ) : (
                 <>
                   {articleContent && <ArticleBody content={articleContent} />}
-                  {isPrimaryWisePage && <WiseAffiliateBlock placement={wisePlacement} />}
+                  {isPrimaryWisePage && wisePlacement && (
+                    <div className="mt-10">
+                      <WiseConversionCta placement={wisePlacement} format="top_inline" />
+                    </div>
+                  )}
                 </>
               )}
 
