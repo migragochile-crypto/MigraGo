@@ -162,6 +162,7 @@ const nextConfig = {
         destination: '/paises/argentina/:path*',
         permanent: true,
       },
+      // Las subguías de país retiradas consolidan su autoridad en el hub revisado.
       {
         source: '/bolivia/:path*',
         destination: '/paises/bolivia',
