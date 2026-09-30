@@ -238,7 +238,7 @@ export default function SimuladorPlazos() {
           <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-xs text-amber-800 space-y-1">
             <p className="font-semibold">Importante — estas fechas son de referencia</p>
             <ul className="list-disc list-inside space-y-0.5 text-amber-700">
-              <li>La referencia general para Residencia Definitiva es de 24 meses. Puede reducirse a 12 meses o aumentar a 30, 36 o 48 meses según tus circunstancias y ausencias.</li>
+              <li>La referencia general para Residencia Definitiva es de 24 meses. Una reducción a 12 meses no es automática y el plazo puede aumentar a 30, 36 o 48 meses según tus circunstancias y ausencias.</li>
               <li>La fecha de cinco años no basta por sí sola para nacionalizarse: también se exige Residencia Definitiva vigente y los demás requisitos aplicables.</li>
               <li>Verifica los requisitos actualizados en el{' '}
                 <a href="https://tramites.serviciomigraciones.cl" target="_blank" rel="noopener noreferrer" className="underline">

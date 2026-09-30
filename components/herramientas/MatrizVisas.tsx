@@ -11,12 +11,12 @@ interface SubcategoriaComparada {
 
 const SUBCATEGORIAS: SubcategoriaComparada[] = [
   {
-    nombre: 'Acuerdo Mercosur',
+    nombre: 'Reciprocidad internacional',
     slug: 'mercosur',
-    fundamento: 'Nacionalidad comprendida en el Acuerdo de Residencia de los Estados Partes del Mercosur, Bolivia y Chile.',
+    fundamento: 'Nacionalidad comprendida en la subcategoría de reciprocidad internacional publicada por el SERMIG.',
     acredita: ['Nacionalidad de Argentina, Bolivia, Brasil, Paraguay o Uruguay', 'Identidad y antecedentes exigidos por SERMIG'],
-    postulacion: 'Es una de las subcategorías que puede admitir solicitud desde Chile en los casos definidos por el Decreto 177.',
-    cautela: 'Ser nacional de otro país asociado no basta para quedar incluido en este acuerdo específico.',
+    postulacion: 'La solicitud por reciprocidad internacional se presenta desde el extranjero.',
+    cautela: 'La ficha vigente comprende a Argentina, Bolivia, Brasil, Paraguay y Uruguay. Ser nacional de otro país asociado no basta.',
   },
   {
     nombre: 'Reunificación familiar',

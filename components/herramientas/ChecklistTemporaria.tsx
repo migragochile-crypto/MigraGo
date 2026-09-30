@@ -58,7 +58,7 @@ const DOC_BASE: Record<string, Item> = {
   contrato: {
     id: 'contrato',
     doc: 'Contrato de trabajo firmado',
-    detalle: 'Debe estar firmado por el empleador y el trabajador. En algunos casos el SERMIG puede requerir que sea ratificado ante notario o en la Inspección del Trabajo.',
+    detalle: 'Para una solicitud desde el extranjero, verifica en SERMIG las formalidades notariales y consulares vigentes para el empleador y la persona solicitante.',
     href: '/residencia-temporal/contrato-trabajo',
   },
   carta_aceptacion: {
@@ -162,7 +162,7 @@ export default function ChecklistTemporaria() {
       {/* Selector de visa */}
       <div>
         <label className="block text-sm font-medium text-gray-900 mb-2">
-          ¿Qué tipo de visa temporaria vas a solicitar?
+          ¿Qué subcategoría de Residencia Temporal estás revisando?
         </label>
         <select
           value={visaSeleccionada ?? ''}
@@ -184,7 +184,7 @@ export default function ChecklistTemporaria() {
           <div>
             <div className="flex justify-between items-center mb-2">
               <span className="text-sm font-medium text-gray-700">
-                {completados} de {total} documentos listos
+                {completados} de {total} puntos revisados
               </span>
               <span className="text-sm font-bold text-primary">{porcentaje}%</span>
             </div>
@@ -196,15 +196,16 @@ export default function ChecklistTemporaria() {
             </div>
             {completados === total && (
               <p className="mt-2 text-sm text-green-700 font-medium">
-                ¡Lista completa! Verifica los requisitos actualizados en el SERMIG antes de presentar.
+                Revisión inicial completa. Confirma el expediente oficial en SERMIG antes de presentar.
               </p>
             )}
           </div>
 
           {/* Nota YMYL */}
           <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 text-xs text-amber-800">
-            Los requisitos exactos y los plazos de vigencia de cada documento los determina el SERMIG.
-            Verifica en{' '}
+            Esta lista es una referencia inicial, no un expediente completo. El lugar de postulación y los documentos
+            dependen de la subcategoría. La regla general es postular desde el extranjero, salvo excepciones oficiales.
+            Verifica los requisitos vigentes en{' '}
             <a
               href="https://tramites.serviciomigraciones.cl"
               target="_blank"
