@@ -236,8 +236,8 @@ export const MAIN_SILOS = [
 ] as const
 
 export const HERRAMIENTAS_LIST = [
-  { slug: 'calculadora-elegibilidad', label: 'Calculadora de Elegibilidad', icon: '✅' },
-  { slug: 'simulador-plazos', label: 'Simulador de Plazos', icon: '⏱️' },
+  { slug: 'calculadora-elegibilidad', label: 'Orientador de categorías migratorias', icon: '✅' },
+  { slug: 'simulador-plazos', label: 'Simulador de fechas de referencia', icon: '⏱️' },
   { slug: 'checklist-permanencia-definitiva', label: 'Checklist Residencia Definitiva', icon: '📋' },
   { slug: 'checklist-temporaria', label: 'Checklist Residencia Temporal', icon: '📋' },
   { slug: 'consultar-estado', label: 'Consultar Estado de Trámite', icon: '🔍' },

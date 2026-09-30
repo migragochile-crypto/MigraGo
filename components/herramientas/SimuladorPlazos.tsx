@@ -79,10 +79,10 @@ export default function SimuladorPlazos() {
             {/* Fecha inicio visa */}
             <div>
               <label className="block text-sm font-medium text-gray-900 mb-1">
-                ¿Cuándo comenzó la Residencia Temporal que usarás para el cálculo?
+                ¿Cuándo comenzó la Residencia Temporal que usarás como referencia?
               </label>
               <p className="text-xs text-gray-500 mb-2">
-                Usa la fecha del Estampado Electrónico o la que indique tu resolución. Una autodenuncia no inicia este cómputo.
+                Usa la fecha del Estampado Electrónico o de la resolución aplicable. Para nacionalización debe ser la residencia que dio origen a tu Residencia Definitiva. Una autodenuncia no inicia este cómputo.
               </p>
               <input
                 type="date"
@@ -143,13 +143,13 @@ export default function SimuladorPlazos() {
             disabled={!fechaInput || tienePD === null || (tienePD === true && !fechaPDInput)}
             className="bg-primary text-white text-sm font-medium px-6 py-2.5 rounded-lg hover:bg-primary/90 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
           >
-            Calcular plazos →
+            Generar fechas de referencia →
           </button>
         </>
       ) : (
         <>
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold text-gray-900">Tus plazos estimados</h2>
+            <h2 className="text-xl font-bold text-gray-900">Fechas base orientativas</h2>
             <button onClick={reiniciar} className="text-sm text-primary hover:underline">
               ← Recalcular
             </button>
@@ -182,7 +182,7 @@ export default function SimuladorPlazos() {
               </div>
               <div className={`rounded-xl p-4 flex-1 ${calculado.pdAlcanzada ? 'bg-green-50 border border-green-200' : 'bg-amber-50 border border-amber-200'}`}>
                 <p className="text-xs font-medium uppercase tracking-wide text-gray-500">
-                  Residencia Definitiva
+                  Referencia general para Residencia Definitiva
                 </p>
                 <p className="text-base font-bold text-gray-900 mt-0.5">
                   {formatDate(calculado.fechaPD)}
@@ -213,7 +213,7 @@ export default function SimuladorPlazos() {
               </div>
               <div className={`rounded-xl p-4 flex-1 ${calculado.natAlcanzada ? 'bg-green-50 border border-green-200' : 'bg-gray-50 border border-gray-200'}`}>
                 <p className="text-xs font-medium uppercase tracking-wide text-gray-500">
-                  Carta de Naturalización
+                  Referencia temporal para Carta de Naturalización
                 </p>
                 <p className="text-base font-bold text-gray-900 mt-0.5">
                   {formatDate(calculado.fechaNaturalizacion)}

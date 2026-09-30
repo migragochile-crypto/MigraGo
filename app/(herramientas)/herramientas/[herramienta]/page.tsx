@@ -43,7 +43,7 @@ interface ToolMeta {
 
 const TOOL_META: Record<string, ToolMeta> = {
   'calculadora-elegibilidad': {
-    desc: 'Responde 4 preguntas y descubre qué visa o categoría migratoria se ajusta mejor a tu situación.',
+    desc: 'Responde 4 preguntas para identificar qué subcategorías oficiales conviene revisar. No determina elegibilidad.',
     icon: '🧮',
     helpsWith: [
       'Ordenar posibles subcategorías según nacionalidad, vínculos y actividad principal.',
@@ -59,7 +59,7 @@ const TOOL_META: Record<string, ToolMeta> = {
     desc: 'Visualiza fechas de referencia para la Residencia Definitiva y la Carta de Naturalización.',
     icon: '📅',
     helpsWith: [
-      'Visualizar la fecha base de 24 meses para Residencia Definitiva bajo la normativa actual.',
+      'Visualizar una fecha base de referencia para los 24 meses generales de Residencia Definitiva.',
       'Estimar el hito de cinco años de residencia usado para la nacionalización ordinaria.',
     ],
     limits: [
@@ -200,7 +200,7 @@ export default async function HerramientaPage({
               </div>
             </div>
             <div className="mt-6 rounded-xl bg-gray-50 p-4 text-sm text-gray-600">
-              <p><strong className="text-gray-900">Revisión normativa:</strong> 10 de agosto de 2026.</p>
+              <p><strong className="text-gray-900">Revisión normativa:</strong> 29 de septiembre de 2026.</p>
               <a
                 href={meta.source.href}
                 target="_blank"

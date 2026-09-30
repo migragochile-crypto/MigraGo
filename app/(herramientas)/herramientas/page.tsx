@@ -16,8 +16,8 @@ export const metadata: Metadata = buildMetadata({
 })
 
 const TOOL_DESCRIPTIONS: Record<string, string> = {
-  'calculadora-elegibilidad': 'Explora subcategorías que conviene revisar según tu situación; no predice una aprobación.',
-  'simulador-plazos': 'Visualiza fechas base y las circunstancias que pueden modificar el cálculo.',
+  'calculadora-elegibilidad': 'Identifica subcategorías que conviene revisar según tu situación; no determina elegibilidad ni predice una aprobación.',
+  'simulador-plazos': 'Visualiza fechas de referencia y las circunstancias que pueden modificar el cómputo.',
   'checklist-permanencia-definitiva': 'Organiza una lista inicial y confirma el detalle en tu formulario oficial.',
   'checklist-temporaria': 'Prepara documentos por subcategoría y verifica vigencia, apostilla y lugar de postulación.',
   'consultar-estado': 'Entiende estados frecuentes y revisa qué canal oficial debes consultar.',

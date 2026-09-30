@@ -21,29 +21,19 @@ interface Item {
 const DOC_BASE: Record<string, Item> = {
   pasaporte: {
     id: 'pasaporte',
-    doc: 'Pasaporte vigente',
-    detalle: 'Con vigencia suficiente conforme a los criterios del SERMIG.',
-  },
-  ant_chile: {
-    id: 'ant-chile',
-    doc: 'Certificado de antecedentes penales de Chile (SRCeI)',
-    detalle: 'Gratuito en registrocivil.cl. Verifica el plazo de vigencia exigido por el SERMIG.',
+    doc: 'Documento de identidad aplicable',
+    detalle: 'Pasaporte vigente si postulas desde el extranjero; si la subcategoría admite solicitud desde Chile, SERMIG acepta el documento de identidad vigente.',
   },
   ant_origen: {
     id: 'ant-origen',
-    doc: 'Certificado de antecedentes del país de origen',
-    detalle: 'Apostillado. En español o con traducción oficial. Verifica el plazo de vigencia exigido por el SERMIG.',
-    href: '/problemas/antecedentes-penales',
-  },
-  domicilio: {
-    id: 'domicilio',
-    doc: 'Comprobante de domicilio en Chile',
-    detalle: 'Contrato de arriendo, boleta de servicio u otro documento según los criterios del SERMIG.',
+    doc: 'Antecedentes penales extranjeros, si eres mayor de 18 años',
+    detalle: 'Del país de origen o de aquel donde residiste durante los últimos cinco años; con antigüedad máxima de 60 días, apostilla o legalización y traducción cuando corresponda.',
+    href: '/problemas-migratorios/antecedentes-penales-chile',
   },
   foto: {
     id: 'foto',
-    doc: 'Fotografía reciente tamaño carnet',
-    detalle: 'El SERMIG puede solicitarla. Verifica los requisitos específicos en el portal.',
+    doc: 'Fotografía reciente',
+    detalle: 'A color, fondo blanco, rostro completo, expresión neutral y sin accesorios; en JPG o PNG.',
   },
   nacimiento_hijo: {
     id: 'nacimiento-hijo',
@@ -63,39 +53,49 @@ const DOC_BASE: Record<string, Item> = {
   },
   carta_aceptacion: {
     id: 'carta-aceptacion',
-    doc: 'Carta de aceptación de institución educativa',
-    detalle: 'De una institución reconocida por el Estado chileno (universidad, instituto, centro de formación técnica, etc.).',
+    doc: 'Certificado de alumno regular o de matrícula',
+    detalle: 'Emitido por un establecimiento educacional reconocido por el Estado.',
+  },
+  sustento_estudiante: {
+    id: 'sustento-estudiante',
+    doc: 'Documentos de sustento económico',
+    detalle: 'Depósitos, giros periódicos, declaración de expensas con respaldo de ingresos o certificado de beca, según corresponda.',
   },
   doc_humanitario: {
     id: 'doc-humanitario',
-    doc: 'Documentación que acredite la situación de vulnerabilidad',
-    detalle: 'Varía según el caso: puede ser carta de organización de apoyo, documentos médicos, declaraciones de testigos, entre otros. El SERMIG evalúa cada caso.',
+    doc: 'Seleccionar el supuesto humanitario exacto',
+    detalle: 'SERMIG publica cinco: NNA, embarazo, trata, tráfico ilícito de migrantes y violencia intrafamiliar o de género.',
+  },
+  ficha_humanitaria: {
+    id: 'ficha-humanitaria',
+    doc: 'Abrir la ficha oficial del supuesto elegido',
+    detalle: 'Cada supuesto tiene requisitos, acreditación y procedimiento propios. No uses una lista genérica de documentos.',
   },
 }
 
 const CHECKLIST_POR_VISA: Record<TipoVisa, { items: Item[]; articuloHref: string }> = {
   mercosur: {
-    items: [DOC_BASE.pasaporte, DOC_BASE.ant_chile, DOC_BASE.ant_origen, DOC_BASE.domicilio, DOC_BASE.foto],
+    items: [DOC_BASE.pasaporte, DOC_BASE.ant_origen, DOC_BASE.foto],
     articuloHref: '/residencia-temporal/mercosur',
   },
   'hijo-chileno': {
-    items: [DOC_BASE.pasaporte, DOC_BASE.ant_chile, DOC_BASE.ant_origen, DOC_BASE.nacimiento_hijo, DOC_BASE.domicilio, DOC_BASE.foto],
+    items: [DOC_BASE.pasaporte, DOC_BASE.ant_origen, DOC_BASE.foto, DOC_BASE.nacimiento_hijo],
     articuloHref: '/residencia-temporal/hijo-chileno',
   },
   'pareja-chilena': {
-    items: [DOC_BASE.pasaporte, DOC_BASE.ant_chile, DOC_BASE.ant_origen, DOC_BASE.matrimonio_auc, DOC_BASE.domicilio, DOC_BASE.foto],
+    items: [DOC_BASE.pasaporte, DOC_BASE.ant_origen, DOC_BASE.foto, DOC_BASE.matrimonio_auc],
     articuloHref: '/residencia-temporal/pareja-chilena',
   },
   'contrato-trabajo': {
-    items: [DOC_BASE.pasaporte, DOC_BASE.ant_chile, DOC_BASE.ant_origen, DOC_BASE.contrato, DOC_BASE.domicilio, DOC_BASE.foto],
+    items: [DOC_BASE.pasaporte, DOC_BASE.ant_origen, DOC_BASE.foto, DOC_BASE.contrato],
     articuloHref: '/residencia-temporal/contrato-trabajo',
   },
   estudiante: {
-    items: [DOC_BASE.pasaporte, DOC_BASE.ant_chile, DOC_BASE.ant_origen, DOC_BASE.carta_aceptacion, DOC_BASE.domicilio, DOC_BASE.foto],
+    items: [DOC_BASE.pasaporte, DOC_BASE.ant_origen, DOC_BASE.foto, DOC_BASE.carta_aceptacion, DOC_BASE.sustento_estudiante],
     articuloHref: '/residencia-temporal/estudiante',
   },
   'razones-humanitarias': {
-    items: [DOC_BASE.pasaporte, DOC_BASE.ant_chile, DOC_BASE.doc_humanitario, DOC_BASE.domicilio, DOC_BASE.foto],
+    items: [DOC_BASE.doc_humanitario, DOC_BASE.ficha_humanitaria],
     articuloHref: '/residencia-temporal/razones-humanitarias',
   },
 }
@@ -110,7 +110,7 @@ const OPCIONES_VISA: { value: TipoVisa; label: string }[] = [
 ]
 
 function storageKey(visa: TipoVisa) {
-  return `checklist-temp-${visa}-v1`
+  return `checklist-temp-${visa}-v2`
 }
 
 export default function ChecklistTemporaria() {

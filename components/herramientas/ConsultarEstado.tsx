@@ -30,20 +30,20 @@ const ESTADOS: EstadoInfo[] = [
   },
   {
     estado: 'Aprobada / Resuelta favorablemente',
-    descripcion: 'Tu solicitud fue aprobada. Debes retirar la cédula de identidad para extranjeros en el Registro Civil.',
-    quéHacer: 'Agenda una cita en el SRCeI (registrocivil.cl) para retirar o renovar tu cédula con la visa aprobada.',
+    descripcion: 'La autoridad dictó una resolución favorable. Los pasos posteriores dependen del permiso y de las instrucciones de la notificación.',
+    quéHacer: 'Lee la resolución, valida y descarga el Estampado Electrónico si corresponde. Cuando se otorgue residencia, solicita cita en Registro Civil dentro del plazo indicado; para Residencia Definitiva, SERMIG informa 30 días corridos desde la notificación.',
     color: 'green',
   },
   {
     estado: 'Rechazada / Resuelta desfavorablemente',
     descripcion: 'El SERMIG denegó tu solicitud. La resolución de rechazo indica los motivos.',
-    quéHacer: 'Lee atentamente la resolución. Puedes presentar un recurso de reposición o recurso jerárquico dentro de los plazos establecidos.',
+    quéHacer: 'Lee la resolución y su fecha de notificación. El recurso y el plazo aplicables dependen del procedimiento; usa la ficha oficial correspondiente y busca orientación urgente si existe una orden de salida o expulsión.',
     color: 'red',
   },
   {
     estado: 'Desistida / Archivada',
     descripcion: 'La solicitud fue archivada por inactividad, desistimiento o porque no se presentaron los antecedentes requeridos en el plazo indicado.',
-    quéHacer: 'Deberás iniciar una nueva solicitud desde cero en el portal del SERMIG.',
+    quéHacer: 'Lee el acto y su causa. Una nueva solicitud solo corresponde si tu situación permite postular y has corregido el problema; no la inicies automáticamente.',
     color: 'gray',
   },
 ]
@@ -110,6 +110,9 @@ export default function ConsultarEstado() {
       {/* Guía de estados */}
       <div>
         <h2 className="text-base font-semibold text-gray-900 mb-3">¿Qué significa cada estado?</h2>
+        <p className="mb-3 text-xs text-gray-500">
+          Los nombres son orientativos: pueden variar según el trámite y la versión del portal. La notificación de tu expediente prevalece sobre esta guía.
+        </p>
         <div className="space-y-3">
           {ESTADOS.map((e) => (
             <div

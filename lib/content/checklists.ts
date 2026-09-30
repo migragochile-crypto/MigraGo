@@ -7,45 +7,36 @@ export interface ChecklistItem {
 
 export const CHECKLIST_RESIDENCIA_DEFINITIVA: ChecklistItem[] = [
   {
-    id: 'pd-pasaporte',
-    doc: 'Pasaporte vigente',
-    detalle: 'Con vigencia suficiente conforme a los criterios del SERMIG al momento de presentar. Si está por vencer, renuévalo antes de presentar.',
+    id: 'pd-identidad',
+    doc: 'Hoja de identificación del pasaporte o documento de identidad',
+    detalle: 'Imagen legible del documento de identidad del país de origen.',
   },
   {
     id: 'pd-visa',
-    doc: 'Residencia Temporal y comprobantes asociados',
-    detalle: 'Confirma en el portal que tu subcategoría permite postular y que cumples el periodo de residencia exigido.',
+    doc: 'Estampado Electrónico de Residencia Temporal o documento equivalente',
+    detalle: 'Adjunta el Estampado Electrónico, la visa estampada en pasaporte o el documento que corresponda a tu caso. Confirma que la subcategoría permite postular.',
     href: '/residencia-temporal/renovacion',
   },
   {
     id: 'pd-cedula',
-    doc: 'Cédula de identidad para extranjeros vigente',
-    detalle: 'Emitida por el SRCeI (Registro Civil). Debe estar vigente al momento de presentar la solicitud.',
-  },
-  {
-    id: 'pd-ant-chile',
-    doc: 'Certificado de antecedentes penales de Chile',
-    detalle: 'Se obtiene gratis en registrocivil.cl. Verifica el plazo de vigencia exigido por el SERMIG al momento de presentar.',
+    doc: 'Cédula de identidad chilena para extranjeros',
+    detalle: 'Imagen legible; obligatoria para mayores de 18 años según la ficha general de SERMIG.',
   },
   {
     id: 'pd-ant-origen',
     doc: 'Certificado de antecedentes del país de origen',
-    detalle: 'Revisa si corresponde a tu caso y si debe estar apostillado, legalizado o traducido. Verifica la vigencia exigida por el SERMIG.',
+    detalle: 'Obligatorio para mayores de 18 años; máximo 60 días desde su emisión, apostillado o legalizado y traducido si corresponde.',
     href: '/problemas-migratorios/antecedentes-penales-chile',
   },
   {
-    id: 'pd-domicilio',
-    doc: 'Comprobante de domicilio, si el formulario lo solicita',
-    detalle: 'Usa únicamente uno de los documentos aceptados en las instrucciones de tu solicitud.',
-  },
-  {
     id: 'pd-foto',
-    doc: 'Fotografía, si el formulario lo solicita',
-    detalle: 'Verifica formato y características directamente en el portal antes de prepararla.',
+    doc: 'Fotografía reciente',
+    detalle: 'A color, fondo blanco, rostro completo, expresión neutral y sin accesorios; en JPG o PNG.',
   },
   {
-    id: 'pd-formulario',
-    doc: 'Formulario de solicitud completado en el portal del SERMIG',
-    detalle: 'Accede a tramites.serviciomigraciones.cl e inicia la solicitud de Residencia Definitiva con tu cuenta.',
+    id: 'pd-especificos',
+    doc: 'Documentos específicos de vínculo, actividad, ingresos o sustento',
+    detalle: 'La lista cambia según tu situación personal. Abre tu apartado exacto en la ficha de SERMIG y no presentes una lista genérica.',
+    href: '/residencia-definitiva/documentos',
   },
 ]

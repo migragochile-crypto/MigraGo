@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { CHECKLIST_RESIDENCIA_DEFINITIVA as ITEMS } from '@/lib/content/checklists'
 import LeadMagnet from '@/components/ui/LeadMagnet'
 
-const STORAGE_KEY = 'checklist-pd-v1'
+const STORAGE_KEY = 'checklist-pd-v2'
 const CHANGE_EVENT = 'checklist-pd-change'
 
 function subscribe(callback: () => void) {
@@ -63,7 +63,7 @@ export default function ChecklistPermanencia() {
       <div>
         <div className="flex justify-between items-center mb-2">
           <span className="text-sm font-medium text-gray-700">
-            {completados} de {total} documentos listos
+            {completados} de {total} puntos revisados
           </span>
           <span className="text-sm font-bold text-primary">{porcentaje}%</span>
         </div>
@@ -75,7 +75,7 @@ export default function ChecklistPermanencia() {
         </div>
         {completados === total && (
           <p className="mt-2 text-sm text-green-700 font-medium">
-            ¡Lista completa! Verifica los requisitos actualizados en el SERMIG antes de presentar.
+            Revisión general completa. Ahora confirma los documentos específicos de tu caso en SERMIG.
           </p>
         )}
       </div>

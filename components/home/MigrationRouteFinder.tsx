@@ -80,7 +80,7 @@ function getRecommendation(location: Location, goal: Goal, country: string): Rec
       title: 'Identifica la categoría familiar que corresponde',
       description: 'La ruta cambia según el vínculo y la situación de la persona con la que te reúnes en Chile.',
       href: '/herramientas/calculadora-elegibilidad',
-      cta: 'Usar la calculadora de elegibilidad',
+      cta: 'Usar el orientador de categorías',
     }
   }
 

@@ -199,7 +199,7 @@ export default function HomePage() {
             Herramientas interactivas
           </h2>
           <p className="text-gray-500 text-center mb-10">
-            Calcula plazos, verifica elegibilidad y prepara tu documentación
+            Explora categorías, revisa fechas de referencia y prepara tu documentación
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {featuredTools.map((tool) => (

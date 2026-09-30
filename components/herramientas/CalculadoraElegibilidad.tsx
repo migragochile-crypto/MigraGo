@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 type Situacion = 'turista' | 'permiso-vencido' | 'ingreso-irregular' | 'visa-vigente'
 type Nacionalidad = 'mercosur' | 'venezuela' | 'otro'
-type Vinculo = 'hijo-chileno' | 'pareja-chilena'
+type Vinculo = 'hijo-chileno' | 'pareja-chilena' | 'familiar-residente-definitivo'
 type Laboral = 'contrato' | 'estudiante' | 'jubilado' | 'ninguno'
 
 interface Respuestas {
@@ -77,6 +77,14 @@ function calcularResultado(r: Respuestas): { previo?: Recomendacion; visas: Reco
     })
   }
 
+  if (r.vinculos.includes('familiar-residente-definitivo')) {
+    visas.push({
+      titulo: 'Reunificación con residente definitivo/a',
+      descripcion: 'Puede corresponder si el vínculo es uno de los publicados por SERMIG, como cónyuge, unión civil, padre, madre o determinados hijos. Debes acreditar el vínculo exacto.',
+      href: '/residencia-temporal',
+    })
+  }
+
   if (r.nacionalidad === 'mercosur') {
     visas.push({
       titulo: 'Residencia Temporal por acuerdo Mercosur',
@@ -96,7 +104,7 @@ function calcularResultado(r: Respuestas): { previo?: Recomendacion; visas: Reco
   if (r.laboral === 'estudiante') {
     visas.push({
       titulo: 'Residencia para estudiantes',
-      descripcion: 'Requiere carta de aceptación de una institución educativa reconocida por el Estado chileno.',
+      descripcion: 'Se solicita desde el extranjero y exige certificado de alumno regular o matrícula en una institución reconocida, además de acreditar sustento económico.',
       href: '/residencia-temporal/estudiante',
     })
   }
@@ -249,7 +257,7 @@ export default function CalculadoraElegibilidad() {
               ['turista', 'Estoy como turista con permiso vigente'],
               ['permiso-vencido', 'Mi permiso venció después de un ingreso habilitado'],
               ['ingreso-irregular', 'Ingresé por un paso no habilitado o eludí el control'],
-              ['visa-vigente', 'Tengo visa temporaria vigente y quiero cambiar o renovar'],
+              ['visa-vigente', 'Tengo Residencia Temporal vigente y quiero cambiarla o prorrogarla'],
             ] as [Situacion, string][]
           ).map(([val, label]) => (
             <label
@@ -316,7 +324,8 @@ export default function CalculadoraElegibilidad() {
           {(
             [
               ['hijo-chileno', 'Tengo un hijo/a con nacionalidad chilena'],
-              ['pareja-chilena', 'Tengo pareja chilena (matrimonio o AUC)'],
+              ['pareja-chilena', 'Tengo cónyuge o unión civil con una persona chilena'],
+              ['familiar-residente-definitivo', 'Tengo un vínculo familiar con una persona residente definitiva'],
             ] as [Vinculo, string][]
           ).map(([val, label]) => (
             <label

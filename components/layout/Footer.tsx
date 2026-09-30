@@ -54,8 +54,8 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-white mb-3 text-sm uppercase tracking-wide">Herramientas</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/herramientas/calculadora-elegibilidad" className="hover:text-white transition-colors">Calculadora de elegibilidad</Link></li>
-              <li><Link href="/herramientas/simulador-plazos" className="hover:text-white transition-colors">Simulador de plazos</Link></li>
+              <li><Link href="/herramientas/calculadora-elegibilidad" className="hover:text-white transition-colors">Orientador de categorías</Link></li>
+              <li><Link href="/herramientas/simulador-plazos" className="hover:text-white transition-colors">Fechas de referencia</Link></li>
               <li><Link href="/herramientas/checklist-permanencia-definitiva" className="hover:text-white transition-colors">Checklist Residencia Definitiva</Link></li>
               <li><Link href="/herramientas/consultar-estado" className="hover:text-white transition-colors">Consultar estado de trámite</Link></li>
             </ul>

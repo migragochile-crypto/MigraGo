@@ -67,8 +67,8 @@ export function searchArticles(articles: SearchArticle[], query: string, limit =
 }
 
 const TOOL_DESCRIPTIONS: Record<string, string> = {
-  'calculadora-elegibilidad': 'Identifica qué categorías migratorias conviene revisar según tu situación.',
-  'simulador-plazos': 'Estima fechas y organiza los plazos importantes de tu trámite.',
+  'calculadora-elegibilidad': 'Identifica qué categorías migratorias conviene revisar según tu situación; no determina elegibilidad.',
+  'simulador-plazos': 'Genera fechas base orientativas para organizar la revisión de requisitos.',
   'checklist-permanencia-definitiva': 'Prepara y marca los documentos para Residencia Definitiva.',
   'checklist-temporaria': 'Organiza los documentos para una solicitud de Residencia Temporal.',
   'consultar-estado': 'Encuentra los canales oficiales para revisar el estado de tu solicitud.',
