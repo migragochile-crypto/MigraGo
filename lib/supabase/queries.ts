@@ -36,7 +36,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
 
       return selected ? normalizeArticleRecord(selected as Article) : null
     },
-    [`article-v7-${slug}`],
+    [`article-v8-${slug}`],
     { revalidate: 86400, tags: [`article-${slug}`] }
   )()
 }
@@ -70,7 +70,7 @@ export async function getRelatedArticles(
 ): Promise<Pick<Article, 'id' | 'slug' | 'title' | 'h1' | 'meta_description' | 'silo' | 'type'>[]> {
   if (slugs.length === 0) return []
   
-  const cacheKey = `related-v6-${[...slugs].sort().join('-')}`
+  const cacheKey = `related-v7-${[...slugs].sort().join('-')}`
   return unstable_cache(
     async () => {
       const supabase = getSupabase()
@@ -173,7 +173,7 @@ export async function getSearchIndex(): Promise<SearchArticle[]> {
         .map(normalizeArticleRecord)
         .filter((article) => isIndexableArticleSlug(article.slug))
     },
-    ['search-index-v2'],
+    ['search-index-v3'],
     { revalidate: 21600, tags: ['all-published-articles'] }
   )()
 }
