@@ -16,7 +16,6 @@ export const INDEXABLE_ARTICLE_SLUGS = new Set([
   'vivir-en-chile',
 
   // Autodenuncia
-  'autodenuncia/pdi-paso-a-paso',
   'autodenuncia/sermig-vs-pdi',
   'autodenuncia/empadronamiento-biometrico',
   'autodenuncia/errores-comunes',
