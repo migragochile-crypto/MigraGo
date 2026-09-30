@@ -200,10 +200,6 @@ export default function ArticlePageTemplate({ article, breadcrumbs, silo }: Prop
                 </>
               )}
 
-              {isPrimaryWisePage && wisePlacement && (
-                <WiseConversionCta placement={wisePlacement} format="bottom_inline" />
-              )}
-
               <div className="mt-12">
                 <EditorialDisclosure updatedAt={article.updated_at} />
               </div>

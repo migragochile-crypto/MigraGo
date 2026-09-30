@@ -45,7 +45,7 @@ export default function WiseStickyCta({ placement }: Props) {
       >
         ×
       </button>
-      <p className="pr-8 text-sm font-bold">{copy.title}</p>
+      <p className="pr-8 text-sm font-bold">Cotiza tu transferencia en Wise</p>
       <p className="mt-1 pr-8 text-xs leading-5 text-white/75">Compara el costo y el monto final antes de decidir.</p>
       <a
         href={getWiseAffiliateHref(placement, 'mobile-sticky')}

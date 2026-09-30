@@ -2,25 +2,26 @@ import { getWiseAffiliateHref, WISE_AFFILIATE_PLACEMENTS, type WisePlacement } f
 
 interface Props {
   placement: WisePlacement
-  format: 'top_inline' | 'bottom_inline' | 'desktop_sidebar'
+  format: 'top_inline' | 'desktop_sidebar'
 }
 
 export default function WiseConversionCta({ placement, format }: Props) {
   const copy = WISE_AFFILIATE_PLACEMENTS[placement]
-  const isBottom = format === 'bottom_inline'
   const isSidebar = format === 'desktop_sidebar'
 
   return (
     <aside
       aria-label="Recurso recomendado para transferencias internacionales"
-      className={`${isSidebar ? 'sticky top-24' : isBottom ? 'mt-10' : 'mb-8'} overflow-hidden rounded-2xl border border-emerald-900/15 bg-gradient-to-br from-[#eef7e8] to-white p-5 shadow-sm`}
+      className={`${isSidebar ? 'sticky top-24' : 'mb-8'} overflow-hidden rounded-2xl border border-emerald-900/15 bg-gradient-to-br from-[#eef7e8] to-white p-5 shadow-sm`}
     >
       <div className={`flex flex-col gap-4 ${isSidebar ? '' : 'sm:flex-row sm:items-center sm:justify-between'}`}>
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.14em] text-emerald-800">
-            Recurso recomendado
+            {isSidebar ? 'Compara antes de decidir' : 'Recurso recomendado'}
           </p>
-          <p className="mt-1 text-lg font-bold text-gray-900">{copy.title}</p>
+          <p className="mt-1 text-lg font-bold text-gray-900">
+            {isSidebar ? 'Revisa el costo total en Wise' : copy.title}
+          </p>
           <p className="mt-1 max-w-2xl text-sm leading-6 text-gray-600">{copy.description}</p>
         </div>
         <a
