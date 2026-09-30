@@ -36,7 +36,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
 
       return selected ? normalizeArticleRecord(selected as Article) : null
     },
-    [`article-v6-${slug}`],
+    [`article-v7-${slug}`],
     { revalidate: 86400, tags: [`article-${slug}`] }
   )()
 }

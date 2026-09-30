@@ -11,7 +11,7 @@ import { SITE_URL } from '@/lib/constants'
 export const revalidate = 21600
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Actualidad Migratoria Chile 2026: Cambios Normativos y Noticias',
+  title: 'Actualidad migratoria en Chile 2026',
   description:
     'Noticias y cambios normativos que afectan tu trámite migratorio en Chile: actualizaciones del SERMIG, nuevos procesos, plazos y requisitos. Actualizado regularmente.',
   slug: 'actualidad',

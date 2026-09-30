@@ -13,6 +13,15 @@ import { isIndexableToolSlug } from '@/lib/seo/indexing'
 export const revalidate = 86400
 export const dynamicParams = false
 
+const TOOL_SEO_DESCRIPTIONS: Record<string, string> = {
+  'calculadora-elegibilidad':
+    'Orientador gratuito para comparar subcategorías de Residencia Temporal según nacionalidad, vínculos y actividad. No determina elegibilidad.',
+  'checklist-permanencia-definitiva':
+    'Checklist gratuito para organizar documentos de Residencia Definitiva según tu situación. Confirma siempre los requisitos vigentes en SERMIG.',
+  'calculadora-multas':
+    'Estimador orientativo de multas por permiso migratorio vencido en Chile, basado en la tabla oficial. El cálculo definitivo corresponde a SERMIG.',
+}
+
 export async function generateStaticParams() {
   return HERRAMIENTAS_LIST.map(({ slug }) => ({ herramienta: slug }))
 }
@@ -27,7 +36,9 @@ export async function generateMetadata({
   if (!tool) return {}
   return buildMetadata({
     title: tool.label,
-    description: `Herramienta interactiva: ${tool.label}. Gratis y actualizada.`,
+    description:
+      TOOL_SEO_DESCRIPTIONS[herramienta] ??
+      `Herramienta interactiva: ${tool.label}. Gratis y actualizada.`,
     slug: `herramientas/${herramienta}`,
     noIndex: !isIndexableToolSlug(herramienta),
   })
