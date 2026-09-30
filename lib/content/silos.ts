@@ -162,7 +162,7 @@ export const SILOS: Record<string, SiloConfig> = {
   },
   peru: {
     label: 'Perú',
-    description: 'Guía para peruanos en Chile: documentos, antecedentes penales y visa MERCOSUR',
+    description: 'Guía para peruanos en Chile: documentos, antecedentes penales y opciones de residencia',
     clusters: [
       'documentos-peru',
       'antecedentes-penales',
@@ -172,7 +172,7 @@ export const SILOS: Record<string, SiloConfig> = {
   },
   colombia: {
     label: 'Colombia',
-    description: 'Guía para colombianos en Chile: apostilla, antecedentes penales y visa MERCOSUR',
+    description: 'Guía para colombianos en Chile: apostilla, antecedentes penales y opciones de residencia',
     clusters: [
       'apostilla-colombia',
       'antecedentes-penales',

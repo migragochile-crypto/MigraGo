@@ -6,7 +6,7 @@ import Link from 'next/link'
 type Location = '' | 'outside' | 'regular' | 'pending' | 'expired'
 type Goal = '' | 'residence' | 'permanent' | 'family' | 'work-study' | 'daily' | 'problem'
 
-const MERCOSUR_COUNTRIES = new Set(['argentina', 'bolivia', 'brasil', 'colombia', 'ecuador', 'paraguay', 'peru', 'uruguay'])
+const MERCOSUR_COUNTRIES = new Set(['argentina', 'bolivia', 'brasil', 'paraguay', 'uruguay'])
 
 const COUNTRY_GUIDES: Record<string, string> = {
   argentina: '/paises/argentina',
@@ -66,10 +66,10 @@ function getRecommendation(location: Location, goal: Goal, country: string): Rec
     }
   }
 
-  if ((goal === 'residence' || goal === 'work-study') && MERCOSUR_COUNTRIES.has(country)) {
+  if (location === 'outside' && (goal === 'residence' || goal === 'work-study') && MERCOSUR_COUNTRIES.has(country)) {
     return {
       title: 'Revisa la vía de Residencia Temporal por reciprocidad',
-      description: 'Tu nacionalidad puede abrir una ruta específica. Confirma los requisitos vigentes antes de solicitar.',
+      description: 'Tu nacionalidad está incluida en la subcategoría vigente. La solicitud se presenta desde el extranjero.',
       href: '/residencia-temporal/mercosur',
       cta: 'Revisar esta alternativa',
     }
