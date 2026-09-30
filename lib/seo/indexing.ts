@@ -44,8 +44,6 @@ export const INDEXABLE_ARTICLE_SLUGS = new Set([
   'nacionalizacion/carta-naturalizacion',
   'nacionalizacion/cuanto-demora',
   'nacionalizacion/doble-nacionalidad',
-  'nacionalizacion/examen',
-  'nacionalizacion/hijo-nacido-chile',
   'nacionalizacion/requisitos-nacionalidad',
 
   // Problemas migratorios
