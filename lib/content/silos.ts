@@ -129,25 +129,14 @@ export const SILOS: Record<string, SiloConfig> = {
   },
   haiti: {
     label: 'Haití',
-    description: 'Información para haitianos: legalización de documentos, traducción y opciones de visa',
-    clusters: [
-      'pasaporte',
-      'documentos-traducidos',
-      'regularizacion',
-      'reagrupacion-familiar',
-      'visas-haitianas',
-    ],
+    description: 'Guía para haitianos: residencias vigentes, legalización, traducción y lugar de solicitud',
+    clusters: [],
     cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.serviciomigraciones.cl' },
   },
   'republica-dominicana': {
     label: 'República Dominicana',
-    description: 'Trámites y documentos para dominicanos: apostilla, antecedentes y opciones de visa',
-    clusters: [
-      'documentos-republica-dominicana',
-      'requisitos',
-      'visa-consular',
-      'faq',
-    ],
+    description: 'Guía para dominicanos: residencias vigentes, ingreso, documentos y apostilla',
+    clusters: [],
     cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.serviciomigraciones.cl' },
   },
   peru: {
@@ -174,24 +163,14 @@ export const SILOS: Record<string, SiloConfig> = {
   },
   ecuador: {
     label: 'Ecuador',
-    description: 'Guía para ecuatorianos en Chile: apostilla de documentos, antecedentes penales y opciones de visa',
-    clusters: [
-      'documentos-ecuador',
-      'antecedentes-penales',
-      'apostilla-ecuador',
-      'opciones-visa',
-      'trabajar-en-chile',
-    ],
+    description: 'Guía para ecuatorianos: residencias vigentes, documentos, apostilla y lugar de solicitud',
+    clusters: [],
     cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.serviciomigraciones.cl' },
   },
   cuba: {
     label: 'Cuba',
-    description: 'Guía para cubanos en Chile: legalización de documentos, antecedentes penales y opciones de visa',
-    clusters: [
-      'documentos-cuba',
-      'antecedentes-penales',
-      'opciones-visa',
-    ],
+    description: 'Guía para cubanos: residencias vigentes, ingreso, documentos y legalización',
+    clusters: [],
     cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.serviciomigraciones.cl' },
   },
 }

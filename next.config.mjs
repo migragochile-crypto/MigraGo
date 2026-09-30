@@ -173,18 +173,18 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/cuba/:path*',
-        destination: '/paises/cuba/:path*',
+        source: '/paises/cuba/:tema',
+        destination: '/paises/cuba',
         permanent: true,
       },
       {
-        source: '/ecuador/:path*',
-        destination: '/paises/ecuador/:path*',
+        source: '/paises/ecuador/:tema',
+        destination: '/paises/ecuador',
         permanent: true,
       },
       {
-        source: '/haiti/:path*',
-        destination: '/paises/haiti/:path*',
+        source: '/paises/haiti/:tema',
+        destination: '/paises/haiti',
         permanent: true,
       },
       {
@@ -193,8 +193,28 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/paises/republica-dominicana/:tema',
+        destination: '/paises/republica-dominicana',
+        permanent: true,
+      },
+      {
+        source: '/cuba/:path*',
+        destination: '/paises/cuba',
+        permanent: true,
+      },
+      {
+        source: '/ecuador/:path*',
+        destination: '/paises/ecuador',
+        permanent: true,
+      },
+      {
+        source: '/haiti/:path*',
+        destination: '/paises/haiti',
+        permanent: true,
+      },
+      {
         source: '/republica-dominicana/:path*',
-        destination: '/paises/republica-dominicana/:path*',
+        destination: '/paises/republica-dominicana',
         permanent: true,
       },
       {
