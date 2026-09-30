@@ -51,6 +51,16 @@ function calcularResultado(r: Respuestas): { previo?: Recomendacion; visas: Reco
     }
   }
 
+  if (r.situacion === 'turista') {
+    previo = {
+      titulo: 'La regla general exige postular desde el extranjero',
+      descripcion:
+        'Estar en Chile con Permanencia Transitoria no permite solicitar normalmente una residencia dentro del país. Las rutas mostradas son categorías para revisar, no una confirmación de elegibilidad. Solo ciertas excepciones oficiales admiten postulación desde Chile.',
+      href: '/residencia-temporal',
+      urgente: true,
+    }
+  }
+
   if (r.vinculos.includes('hijo-chileno')) {
     visas.push({
       titulo: 'Visa por hijo/a chileno/a',
@@ -148,7 +158,7 @@ export default function CalculadoraElegibilidad() {
     return (
       <div className="space-y-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-xl font-bold text-gray-900">Tus opciones migratorias</h2>
+          <h2 className="text-xl font-bold text-gray-900">Rutas que debes verificar</h2>
           <button onClick={reiniciar} className="text-sm text-primary hover:underline">
             ← Volver a empezar
           </button>
@@ -193,8 +203,8 @@ export default function CalculadoraElegibilidad() {
         </div>
 
         <p className="text-xs text-gray-400 border-t pt-4">
-          Esta calculadora es orientativa. Los requisitos exactos y la disponibilidad de cada categoría
-          pueden variar. Verifica siempre en el{' '}
+          Esta herramienta no determina elegibilidad ni reemplaza la evaluación de SERMIG. Las categorías
+          mostradas son puntos de revisión, no una recomendación para postular. Verifica siempre en el{' '}
           <a
             href="https://tramites.serviciomigraciones.cl"
             target="_blank"
