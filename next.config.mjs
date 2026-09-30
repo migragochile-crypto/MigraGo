@@ -33,6 +33,26 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/paises/bolivia/:tema',
+        destination: '/paises/bolivia',
+        permanent: true,
+      },
+      {
+        source: '/paises/colombia/:tema',
+        destination: '/paises/colombia',
+        permanent: true,
+      },
+      {
+        source: '/paises/peru/:tema',
+        destination: '/paises/peru',
+        permanent: true,
+      },
+      {
+        source: '/paises/venezuela/:tema',
+        destination: '/paises/venezuela',
+        permanent: true,
+      },
+      {
         source: '/colombia/visa-mercosur',
         destination: '/paises/colombia',
         permanent: true,
@@ -144,12 +164,12 @@ const nextConfig = {
       },
       {
         source: '/bolivia/:path*',
-        destination: '/paises/bolivia/:path*',
+        destination: '/paises/bolivia',
         permanent: true,
       },
       {
         source: '/colombia/:path*',
-        destination: '/paises/colombia/:path*',
+        destination: '/paises/colombia',
         permanent: true,
       },
       {
@@ -169,7 +189,7 @@ const nextConfig = {
       },
       {
         source: '/peru/:path*',
-        destination: '/paises/peru/:path*',
+        destination: '/paises/peru',
         permanent: true,
       },
       {
@@ -179,7 +199,7 @@ const nextConfig = {
       },
       {
         source: '/venezuela/:path*',
-        destination: '/paises/venezuela/:path*',
+        destination: '/paises/venezuela',
         permanent: true,
       },
     ]

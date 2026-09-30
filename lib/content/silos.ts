@@ -117,24 +117,14 @@ export const SILOS: Record<string, SiloConfig> = {
   },
   venezuela: {
     label: 'Venezuela',
-    description: 'Guía para venezolanos en Chile: visa, documentos sin apostilla y regularización',
-    clusters: [
-      'documentos-apostilla',
-      'pasaporte',
-      'antecedentes-penales',
-    ],
+    description: 'Guía para venezolanos: ingreso, residencias vigentes, documentos y situaciones irregulares',
+    clusters: [],
     cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.serviciomigraciones.cl' },
   },
   bolivia: {
     label: 'Bolivia',
-    description: 'Guía práctica para ciudadanos bolivianos: documentos, apostilla y opciones de visa',
-    clusters: [
-      'documentos-bolivia',
-      'antecedentes-penales',
-      'apostilla',
-      'visa-temporaria',
-      'trabajar-en-chile',
-    ],
+    description: 'Guía para bolivianos: Residencia MERCOSUR, DNI, documentos y lugar de solicitud',
+    clusters: [],
     cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.serviciomigraciones.cl' },
   },
   haiti: {
@@ -162,27 +152,19 @@ export const SILOS: Record<string, SiloConfig> = {
   },
   peru: {
     label: 'Perú',
-    description: 'Guía para peruanos en Chile: documentos, antecedentes penales y opciones de residencia',
-    clusters: [
-      'documentos-peru',
-      'antecedentes-penales',
-      'visa-mercosur',
-    ],
+    description: 'Guía para peruanos: residencias vigentes, documentos y lugar de solicitud',
+    clusters: [],
     cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.serviciomigraciones.cl' },
   },
   colombia: {
     label: 'Colombia',
-    description: 'Guía para colombianos en Chile: apostilla, antecedentes penales y opciones de residencia',
-    clusters: [
-      'apostilla-colombia',
-      'antecedentes-penales',
-      'visa-mercosur',
-    ],
+    description: 'Guía para colombianos: residencias vigentes, documentos y lugar de solicitud',
+    clusters: [],
     cta: { text: 'Iniciar trámite en línea', href: 'https://tramites.serviciomigraciones.cl' },
   },
   argentina: {
     label: 'Argentina',
-    description: 'Guía para argentinos en Chile: documentos, antecedentes penales y visa MERCOSUR con DNI',
+    description: 'Guía para argentinos: Residencia MERCOSUR desde el extranjero y documentos',
     clusters: [
       'documentos-argentina',
       'antecedentes-penales',
