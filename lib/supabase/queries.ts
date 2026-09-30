@@ -148,7 +148,7 @@ export async function getAllPublishedArticles(): Promise<
         'slug' | 'silo' | 'type' | 'updated_at' | 'country_tags' | 'content'
       >[]).map(normalizeArticleRecord)
     },
-    ['all-published-articles-v6'],
+    ['all-published-articles-v7'],
     { revalidate: 21600, tags: ['all-published-articles'] }
   )()
 }
@@ -173,7 +173,7 @@ export async function getSearchIndex(): Promise<SearchArticle[]> {
         .map(normalizeArticleRecord)
         .filter((article) => isIndexableArticleSlug(article.slug))
     },
-    ['search-index-v1'],
+    ['search-index-v2'],
     { revalidate: 21600, tags: ['all-published-articles'] }
   )()
 }

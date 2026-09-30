@@ -76,7 +76,11 @@ export const INDEXABLE_ARTICLE_SLUGS = new Set([
   'argentina',
   'bolivia',
   'colombia',
+  'cuba',
+  'ecuador',
+  'haiti',
   'peru',
+  'republica-dominicana',
   'venezuela',
 
   // Actualidad consolidada
